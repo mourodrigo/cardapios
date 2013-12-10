@@ -44,4 +44,36 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma - mark Interface
+
+
+-(UIViewController*)getViewControllerWithIdentifier:(NSString*)identifier{
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil		];
+    return [mainStoryboard instantiateViewControllerWithIdentifier:identifier];
+}
+
+
+#pragma - mark Constants
+
+-(NSDictionary *)getInfoPlist{ //to-do remover tags excedentes do arquivo de plist
+    if (![[NSFileManager defaultManager]fileExistsAtPath:[@"~/Documents/constants.plist" stringByExpandingTildeInPath]]) {
+        NSLog(@"getInfoPlist padrão");
+        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"constants" ofType:@"plist"];
+        NSDictionary *info = [[NSDictionary alloc]initWithContentsOfFile:plistPath];
+        [info writeToFile:[@"~/Documents/constants.plist" stringByExpandingTildeInPath] atomically:YES];
+        return info;
+    }else{
+        NSString *plistPath = [@"~/Documents/constants.plist" stringByExpandingTildeInPath];
+        NSDictionary *info = [[NSDictionary alloc]initWithContentsOfFile:plistPath];
+        return info;
+    }
+}
+
+-(void)setInfoPlist:(NSDictionary*)constants{
+    [constants writeToFile:[@"~/Documents/constants.plist" stringByExpandingTildeInPath] atomically:YES];
+}
+
+#pragma - mark Database
+
+
 @end

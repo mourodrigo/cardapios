@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		302D6A9318509B90004239A5 /* constants.plist in Resources */ = {isa = PBXBuildFile; fileRef = 302D6A9218509B90004239A5 /* constants.plist */; };
+		302D6A991850A00D004239A5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D6A981850A00D004239A5 /* MainViewController.m */; };
 		30BF65C81842C4350091DDD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65C71842C4350091DDD0 /* Foundation.framework */; };
 		30BF65CA1842C4350091DDD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65C91842C4350091DDD0 /* CoreGraphics.framework */; };
 		30BF65CC1842C4350091DDD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65CB1842C4350091DDD0 /* UIKit.framework */; };
-		30BF65D21842C4350091DDD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30BF65D01842C4350091DDD0 /* InfoPlist.strings */; };
 		30BF65D41842C4350091DDD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BF65D31842C4350091DDD0 /* main.m */; };
 		30BF65D81842C4350091DDD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BF65D71842C4350091DDD0 /* AppDelegate.m */; };
 		30BF65DB1842C4350091DDD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BF65D91842C4350091DDD0 /* Main.storyboard */; };
-		30BF65DE1842C4350091DDD0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BF65DD1842C4350091DDD0 /* ViewController.m */; };
+		30BF65DE1842C4350091DDD0 /* IdiomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BF65DD1842C4350091DDD0 /* IdiomViewController.m */; };
 		30BF65E01842C4350091DDD0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30BF65DF1842C4350091DDD0 /* Images.xcassets */; };
 		30BF65E71842C4350091DDD0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65E61842C4350091DDD0 /* XCTest.framework */; };
 		30BF65E81842C4350091DDD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65C71842C4350091DDD0 /* Foundation.framework */; };
 		30BF65E91842C4350091DDD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65CB1842C4350091DDD0 /* UIKit.framework */; };
-		30BF65F11842C4350091DDD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30BF65EF1842C4350091DDD0 /* InfoPlist.strings */; };
 		30BF65F31842C4350091DDD0 /* CardapiosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BF65F21842C4350091DDD0 /* CardapiosTests.m */; };
 /* End PBXBuildFile section */
 
@@ -34,24 +34,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		302D6A9218509B90004239A5 /* constants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = constants.plist; sourceTree = "<group>"; };
+		302D6A971850A00D004239A5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		302D6A981850A00D004239A5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		302D6AA01850A36F004239A5 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
+		302D6AA11850A37A004239A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		30BF65C41842C4350091DDD0 /* Cardapios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardapios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BF65C71842C4350091DDD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		30BF65C91842C4350091DDD0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		30BF65CB1842C4350091DDD0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		30BF65CF1842C4350091DDD0 /* Cardapios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cardapios-Info.plist"; sourceTree = "<group>"; };
-		30BF65D11842C4350091DDD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		30BF65D31842C4350091DDD0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		30BF65D51842C4350091DDD0 /* Cardapios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cardapios-Prefix.pch"; sourceTree = "<group>"; };
 		30BF65D61842C4350091DDD0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		30BF65D71842C4350091DDD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		30BF65DA1842C4350091DDD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		30BF65DC1842C4350091DDD0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		30BF65DD1842C4350091DDD0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		30BF65DC1842C4350091DDD0 /* IdiomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IdiomViewController.h; sourceTree = "<group>"; };
+		30BF65DD1842C4350091DDD0 /* IdiomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IdiomViewController.m; sourceTree = "<group>"; };
 		30BF65DF1842C4350091DDD0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		30BF65E51842C4350091DDD0 /* CardapiosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardapiosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BF65E61842C4350091DDD0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		30BF65EE1842C4350091DDD0 /* CardapiosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CardapiosTests-Info.plist"; sourceTree = "<group>"; };
-		30BF65F01842C4350091DDD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		30BF65F21842C4350091DDD0 /* CardapiosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardapiosTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,8 +118,10 @@
 				30BF65D61842C4350091DDD0 /* AppDelegate.h */,
 				30BF65D71842C4350091DDD0 /* AppDelegate.m */,
 				30BF65D91842C4350091DDD0 /* Main.storyboard */,
-				30BF65DC1842C4350091DDD0 /* ViewController.h */,
-				30BF65DD1842C4350091DDD0 /* ViewController.m */,
+				30BF65DC1842C4350091DDD0 /* IdiomViewController.h */,
+				30BF65DD1842C4350091DDD0 /* IdiomViewController.m */,
+				302D6A971850A00D004239A5 /* MainViewController.h */,
+				302D6A981850A00D004239A5 /* MainViewController.m */,
 				30BF65DF1842C4350091DDD0 /* Images.xcassets */,
 				30BF65CE1842C4350091DDD0 /* Supporting Files */,
 			);
@@ -126,8 +131,8 @@
 		30BF65CE1842C4350091DDD0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				302D6A9218509B90004239A5 /* constants.plist */,
 				30BF65CF1842C4350091DDD0 /* Cardapios-Info.plist */,
-				30BF65D01842C4350091DDD0 /* InfoPlist.strings */,
 				30BF65D31842C4350091DDD0 /* main.m */,
 				30BF65D51842C4350091DDD0 /* Cardapios-Prefix.pch */,
 			);
@@ -147,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				30BF65EE1842C4350091DDD0 /* CardapiosTests-Info.plist */,
-				30BF65EF1842C4350091DDD0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -211,6 +215,8 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				"pt-BR",
 			);
 			mainGroup = 30BF65BB1842C4350091DDD0;
 			productRefGroup = 30BF65C51842C4350091DDD0 /* Products */;
@@ -229,7 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30BF65E01842C4350091DDD0 /* Images.xcassets in Resources */,
-				30BF65D21842C4350091DDD0 /* InfoPlist.strings in Resources */,
+				302D6A9318509B90004239A5 /* constants.plist in Resources */,
 				30BF65DB1842C4350091DDD0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,7 +244,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30BF65F11842C4350091DDD0 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +254,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30BF65DE1842C4350091DDD0 /* ViewController.m in Sources */,
+				30BF65DE1842C4350091DDD0 /* IdiomViewController.m in Sources */,
 				30BF65D81842C4350091DDD0 /* AppDelegate.m in Sources */,
 				30BF65D41842C4350091DDD0 /* main.m in Sources */,
+				302D6A991850A00D004239A5 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,28 +280,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		30BF65D01842C4350091DDD0 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				30BF65D11842C4350091DDD0 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		30BF65D91842C4350091DDD0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				30BF65DA1842C4350091DDD0 /* Base */,
+				302D6AA01850A36F004239A5 /* pt */,
+				302D6AA11850A37A004239A5 /* en */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		30BF65EF1842C4350091DDD0 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				30BF65F01842C4350091DDD0 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -460,6 +452,7 @@
 				30BF65F81842C4350091DDD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30BF65F91842C4350091DDD0 /* Build configuration list for PBXNativeTarget "CardapiosTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +461,7 @@
 				30BF65FB1842C4350091DDD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

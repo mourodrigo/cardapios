@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ip</key>
+	<string>http://255.255.255.255/</string>
+	<key>emailContato</key>
+	<string></string>
+	<key>telefone</key>
+	<string></string>
+	<key>idioma</key>
+	<string></string>
+	<key>storyboard</key>
+	<string>Main</string>
+	<key>api</key>
+	<string>http://255.255.255.255/api/</string>
+</dict>
+</plist>

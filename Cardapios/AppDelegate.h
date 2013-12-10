@@ -11,5 +11,5 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+-(UIViewController*)getViewControllerWithIdentifier:(NSString*)identifier;
 @end

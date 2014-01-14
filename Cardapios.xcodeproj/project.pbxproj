@@ -22,6 +22,9 @@
 		302CCF0818855DF300788ECC /* RightArrowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CCF0718855DF300788ECC /* RightArrowCell.m */; };
 		302D6A9318509B90004239A5 /* constants.plist in Resources */ = {isa = PBXBuildFile; fileRef = 302D6A9218509B90004239A5 /* constants.plist */; };
 		302D6A991850A00D004239A5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D6A981850A00D004239A5 /* MainViewController.m */; };
+		30AF4090188567DE00EFA8FC /* database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30AF408E188567DE00EFA8FC /* database.xcdatamodeld */; };
+		30AF40931885685800EFA8FC /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AF40921885685800EFA8FC /* City.m */; };
+		30AF409518856F9000EFA8FC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AF409418856F9000EFA8FC /* CoreData.framework */; };
 		30BF65C81842C4350091DDD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65C71842C4350091DDD0 /* Foundation.framework */; };
 		30BF65CA1842C4350091DDD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65C91842C4350091DDD0 /* CoreGraphics.framework */; };
 		30BF65CC1842C4350091DDD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65CB1842C4350091DDD0 /* UIKit.framework */; };
@@ -66,6 +69,10 @@
 		302D6A9218509B90004239A5 /* constants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = constants.plist; sourceTree = "<group>"; };
 		302D6A971850A00D004239A5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		302D6A981850A00D004239A5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		30AF408F188567DE00EFA8FC /* database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = database.xcdatamodel; sourceTree = "<group>"; };
+		30AF40911885685800EFA8FC /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		30AF40921885685800EFA8FC /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		30AF409418856F9000EFA8FC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		30BF65C41842C4350091DDD0 /* Cardapios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardapios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BF65C71842C4350091DDD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		30BF65C91842C4350091DDD0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30AF409518856F9000EFA8FC /* CoreData.framework in Frameworks */,
 				30BF65CA1842C4350091DDD0 /* CoreGraphics.framework in Frameworks */,
 				30BF65CC1842C4350091DDD0 /* UIKit.framework in Frameworks */,
 				30BF65C81842C4350091DDD0 /* Foundation.framework in Frameworks */,
@@ -126,6 +134,16 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		30AF408D188567B600EFA8FC /* Db */ = {
+			isa = PBXGroup;
+			children = (
+				30AF408E188567DE00EFA8FC /* database.xcdatamodeld */,
+				30AF40911885685800EFA8FC /* City.h */,
+				30AF40921885685800EFA8FC /* City.m */,
+			);
+			name = Db;
+			sourceTree = "<group>";
+		};
 		30BF65BB1842C4350091DDD0 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +166,7 @@
 		30BF65C61842C4350091DDD0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30AF409418856F9000EFA8FC /* CoreData.framework */,
 				30BF65C71842C4350091DDD0 /* Foundation.framework */,
 				30BF65C91842C4350091DDD0 /* CoreGraphics.framework */,
 				30BF65CB1842C4350091DDD0 /* UIKit.framework */,
@@ -159,6 +178,7 @@
 		30BF65CD1842C4350091DDD0 /* Cardapios */ = {
 			isa = PBXGroup;
 			children = (
+				30AF408D188567B600EFA8FC /* Db */,
 				30BF65D61842C4350091DDD0 /* AppDelegate.h */,
 				30BF65D71842C4350091DDD0 /* AppDelegate.m */,
 				30BF65D91842C4350091DDD0 /* Main.storyboard */,
@@ -317,11 +337,13 @@
 			files = (
 				30BF65DE1842C4350091DDD0 /* IdiomViewController.m in Sources */,
 				30BF65D81842C4350091DDD0 /* AppDelegate.m in Sources */,
+				30AF4090188567DE00EFA8FC /* database.xcdatamodeld in Sources */,
 				30BF65D41842C4350091DDD0 /* main.m in Sources */,
 				302CCF0118855B7400788ECC /* CityViewController.m in Sources */,
 				302CCEFE188559E900788ECC /* MainTabBar.m in Sources */,
 				302D6A991850A00D004239A5 /* MainViewController.m in Sources */,
 				302CCF0818855DF300788ECC /* RightArrowCell.m in Sources */,
+				30AF40931885685800EFA8FC /* City.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +548,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		30AF408E188567DE00EFA8FC /* database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				30AF408F188567DE00EFA8FC /* database.xcdatamodel */,
+			);
+			currentVersion = 30AF408F188567DE00EFA8FC /* database.xcdatamodel */;
+			path = database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 30BF65BC1842C4350091DDD0 /* Project object */;
 }

@@ -11,8 +11,19 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
 -(UIViewController*)getViewControllerWithIdentifier:(NSString*)identifier;
 -(NSDictionary *)getInfoPlist;
 -(void)setInfoPlist:(NSDictionary*)constants;
 -(void)setIdiomWithString:(NSString*)idiom;
+- (void)saveContext;
+- (NSManagedObjectContext *)managedObjectContext;
+- (NSManagedObjectModel *)managedObjectModel;
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
+- (void)eraseAllDataBAse;
+- (NSString *)getDBPath;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
 @end

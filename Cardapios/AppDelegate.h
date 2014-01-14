@@ -12,4 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 -(UIViewController*)getViewControllerWithIdentifier:(NSString*)identifier;
+-(NSDictionary *)getInfoPlist;
+-(void)setInfoPlist:(NSDictionary*)constants;
+-(void)setIdiomWithString:(NSString*)idiom;
 @end

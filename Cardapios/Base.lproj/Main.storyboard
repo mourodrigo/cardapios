@@ -17,42 +17,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiF-bX-GrO">
-                                <rect key="frame" x="77" y="326" width="167" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiF-bX-GrO">
+                                <rect key="frame" x="64" y="316" width="192" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="PORTUGUÊS">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="PORTUGUÊS" backgroundImage="BtnInicial.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="actionBtnPortuguese:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OVD-0c-zXY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elo-gR-WKq">
-                                <rect key="frame" x="77" y="364" width="167" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elo-gR-WKq">
+                                <rect key="frame" x="64" y="368" width="192" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ENGLISH">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="06T-Fg-kWG"/>
+                                    <constraint firstAttribute="width" constant="192" id="HYj-xf-Ney"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="ENGLISH" backgroundImage="BtnInicial.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="actionBtnEnglish:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qDs-BJ-i1h"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYN-8S-1qk">
-                                <rect key="frame" x="77" y="402" width="167" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYN-8S-1qk">
+                                <rect key="frame" x="64" y="420" width="192" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ESPANOL">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="8Xo-BZ-dCg"/>
+                                    <constraint firstAttribute="height" constant="42" id="B8F-BT-TmY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="ESPANOL" backgroundImage="BtnInicial.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="actionBtnSpanish:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cTE-Uh-iy7"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eyl-BP-2Kz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoInicial.png" translatesAutoresizingMaskIntoConstraints="NO" id="eyl-BP-2Kz">
                                 <rect key="frame" x="40" y="81" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="NE2-VT-Xpq"/>
+                                    <constraint firstAttribute="height" constant="128" id="fmV-C4-E4d"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.91764705882352937" green="0.26666666666666666" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="GYN-8S-1qk" secondAttribute="centerX" id="0oV-qS-i9a"/>
+                            <constraint firstItem="GYN-8S-1qk" firstAttribute="trailing" secondItem="Elo-gR-WKq" secondAttribute="trailing" id="5Q6-3g-g2O"/>
+                            <constraint firstAttribute="centerX" secondItem="Elo-gR-WKq" secondAttribute="centerX" id="Aus-oo-QSa"/>
+                            <constraint firstAttribute="centerX" secondItem="eyl-BP-2Kz" secondAttribute="centerX" id="FjE-fg-dl3"/>
+                            <constraint firstItem="GYN-8S-1qk" firstAttribute="leading" secondItem="qiF-bX-GrO" secondAttribute="leading" id="GN1-kD-Cfb"/>
+                            <constraint firstItem="GYN-8S-1qk" firstAttribute="centerX" secondItem="Elo-gR-WKq" secondAttribute="centerX" id="Otp-o7-GSM"/>
+                            <constraint firstItem="eyl-BP-2Kz" firstAttribute="top" secondItem="I6x-h5-u2d" secondAttribute="bottom" constant="61" id="SZk-CU-Jaj"/>
+                            <constraint firstItem="GYN-8S-1qk" firstAttribute="top" secondItem="Elo-gR-WKq" secondAttribute="bottom" constant="10" id="Yg5-cy-5fM"/>
+                            <constraint firstItem="GYN-8S-1qk" firstAttribute="centerX" secondItem="qiF-bX-GrO" secondAttribute="centerX" id="YnT-c0-RO7"/>
+                            <constraint firstItem="GYN-8S-1qk" firstAttribute="leading" secondItem="Elo-gR-WKq" secondAttribute="leading" id="jmR-IN-T9c"/>
+                            <constraint firstItem="Elo-gR-WKq" firstAttribute="top" secondItem="qiF-bX-GrO" secondAttribute="bottom" constant="10" id="kef-hD-sWa"/>
+                            <constraint firstAttribute="centerX" secondItem="qiF-bX-GrO" secondAttribute="centerX" id="nEN-Ki-hU8"/>
+                            <constraint firstItem="qiF-bX-GrO" firstAttribute="top" secondItem="eyl-BP-2Kz" secondAttribute="bottom" constant="107" id="sCq-vX-eqx"/>
+                            <constraint firstItem="GYN-8S-1qk" firstAttribute="trailing" secondItem="qiF-bX-GrO" secondAttribute="trailing" id="utv-e3-MuR"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="outletBtnEnglish" destination="Elo-gR-WKq" id="x2K-0E-gdb"/>
@@ -65,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="181" y="-275"/>
         </scene>
-        <!--View Controller - Home-->
+        <!--City View Controller-->
         <scene sceneID="OTD-2j-BeC">
             <objects>
-                <viewController id="dDJ-vo-afR" sceneMemberID="viewController">
+                <viewController id="dDJ-vo-afR" customClass="CityViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ei0-7h-b8r"/>
                         <viewControllerLayoutGuide type="bottom" id="2BH-FD-aQQ"/>
@@ -77,19 +111,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qth-CX-HxE">
-                                <rect key="frame" x="139" y="248" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uim-e2-cav">
+                                <rect key="frame" x="0.0" y="44" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="RightArrowCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="RightArrowCell" id="2Af-hq-ZtG" customClass="RightArrowCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Af-hq-ZtG" id="E5Y-US-49m">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQc-63-oV2">
+                                                    <rect key="frame" x="15" y="3" width="290" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.50793987771739135" green="0.50793987771739135" blue="0.50793987771739135" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label">
+                                                            <attributes>
+                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="7"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ArrowRight.png" translatesAutoresizingMaskIntoConstraints="NO" id="qoB-b9-75B">
+                                                    <rect key="frame" x="287" y="11" width="13" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="outletImgArrow" destination="qoB-b9-75B" id="Gqp-ey-dMs"/>
+                                            <outlet property="outletLblTitle" destination="iQc-63-oV2" id="vTz-dh-5fo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dDJ-vo-afR" id="qME-MK-W4n"/>
+                                    <outlet property="delegate" destination="dDJ-vo-afR" id="BJM-cH-Qnx"/>
+                                </connections>
+                            </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PiE-7d-P4a">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="CIDADE" id="XG8-HG-xFr" userLabel="lblCidade">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="rYz-Rk-gKb">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="3HZ-Ah-3wa">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Evv-Ji-v4d">
+                                                <rect key="frame" x="16" y="-1" width="71" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="Voltar">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="rYz-Rk-gKb">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hNc-Q3-h2F">
                                                 <rect key="frame" x="258" y="7" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -107,7 +189,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="8F2-z8-Tuq"/>
+                    <tabBarItem key="tabBarItem" title="" image="home.png" id="8F2-z8-Tuq"/>
+                    <connections>
+                        <outlet property="uiTvCity" destination="uim-e2-cav" id="1iq-bc-mgr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y11-Yy-xrG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,7 +248,7 @@
             <objects>
                 <tabBarController restorationIdentifier="mainvc" storyboardIdentifier="mainvc" title="mainvc" definesPresentationContext="YES" id="Kpo-Yd-Toi" userLabel="mainvc" customClass="MainViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="kS2-uR-Mi1">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="kS2-uR-Mi1" customClass="MainTabBar">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -233,6 +318,12 @@
             <point key="canvasLocation" x="1128" y="51"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ArrowRight.png" width="13" height="22"/>
+        <image name="BtnInicial.png" width="192" height="42"/>
+        <image name="LogoInicial.png" width="193" height="47"/>
+        <image name="home.png" width="28" height="27"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

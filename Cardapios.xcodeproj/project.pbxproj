@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30022FC6186DE10800F2082B /* LogoInicial.png in Resources */ = {isa = PBXBuildFile; fileRef = 30022FC4186DE10800F2082B /* LogoInicial.png */; };
+		30022FC7186DE10800F2082B /* LogoInicial@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30022FC5186DE10800F2082B /* LogoInicial@2x.png */; };
+		30022FCC186E032600F2082B /* BtnInicial.png in Resources */ = {isa = PBXBuildFile; fileRef = 30022FC8186E032600F2082B /* BtnInicial.png */; };
+		30022FCD186E032600F2082B /* BtnInicial@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30022FC9186E032600F2082B /* BtnInicial@2x.png */; };
+		30022FCE186E032600F2082B /* BtnInicialSel.png in Resources */ = {isa = PBXBuildFile; fileRef = 30022FCA186E032600F2082B /* BtnInicialSel.png */; };
+		30022FCF186E032600F2082B /* BtnInicialSel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30022FCB186E032600F2082B /* BtnInicialSel@2x.png */; };
+		302CCEF7188558FB00788ECC /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 302CCEF5188558FB00788ECC /* home.png */; };
+		302CCEF8188558FB00788ECC /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 302CCEF6188558FB00788ECC /* home@2x.png */; };
+		302CCEFE188559E900788ECC /* MainTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CCEFD188559E900788ECC /* MainTabBar.m */; };
+		302CCF0118855B7400788ECC /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CCF0018855B7400788ECC /* CityViewController.m */; };
+		302CCF0418855CDE00788ECC /* ArrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 302CCF0218855CDE00788ECC /* ArrowRight.png */; };
+		302CCF0518855CDE00788ECC /* ArrowRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 302CCF0318855CDE00788ECC /* ArrowRight@2x.png */; };
+		302CCF0818855DF300788ECC /* RightArrowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CCF0718855DF300788ECC /* RightArrowCell.m */; };
 		302D6A9318509B90004239A5 /* constants.plist in Resources */ = {isa = PBXBuildFile; fileRef = 302D6A9218509B90004239A5 /* constants.plist */; };
 		302D6A991850A00D004239A5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D6A981850A00D004239A5 /* MainViewController.m */; };
 		30BF65C81842C4350091DDD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65C71842C4350091DDD0 /* Foundation.framework */; };
@@ -34,11 +47,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30022FC4186DE10800F2082B /* LogoInicial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoInicial.png; sourceTree = "<group>"; };
+		30022FC5186DE10800F2082B /* LogoInicial@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LogoInicial@2x.png"; sourceTree = "<group>"; };
+		30022FC8186E032600F2082B /* BtnInicial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BtnInicial.png; sourceTree = "<group>"; };
+		30022FC9186E032600F2082B /* BtnInicial@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BtnInicial@2x.png"; sourceTree = "<group>"; };
+		30022FCA186E032600F2082B /* BtnInicialSel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BtnInicialSel.png; sourceTree = "<group>"; };
+		30022FCB186E032600F2082B /* BtnInicialSel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BtnInicialSel@2x.png"; sourceTree = "<group>"; };
+		302CCEF5188558FB00788ECC /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		302CCEF6188558FB00788ECC /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
+		302CCEFC188559E900788ECC /* MainTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBar.h; sourceTree = "<group>"; };
+		302CCEFD188559E900788ECC /* MainTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBar.m; sourceTree = "<group>"; };
+		302CCEFF18855B7400788ECC /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityViewController.h; sourceTree = "<group>"; };
+		302CCF0018855B7400788ECC /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
+		302CCF0218855CDE00788ECC /* ArrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArrowRight.png; sourceTree = "<group>"; };
+		302CCF0318855CDE00788ECC /* ArrowRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ArrowRight@2x.png"; sourceTree = "<group>"; };
+		302CCF0618855DF300788ECC /* RightArrowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightArrowCell.h; sourceTree = "<group>"; };
+		302CCF0718855DF300788ECC /* RightArrowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightArrowCell.m; sourceTree = "<group>"; };
 		302D6A9218509B90004239A5 /* constants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = constants.plist; sourceTree = "<group>"; };
 		302D6A971850A00D004239A5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		302D6A981850A00D004239A5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		302D6AA01850A36F004239A5 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
-		302D6AA11850A37A004239A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		30BF65C41842C4350091DDD0 /* Cardapios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardapios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BF65C71842C4350091DDD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		30BF65C91842C4350091DDD0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,6 +109,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30022FC3186DE0EF00F2082B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				302CCF0218855CDE00788ECC /* ArrowRight.png */,
+				302CCF0318855CDE00788ECC /* ArrowRight@2x.png */,
+				302CCEF5188558FB00788ECC /* home.png */,
+				302CCEF6188558FB00788ECC /* home@2x.png */,
+				30022FC4186DE10800F2082B /* LogoInicial.png */,
+				30022FC5186DE10800F2082B /* LogoInicial@2x.png */,
+				30022FC8186E032600F2082B /* BtnInicial.png */,
+				30022FC9186E032600F2082B /* BtnInicial@2x.png */,
+				30022FCA186E032600F2082B /* BtnInicialSel.png */,
+				30022FCB186E032600F2082B /* BtnInicialSel@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		30BF65BB1842C4350091DDD0 = {
 			isa = PBXGroup;
 			children = (
@@ -118,10 +162,16 @@
 				30BF65D61842C4350091DDD0 /* AppDelegate.h */,
 				30BF65D71842C4350091DDD0 /* AppDelegate.m */,
 				30BF65D91842C4350091DDD0 /* Main.storyboard */,
+				302CCF0618855DF300788ECC /* RightArrowCell.h */,
+				302CCF0718855DF300788ECC /* RightArrowCell.m */,
+				302CCEFF18855B7400788ECC /* CityViewController.h */,
+				302CCF0018855B7400788ECC /* CityViewController.m */,
 				30BF65DC1842C4350091DDD0 /* IdiomViewController.h */,
 				30BF65DD1842C4350091DDD0 /* IdiomViewController.m */,
 				302D6A971850A00D004239A5 /* MainViewController.h */,
 				302D6A981850A00D004239A5 /* MainViewController.m */,
+				302CCEFC188559E900788ECC /* MainTabBar.h */,
+				302CCEFD188559E900788ECC /* MainTabBar.m */,
 				30BF65DF1842C4350091DDD0 /* Images.xcassets */,
 				30BF65CE1842C4350091DDD0 /* Supporting Files */,
 			);
@@ -131,6 +181,7 @@
 		30BF65CE1842C4350091DDD0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				30022FC3186DE0EF00F2082B /* Images */,
 				302D6A9218509B90004239A5 /* constants.plist */,
 				30BF65CF1842C4350091DDD0 /* Cardapios-Info.plist */,
 				30BF65D31842C4350091DDD0 /* main.m */,
@@ -234,9 +285,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30022FC6186DE10800F2082B /* LogoInicial.png in Resources */,
+				30022FC7186DE10800F2082B /* LogoInicial@2x.png in Resources */,
+				30022FCC186E032600F2082B /* BtnInicial.png in Resources */,
 				30BF65E01842C4350091DDD0 /* Images.xcassets in Resources */,
 				302D6A9318509B90004239A5 /* constants.plist in Resources */,
+				30022FCF186E032600F2082B /* BtnInicialSel@2x.png in Resources */,
+				302CCEF7188558FB00788ECC /* home.png in Resources */,
+				30022FCE186E032600F2082B /* BtnInicialSel.png in Resources */,
+				30022FCD186E032600F2082B /* BtnInicial@2x.png in Resources */,
 				30BF65DB1842C4350091DDD0 /* Main.storyboard in Resources */,
+				302CCF0518855CDE00788ECC /* ArrowRight@2x.png in Resources */,
+				302CCF0418855CDE00788ECC /* ArrowRight.png in Resources */,
+				302CCEF8188558FB00788ECC /* home@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +318,10 @@
 				30BF65DE1842C4350091DDD0 /* IdiomViewController.m in Sources */,
 				30BF65D81842C4350091DDD0 /* AppDelegate.m in Sources */,
 				30BF65D41842C4350091DDD0 /* main.m in Sources */,
+				302CCF0118855B7400788ECC /* CityViewController.m in Sources */,
+				302CCEFE188559E900788ECC /* MainTabBar.m in Sources */,
 				302D6A991850A00D004239A5 /* MainViewController.m in Sources */,
+				302CCF0818855DF300788ECC /* RightArrowCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,8 +348,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				30BF65DA1842C4350091DDD0 /* Base */,
-				302D6AA01850A36F004239A5 /* pt */,
-				302D6AA11850A37A004239A5 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

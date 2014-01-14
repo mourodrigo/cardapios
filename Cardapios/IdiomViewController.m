@@ -23,7 +23,6 @@
 {
     [super viewDidLoad];
     delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    NSLog(@"languages %@",    [[NSUserDefaults standardUserDefaults]valueForKey:@"AppleLanguages"]);
 
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -35,17 +34,22 @@
 }
 
 - (IBAction)actionBtnPortuguese:(id)sender {
-    MainViewController *main = (MainViewController*)[delegate getViewControllerWithIdentifier:@"mainvc"];
-    [self presentViewController:main animated:YES completion:nil];
+    [delegate setIdiomWithString:@"pt"];
+    [self showMainVC];
 }
 - (IBAction)actionBtnEnglish:(id)sender {
+    [delegate setIdiomWithString:@"en"];
+    [self showMainVC];
 }
 
 - (IBAction)actionBtnSpanish:(id)sender {
-    
-    
-    
+    [delegate setIdiomWithString:@"es"];
+    [self showMainVC];
 }
 
+-(void)showMainVC{
+    MainViewController *main = (MainViewController*)[delegate getViewControllerWithIdentifier:@"mainvc"];
+    [self presentViewController:main animated:YES completion:nil];
+}
 
 @end

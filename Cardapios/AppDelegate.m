@@ -48,14 +48,14 @@
 
 
 -(UIViewController*)getViewControllerWithIdentifier:(NSString*)identifier{
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil		];
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     return [mainStoryboard instantiateViewControllerWithIdentifier:identifier];
 }
 
-
 #pragma - mark Constants
 
--(NSDictionary *)getInfoPlist{ //to-do remover tags excedentes do arquivo de plist
+-(NSDictionary *)getInfoPlist{
     if (![[NSFileManager defaultManager]fileExistsAtPath:[@"~/Documents/constants.plist" stringByExpandingTildeInPath]]) {
         NSLog(@"getInfoPlist padrão");
         NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"constants" ofType:@"plist"];
@@ -72,6 +72,13 @@
 -(void)setInfoPlist:(NSDictionary*)constants{
     [constants writeToFile:[@"~/Documents/constants.plist" stringByExpandingTildeInPath] atomically:YES];
 }
+
+-(void)setIdiomWithString:(NSString*)idiom{
+    NSMutableDictionary *dic = (NSMutableDictionary*)[self getInfoPlist];
+    [dic setValue:idiom forKey:@"idioma"];
+    [self setInfoPlist:dic];
+}
+
 
 #pragma - mark Database
 

@@ -1,15 +1,15 @@
 //
-//  City.m
+//  Category.m
 //  Cardapios
 //
 //  Created by Rodrigo Bueno Tomiosso on 20/01/14.
 //  Copyright (c) 2014 mourodrigo. All rights reserved.
 //
 
-#import "City.h"
+#import "Category.h"
 
 
-@implementation City
+@implementation Category
 
 @dynamic id;
 @dynamic name;

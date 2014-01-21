@@ -1,5 +1,5 @@
 //
-//  City.h
+//  Category.h
 //  Cardapios
 //
 //  Created by Rodrigo Bueno Tomiosso on 20/01/14.
@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 
 
-@interface City : NSManagedObject
+@interface Category : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSString * name;

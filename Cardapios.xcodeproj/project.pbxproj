@@ -22,8 +22,12 @@
 		302CCF0818855DF300788ECC /* RightArrowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CCF0718855DF300788ECC /* RightArrowCell.m */; };
 		302D6A9318509B90004239A5 /* constants.plist in Resources */ = {isa = PBXBuildFile; fileRef = 302D6A9218509B90004239A5 /* constants.plist */; };
 		302D6A991850A00D004239A5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D6A981850A00D004239A5 /* MainViewController.m */; };
+		30911541188DF7BA001772D3 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 30911540188DF7BA001772D3 /* City.m */; };
+		30911544188DF7BB001772D3 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 30911543188DF7BB001772D3 /* Category.m */; };
+		30911547188DF7BB001772D3 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 30911546188DF7BB001772D3 /* Restaurant.m */; };
+		3091154A188DFB0E001772D3 /* WriteDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 30911549188DFB0E001772D3 /* WriteDataBase.m */; };
+		3091154D188DFB2C001772D3 /* SynchronizeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3091154C188DFB2C001772D3 /* SynchronizeData.m */; };
 		30AF4090188567DE00EFA8FC /* database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30AF408E188567DE00EFA8FC /* database.xcdatamodeld */; };
-		30AF40931885685800EFA8FC /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AF40921885685800EFA8FC /* City.m */; };
 		30AF409518856F9000EFA8FC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AF409418856F9000EFA8FC /* CoreData.framework */; };
 		30BF65C81842C4350091DDD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65C71842C4350091DDD0 /* Foundation.framework */; };
 		30BF65CA1842C4350091DDD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65C91842C4350091DDD0 /* CoreGraphics.framework */; };
@@ -69,9 +73,17 @@
 		302D6A9218509B90004239A5 /* constants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = constants.plist; sourceTree = "<group>"; };
 		302D6A971850A00D004239A5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		302D6A981850A00D004239A5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		3091153F188DF7BA001772D3 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		30911540188DF7BA001772D3 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		30911542188DF7BB001772D3 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		30911543188DF7BB001772D3 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		30911545188DF7BB001772D3 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		30911546188DF7BB001772D3 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		30911548188DFB0E001772D3 /* WriteDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteDataBase.h; sourceTree = "<group>"; };
+		30911549188DFB0E001772D3 /* WriteDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteDataBase.m; sourceTree = "<group>"; };
+		3091154B188DFB2C001772D3 /* SynchronizeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynchronizeData.h; sourceTree = "<group>"; };
+		3091154C188DFB2C001772D3 /* SynchronizeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynchronizeData.m; sourceTree = "<group>"; };
 		30AF408F188567DE00EFA8FC /* database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = database.xcdatamodel; sourceTree = "<group>"; };
-		30AF40911885685800EFA8FC /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
-		30AF40921885685800EFA8FC /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 		30AF409418856F9000EFA8FC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		30BF65C41842C4350091DDD0 /* Cardapios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardapios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BF65C71842C4350091DDD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -137,9 +149,17 @@
 		30AF408D188567B600EFA8FC /* Db */ = {
 			isa = PBXGroup;
 			children = (
+				30911548188DFB0E001772D3 /* WriteDataBase.h */,
+				30911549188DFB0E001772D3 /* WriteDataBase.m */,
+				3091154B188DFB2C001772D3 /* SynchronizeData.h */,
+				3091154C188DFB2C001772D3 /* SynchronizeData.m */,
+				30911545188DF7BB001772D3 /* Restaurant.h */,
+				30911546188DF7BB001772D3 /* Restaurant.m */,
+				30911542188DF7BB001772D3 /* Category.h */,
+				30911543188DF7BB001772D3 /* Category.m */,
+				3091153F188DF7BA001772D3 /* City.h */,
+				30911540188DF7BA001772D3 /* City.m */,
 				30AF408E188567DE00EFA8FC /* database.xcdatamodeld */,
-				30AF40911885685800EFA8FC /* City.h */,
-				30AF40921885685800EFA8FC /* City.m */,
 			);
 			name = Db;
 			sourceTree = "<group>";
@@ -342,8 +362,12 @@
 				302CCF0118855B7400788ECC /* CityViewController.m in Sources */,
 				302CCEFE188559E900788ECC /* MainTabBar.m in Sources */,
 				302D6A991850A00D004239A5 /* MainViewController.m in Sources */,
+				30911544188DF7BB001772D3 /* Category.m in Sources */,
+				30911547188DF7BB001772D3 /* Restaurant.m in Sources */,
 				302CCF0818855DF300788ECC /* RightArrowCell.m in Sources */,
-				30AF40931885685800EFA8FC /* City.m in Sources */,
+				3091154A188DFB0E001772D3 /* WriteDataBase.m in Sources */,
+				3091154D188DFB2C001772D3 /* SynchronizeData.m in Sources */,
+				30911541188DF7BA001772D3 /* City.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

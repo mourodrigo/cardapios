@@ -1,58 +1,12 @@
-//
-//  ManageData.m
-//  Embraed
-//
-//  Created by Reinaldo Martins de Padua on 05/02/13.
-//  Copyright (c) 2013 catalogbrasil. All rights reserved.
-//
-
-
-/*
- 
-    Classe responsavel por manejar a base de dados, ela limita-se a excluir a base antiga 
-    e gravar novos dados toda vez que é estanciada.
- 
-    O metodo beginWriteData deve ser o primeiro metodo a ser invocado após estanciar a classe WriteDatabase, pois ele inicia os objetos appDelegate e NSManagedObjectContext, alem de disso ele chama o metodo de AppDelegate eraseAllDataBAse que limpa a base atual para receber novos dados.
- 
-    O metodo writeDataBaseEmpresa recebe o json enviando pelo objeto de SyncronizeData e adiciona os valor das chaves a um NSManagedObject Empresa.
- 
-    O metodo writeDataBaseImovel recebe o json enviando pelo objeto de SyncronizeData e adiciona os valor das chaves a um NSManagedObject Imovel. 
-    O valor retornado pela cavhe do Json  é validado pelo metodo testIfIsNull que testa se é um valor nulo ou não e retorno o balor correto ou uma string @"".
-    Esse mesmo metodo chama os metodos  writeFiles  e  writePhotos3d e após os mesmo serem executados, ele salva a base de dados através do método [objectContext save:nil];
-    
-    Os objectos das chaves novo_fotos e novo_plantas são strings no formato  "categoria:nomeDoarquivo:tituloDoarquivo;categoria:nomeDoarquivo:tituloDoarquivo;", 
-         então eu transformo elas em vetores separando cada componente por ";" exemplo: 
-         [dicJson valueForKey:@"novo_fotos"] componentsSeparatedByString:@";"]   , a array retornda é passada para o metodo writeFiles.
- 
- 
-    
-    O metodo writeFiles recebe o vetor da quebra de  e uma string que definira o tipo de arquivos, para fotos deve ser passado "photos" e para plantas "floorPlan".
-    É feito um laço de reptição que percore o vetor recebido como parametro  e extrai a strings contidas nele, que são no formato  "categoria:nomeDoarquivo:tituloDoarquivo"
-    essa string deve ser quebrada em 3 substrings pelo componente ":" , cada uma dessas substrings corresponde a uma chave do objeto Arquivos que é adicionada a estancia de "Arquivos".
- 
-    O metodo writePhotos3d recebe um vetor e percore o mesmo através de um laço de repetiçao , extraindo os objetos e adicionando as chaves a uma estancia de "Fotos3d".
- 
-    É contruido uma relação one-to-many  , onde tanto "Arquivos" quanto "Fotos3d" recebem uma referencia de "Imovel". Essa relação é feita da forma:
- 
-    [dataImovel addRelationshipObject:dateFiles] ou  [dataImovel addRelationship1Object:dataFotos3d].
- 
- 
- */
 
 #import "WriteDataBase.h"
-#import "Empresa.h"
-#import "Imovel.h"
-#import "Fotos3d.h"
-#import "Arquivos.h"
-#import "Imagens.h"
-#import "Plantas.h"
-#import "ImovelSincronizado.h"
+
 @interface WriteDataBase ()
 {
     
     NSManagedObjectContext *objectContext;    
    
-    Imovel *dataImovel;
+   // Imovel *dataImovel;
 }
 
 
@@ -76,7 +30,7 @@
 
 - (void)writeDataBaseEmpresa:(NSDictionary *)dicJson
 {
-    _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+/*    _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     objectContext = [_appdelegate managedObjectContext];
 
     Empresa *dataEmpresa = [NSEntityDescription insertNewObjectForEntityForName:@"Empresa" inManagedObjectContext:objectContext];
@@ -107,11 +61,12 @@
     [dataEmpresa setValue:[self testIfIsNumber:[dicJson valueForKey:@"userId"]] forKey:@"userId"];
     [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"senha"]] forKey:@"senha"];
     
-    [objectContext save:nil];
+    [objectContext save:nil];*/
 }
 
 - (void)writeDataImovel:(NSDictionary *)dicJson
 {
+    /*
     _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     objectContext = [_appdelegate managedObjectContext];
     
@@ -123,13 +78,13 @@
     [Sincronizado setValue:[dicJson valueForKey:@"userId"] forKey:@"userId"];
     
     
-    [objectContext save:nil];
+    [objectContext save:nil];*/
 }
 
 - (void)writeDataBaseImovel:(NSDictionary *)dicJson
 {
     //NSLog(@"dicJson %@", dicJson);
-    
+    /*
     
     dataImovel = [NSEntityDescription insertNewObjectForEntityForName:@"Imovel" inManagedObjectContext:objectContext];
     
@@ -198,12 +153,12 @@
     //[self writeFiles:[[dicJson valueForKey:@"novo_plantas"] componentsSeparatedByString:@";"] :@"floorPlan"];
     
     
-    [objectContext save:nil];
+    [objectContext save:nil];*/
     
 }
 
 -(void)writeImages:(NSDictionary*)dicJson{
-    if ([self testIfIsNull:[dicJson valueForKey:@"novo_fotos"]].length!=0) {
+    /*if ([self testIfIsNull:[dicJson valueForKey:@"novo_fotos"]].length!=0) {
         NSArray *arrFotos = [[NSArray alloc]initWithArray:[[self testIfIsNull:[dicJson valueForKey:@"novo_fotos"]] componentsSeparatedByString:@";"]];
         
         
@@ -229,11 +184,11 @@
                 
             }
         }
-    }
+    }*/
 }
 
 -(void)writePlantas:(NSDictionary*)dicJson{
-    if ([self testIfIsNull:[dicJson valueForKey:@"novo_plantas"]].length!=0) {
+  /*  if ([self testIfIsNull:[dicJson valueForKey:@"novo_plantas"]].length!=0) {
         NSArray *arrFotos = [[NSArray alloc]initWithArray:[[self testIfIsNull:[dicJson valueForKey:@"novo_plantas"]] componentsSeparatedByString:@";"]];
         for (NSString *infoFoto in arrFotos) {
             
@@ -257,11 +212,11 @@
                 }
             
         }
-    }
+    }*/
 }
 
 -(void)writeArquivos:(NSString*)campo deTipo:(NSString*)tipo paraImovelId:(int)idImovel userId:(int)userId{
-     if (campo.length!=0) {
+    /* if (campo.length!=0) {
         NSLog(@"\n\nwrite arquivos %@", campo);
          
         NSArray *arquivo = [[NSArray alloc]initWithArray:[campo componentsSeparatedByString:@";"]];
@@ -294,12 +249,12 @@
             }
             
         }
-    }
+    }*/
 }
 
 
 -(void)writeFiles:(NSArray*)arrayFiles :(NSString*)type{
-
+/*
     for (NSString *stringInArray in arrayFiles) {
         
         if ([[stringInArray componentsSeparatedByString:@":"] count]==3) {
@@ -319,12 +274,12 @@
         }
         
     }
-
+*/
 }
 
 
 -(void)writePhotos3d:(NSArray*)arrayPhotos3d :(int)idImovel{
-    
+    /*
     for (NSDictionary *dic in arrayPhotos3d) {
       
         Fotos3d *dataFotos3d = [NSEntityDescription insertNewObjectForEntityForName:@"Fotos3d" inManagedObjectContext:objectContext];
@@ -348,7 +303,7 @@
     
         [dataImovel addRelationship1Object:dataFotos3d];
         
-    }
+    }*/
 }
 
 

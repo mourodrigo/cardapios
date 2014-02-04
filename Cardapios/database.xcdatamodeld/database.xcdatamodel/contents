@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Category" representedClassName="Category" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="City" representedClassName="City" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FoodCategory" representedClassName="FoodCategory" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Menu" representedClassName="Menu" syncable="YES">
+        <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="idCategory" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="idRestaurant" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="Restaurant" representedClassName="Restaurant" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
@@ -35,13 +43,14 @@
         <attribute name="text_en" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text_es" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text_pt" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="timeClose" optional="YES" syncable="YES"/>
+        <attribute name="timeClose" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="timeOpen" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="visa" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
         <element name="City" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Category" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Restaurant" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Menu" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FoodCategory" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

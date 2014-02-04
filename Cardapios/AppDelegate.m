@@ -1,11 +1,4 @@
-//
-//  AppDelegate.m
-//  Cardapios
-//
-//  Created by Rodrigo Bueno Tomiosso on 24/11/13.
-//  Copyright (c) 2013 mourodrigo. All rights reserved.
-//
-//:D
+
 
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
@@ -97,7 +90,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"imoveis" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"database" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -108,7 +101,7 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"imoveis.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"database.sqlite"];
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
@@ -140,7 +133,6 @@
 
 -(NSDictionary *)getInfoPlist{
     if (![[NSFileManager defaultManager]fileExistsAtPath:[@"~/Documents/constants.plist" stringByExpandingTildeInPath]]) {
-        NSLog(@"getInfoPlist padrão");
         NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"constants" ofType:@"plist"];
         NSDictionary *info = [[NSDictionary alloc]initWithContentsOfFile:plistPath];
         [info writeToFile:[@"~/Documents/constants.plist" stringByExpandingTildeInPath] atomically:YES];

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
-
+#import <CoreData/CoreData.h>
 @interface WriteDataBase : NSObject<NSFetchedResultsControllerDelegate>
 
 

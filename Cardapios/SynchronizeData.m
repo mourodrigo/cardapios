@@ -10,9 +10,9 @@
 #import "SynchronizeData.h"
 #import "AFNetworking.h"
 #import "WriteDataBase.h"
-#import "Principal.h"
+
 #import "ReturnObjects.h"
-#import "ImovelSincronizado.h"
+
 @implementation SynchronizeData
 {
     WriteDataBase *manageDAtaObject;
@@ -38,7 +38,7 @@
 
 -(void)getImoveis{
     NSLog(@"GETIMOVEIS");
-    
+    /*
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
@@ -90,12 +90,12 @@
         
         [operation start];
         
-    });
+    });*/
     
 }
 
 -(void)atualizaImoveis:(NSNotification *)notification{
-    idsImoveisAtualizados = @"";
+   /* idsImoveisAtualizados = @"";
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
         
@@ -223,19 +223,19 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"sincroImoveisFinalizado" object:self userInfo:nil];
             });*/
-            [_appdelegate atualizaArquivos];
+      /*      [_appdelegate atualizaArquivos];
         }
         @catch (NSException *exception) {
             NSLog(@"atualizaImoveis erro %@", exception.description);
         }
         
-    });
+    });*/
    
 }
 
 
 -(void)checkImovelRemovido:(id)json{
-    int imoveisRemovidos = 0;
+ /*   int imoveisRemovidos = 0;
     NSString *idsImoveisRemovidos = @"";
     int idEmpresa = [[[_appdelegate getCurrentEmpresa] valueForKey:@"ZIDEMPRESA"] integerValue];
     
@@ -267,46 +267,15 @@
         [_appdelegate sqliteDoQuery:[NSString stringWithFormat:@"INSERT INTO ZHISTORICO (ZEMPRESA, ZDATA, ZCOMENTARIO, ZLOGIN, ZTIPO) VALUES ((Select ZIDEMPRESA from ZEMPRESA where ZCURRENT = 1),  datetime('now') , '%d imóveis removidos [%@]', (SELECT ZEMAIL FROM ZLOGINS WHERE ZCURRENT = 1) , 'Sincronização Imóveis')", imoveisRemovidos, idsImoveisRemovidos]];
     }
     
-    
+    */
 }
-
--(void)eraseImovelWithId:(int)idImovel andUserId:(int)userId shouldDeleteFile:(BOOL)deleteFile{
-    [self removeImovelWithId:idImovel andUserId:userId shouldDeleteFile:deleteFile];
-    [self removeImagesWithId:idImovel andUserId:userId shouldDeleteFile:deleteFile];
-    [self removePlantasWithId:idImovel andUserId:userId shouldDeleteFile:deleteFile];
-    [self removeArquivosWithId:idImovel andUserId:userId shouldDeleteFile:deleteFile];
-    [self removeFotos3dWithId:idImovel andUserId:userId shouldDeleteFile:deleteFile];
-}
-
--(void)removeImovelWithId:(int)idImovel andUserId:(int)userId shouldDeleteFile:(BOOL)deleteFile{
-    [_appdelegate sqliteDoQuery:[NSString stringWithFormat:@"DELETE FROM ZIMOVEL WHERE ZIDIMOVEL = %d AND ZUSERID = %d;",idImovel, userId]];
-    [_appdelegate sqliteDoQuery:[NSString stringWithFormat:@"DELETE FROM ZIMOVELSINCRONIZADO WHERE ZIDIMOVEL = %d AND ZUSERID = %d;",idImovel, userId]];
-    
-}
-
--(void)removeImagesWithId:(int)idImovel andUserId:(int)userId shouldDeleteFile:(BOOL)deleteFile{
-    [_appdelegate sqliteDoQuery:[NSString stringWithFormat:@"DELETE FROM ZIMAGENS WHERE ZIDIMOVEL = %d AND ZUSERID = %d;",idImovel, userId]];
-}
-
--(void)removePlantasWithId:(int)idImovel andUserId:(int)userId shouldDeleteFile:(BOOL)deleteFile{
-    [_appdelegate sqliteDoQuery:[NSString stringWithFormat:@"DELETE FROM ZPLANTAS WHERE ZIDIMOVEL = %d AND ZUSERID = %d;",idImovel, userId]];
-}
-
--(void)removeArquivosWithId:(int)idImovel andUserId:(int)userId shouldDeleteFile:(BOOL)deleteFile{
-    [_appdelegate sqliteDoQuery:[NSString stringWithFormat:@"DELETE FROM ZARQUIVOS WHERE ZIDIMOVEL = %d AND ZUSERID = %d;",idImovel, userId]];
-}
-
--(void)removeFotos3dWithId:(int)idImovel andUserId:(int)userId shouldDeleteFile:(BOOL)deleteFile{
-    [_appdelegate sqliteDoQuery:[NSString stringWithFormat:@"DELETE FROM ZFOTOS3D WHERE ZIDIMOVEL = %d AND ZUSERID = %d;",idImovel, userId]];
-}
-
 
 #pragma mark - Empresa
 
 -(void)atualizaEmpresas:(id)Json{
     manageDAtaObject=[[WriteDataBase alloc]init];
     _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    
+/*
     NSMutableArray *empresas = [[NSMutableArray alloc] initWithArray:[_appdelegate sqliteDoQuery:@"Select * from ZEMPRESA"]];
     int idselecionado = -1;
     for (NSDictionary *empresa in empresas) {
@@ -387,42 +356,16 @@
             NSLog(@"expection -> %@", exception.description);
         }
     
-    });
+    });*/
 
 }
 
--(void)resumeSincro{
-    NSLog(@"resume sinc %d imoveis", _appdelegate.infoToSync.count);
-    manageDAtaObject=[[WriteDataBase alloc]init];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
-                                             (unsigned long)NULL), ^(void) {
-        
-       
-        while (_appdelegate.infoToSync.count!=0) {
-            NSDictionary *dic = [_appdelegate.infoToSync objectAtIndex:0];
-            NSLog(@"gravando imóvel %@ - %@", [dic valueForKey:@"id"], [dic valueForKey:@"titulo"]);
-            [manageDAtaObject writeDataBaseImovel:dic];
-            
-            [manageDAtaObject writeImages:dic];
-            
-            [manageDAtaObject writePlantas:dic];
-            //NSLog(@"WRITE writePlantas %@",[_appdelegate sqliteDoQuery:@"Select ZLOGO from ZEMPRESA LIMIT 0, 1"]);
-            [_appdelegate.infoToSync removeObjectAtIndex:0];
-            
-        }
-        
-        NSLog(@"Sincronismo Finalizado");
-    
-        
-    });
-    
-}
+
 
 
 - (void)getFileWithBaseUrl:(NSString*)directoryname withFileName:(NSString*)nameFile storeAtpath:(NSString*)downloadPath
 {
-        _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+  /*      _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
         NSString *api = [[_appdelegate getInfoPlist]valueForKey:@"api"];
         
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:[api stringByAppendingString:@"%@%@"],directoryname,nameFile]]];
@@ -455,35 +398,11 @@
             
         }];
         
-        [operation start];
+        [operation start];*/
     
 }
 
-- (void)showAlert //teletar
-{
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Atenção" message:@"Problemas na conexão" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    
-    [alert show];
-}
 
 
-
--(NSData*)getDataImovelSincronizado:(NSString*)id_imovel{
-    NSData *data;
-    NSArray* query = [[NSArray alloc]initWithArray:[_appdelegate sqliteDoQuery:[NSString stringWithFormat:@"Select Zbin from ZImovelSincronizado where Zidimovel = %@",id_imovel]]];
-    if (query.count==0) {
-        return nil;
-    }else{
-        NSLog(@"query -> %@", query);
-        return data;
-    }
-}
-
-
--(void)sqliteNotification:(NSNotification *)notification {
-    NSDictionary *notificationInfo = notification.userInfo;
-    if ([[notificationInfo valueForKey:@"sqlite3Notification"] integerValue]==100) {
-    }
-}
 
 @end

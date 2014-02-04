@@ -1,17 +1,17 @@
 //
-//  City.m
+//  FoodCategory.m
 //  Cardapios
 //
 //  Created by Rodrigo Bueno Tomiosso on 04/02/14.
 //  Copyright (c) 2014 mourodrigo. All rights reserved.
 //
 
-#import "City.h"
+#import "FoodCategory.h"
 
 
-@implementation City
+@implementation FoodCategory
 
 @dynamic id;
-@dynamic name;
+@dynamic nome;
 
 @end

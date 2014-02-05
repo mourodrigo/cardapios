@@ -2,7 +2,7 @@
 //  Menu.h
 //  Cardapios
 //
-//  Created by Rodrigo Bueno Tomiosso on 04/02/14.
+//  Created by Rodrigo Bueno Tomiosso on 05/02/14.
 //  Copyright (c) 2014 mourodrigo. All rights reserved.
 //
 
@@ -12,11 +12,11 @@
 
 @interface Menu : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * id;
-@property (nonatomic, retain) NSNumber * idCategory;
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * idRestaurant;
 @property (nonatomic, retain) NSString * descr;
+@property (nonatomic, retain) NSNumber * idMenu;
+@property (nonatomic, retain) NSNumber * idCategory;
+@property (nonatomic, retain) NSNumber * idRestaurant;
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * value;
 
 @end

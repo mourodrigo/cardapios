@@ -10,8 +10,10 @@
 #import "IdiomViewController.h"
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "SynchronizeData.h"
 @interface IdiomViewController (){
     AppDelegate *delegate;
+    SynchronizeData *sinc;
 }
 
 @end
@@ -23,10 +25,14 @@
 {
     [super viewDidLoad];
     delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-
+    sinc = [[SynchronizeData alloc]init];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [sinc startSincro];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -2,7 +2,7 @@
 //  City.h
 //  Cardapios
 //
-//  Created by Rodrigo Bueno Tomiosso on 04/02/14.
+//  Created by Rodrigo Bueno Tomiosso on 05/02/14.
 //  Copyright (c) 2014 mourodrigo. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 
 @interface City : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSNumber * idCity;
 @property (nonatomic, retain) NSString * name;
 
 @end

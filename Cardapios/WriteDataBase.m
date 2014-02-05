@@ -1,12 +1,12 @@
 
 #import "WriteDataBase.h"
-
+#import "Restaurant.h"
 @interface WriteDataBase ()
 {
     
     NSManagedObjectContext *objectContext;    
    
-   // Imovel *dataImovel;
+    Restaurant *rest;
 }
 
 
@@ -28,132 +28,81 @@
 }
 
 
-- (void)writeDataBaseEmpresa:(NSDictionary *)dicJson
+
+- (void)writeRestaurant:(NSDictionary *)dicJson
 {
-/*    _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    objectContext = [_appdelegate managedObjectContext];
-
-    Empresa *dataEmpresa = [NSEntityDescription insertNewObjectForEntityForName:@"Empresa" inManagedObjectContext:objectContext];
-    //NSLog(@"writeDataBaseEmpresa %@", dicJson);
-    
-    NSLog(@"Adicionando no banco %@ - %@", [dicJson valueForKey:@"id"],[dicJson valueForKey:@"titulo"]);
-    
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"background"]] forKey:@"background"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"blog"]] forKey:@"blog"];
-    [dataEmpresa setValue:[self testIfIsNumber:[dicJson valueForKey:@"bloquear"]] forKey:@"bloquear"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"categoria_padrao"]] forKey:@"categoria_padrao"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"facebook"]] forKey:@"facebook"];
-    [dataEmpresa setValue:[self testIfIsNumber:[dicJson valueForKey:@"id"]] forKey:@"idEmpresa"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"idioma_padrao"]] forKey:@"idioma_padrao"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"instagram"]] forKey:@"instagram"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"logomarca"]] forKey:@"logo"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"logomarca_com_fundo"]] forKey:@"logomarca_com_fundo"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"logomarca_reduzida"]] forKey:@"logomarca_reduzida"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"modulos"]] forKey:@"modulos"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"moeda"]] forKey:@"moeda"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"pinterest"]] forKey:@"pinterest"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"twitter"]] forKey:@"twitter"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"website"]] forKey:@"website"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"titulo"]] forKey:@"titulo"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"youtube"]] forKey:@"youtube"];
-    [dataEmpresa setValue:[self testIfIsNumber:[dicJson valueForKey:@"current"]] forKey:@"current"];
-    [dataEmpresa setValue:[self testIfIsNumber:[dicJson valueForKey:@"sincronizado"]] forKey:@"sincronizado"];
-    [dataEmpresa setValue:[self testIfIsNumber:[dicJson valueForKey:@"userId"]] forKey:@"userId"];
-    [dataEmpresa setValue:[self testIfIsNull:[dicJson valueForKey:@"senha"]] forKey:@"senha"];
-    
-    [objectContext save:nil];*/
-}
-
-- (void)writeDataImovel:(NSDictionary *)dicJson
-{
-    /*
-    _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    objectContext = [_appdelegate managedObjectContext];
-    
-    ImovelSincronizado *Sincronizado = [NSEntityDescription insertNewObjectForEntityForName:@"ImovelSincronizado" inManagedObjectContext:objectContext];
-    
-    [Sincronizado setValue:[self testIfIsNumber:[dicJson valueForKey:@"idImovel"]] forKey:@"idImovel"];
-    [Sincronizado setValue:[dicJson valueForKey:@"bin"] forKey:@"bin"];
-    [Sincronizado setValue:[dicJson valueForKey:@"lenght"] forKey:@"lenght"];
-    [Sincronizado setValue:[dicJson valueForKey:@"userId"] forKey:@"userId"];
+    NSLog(@"dicJson %@", dicJson);
     
     
-    [objectContext save:nil];*/
-}
-
-- (void)writeDataBaseImovel:(NSDictionary *)dicJson
-{
-    //NSLog(@"dicJson %@", dicJson);
-    /*
-    
-    dataImovel = [NSEntityDescription insertNewObjectForEntityForName:@"Imovel" inManagedObjectContext:objectContext];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"endereco"]] forKey:@"address"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"categoria"]] forKey:@"category"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"cep"]] forKey:@"cep"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"cidade"]] forKey:@"city"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"cf_foto_horizontal"]] forKey:@"cf_foto_horizontal"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"cf_foto_vertical"]] forKey:@"cf_foto_vertical"];
-    
-    [dataImovel setValue:FALSE forKey:@"favorite"];
-    
-    [dataImovel setValue:[self testIfIsNumber:[dicJson valueForKey:@"destaque"]] forKey:@"featured"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"fotoPrincipal"]] forKey:@"fotoPrincipal"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"cidade"]] forKey:@"city"];
-    
-    [dataImovel setValue:[self testIfIsNumber:[dicJson valueForKey:@"id"]] forKey:@"idImovel"];
-
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"latitude"]] forKey:@"latitude"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"longitude"]] forKey:@"longitude"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"bairro"]] forKey:@"neighborhood"];
-    
-    [dataImovel setValue:[self testIfIsNumber:[dicJson valueForKey:@"quartos"]]forKey:@"numQuartos"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"obraInicioTermino"]] forKey:@"obraInicioTermino"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"informacoes_proprietario"]] forKey:@"owner_info"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"pequena_descricao"]] forKey:@"pequena_descricao"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"referencia"]] forKey:@"ref"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"uf"]] forKey:@"state"];
-    
-    [dataImovel setValue:[self testIfIsNumber:[dicJson valueForKey:@"suites"]]forKey:@"suites"];
-    
-    [dataImovel setValue: [self testIfIsNull:[dicJson valueForKey:@"descricao"]] forKey:@"textInformation"];
-    
-    [dataImovel setValue:[self testIfIsNull:[dicJson valueForKey:@"titulo"]] forKey:@"title"];
-    
-    [dataImovel setValue: [self testIfIsNull:[dicJson valueForKey:@"tipo"]] forKey:@"type"];
+    rest = [NSEntityDescription insertNewObjectForEntityForName:@"Restaurant" inManagedObjectContext:objectContext];
   
-    [dataImovel setValue: [self testIfIsNull:[dicJson valueForKey:@"porcentagens"]] forKey:@"percentObra"];
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"endereco"]] forKey:@"address"];
     
-    [dataImovel setValue:[self testIfIsNumber:[dicJson valueForKey:@"valor_venda"]] forKey:@"valor_venda"];
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"celular"]] forKey:@"cellphone"];
     
-    [dataImovel setValue:[self testIfIsNumber:[dicJson valueForKey:@"userId"]] forKey:@"userId"];
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"senha"]] forKey:@"password"];
     
-    [dataImovel setValue:[[[self testIfIsNull:[[dicJson valueForKey:@"area_util"] stringValue]] stringByReplacingOccurrencesOfString:@"m2" withString:@""] stringByAppendingString:@"m²"] forKey:@"areaUtil"];
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"logomarca"]] forKey:@"logo"];
     
-    [dataImovel setValue:[NSDate date] forKey:@"dataSincronizado"];
-  
-    [dataImovel setValue:[self testIfIsNumber:[dicJson valueForKey:@"idEmpresa"]] forKey:@"idEmpresa"];
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"descricao_en"]] forKey:@"text_en"];
+    
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"descricao_pt"]] forKey:@"text_pt"];
+    
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"descricao_es"]] forKey:@"text_es"];
+    
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"cidade"]] forKey:@"city"];
+ 
+    [rest setValue:[self getDateFromString:[dicJson valueForKey:@"horario_funcionamento_abertura"]] forKey:@"timeOpen"];
 
-    //[self writeFiles:[[dicJson valueForKey:@"novo_fotos"] componentsSeparatedByString:@";"] :@"photos"]; //TELETAR
+    [rest setValue:[self getDateFromString:[dicJson valueForKey:@"horario_funcionamento_fechamento"]] forKey:@"timeClose"];
+
+    [rest setValue:[NSNumber numberWithInt:[[dicJson valueForKey:@"aceita_master"] integerValue]] forKey:@"master"];
+
+    [rest setValue:[NSNumber numberWithInt:[[dicJson valueForKey:@"aceita_visa"] integerValue]] forKey:@"visa"];
+
+    [rest setValue:[NSNumber numberWithInt:[[dicJson valueForKey:@"aceita_american"] integerValue]] forKey:@"american"];
+
+    [rest setValue:[NSNumber numberWithInt:[[dicJson valueForKey:@"aceita_dinheiro"] integerValue]] forKey:@"cash"];
+
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"email"]] forKey:@"email"];
     
-    //[self writeFiles:[[dicJson valueForKey:@"novo_plantas"] componentsSeparatedByString:@";"] :@"floorPlan"];
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"img0"]] forKey:@"image1"];
+
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"img1"]] forKey:@"image2"];
+
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"img2"]] forKey:@"image3"];
+
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"img3"]] forKey:@"image4"];
+
+    [rest setValue:[self testIfIsNumber:[dicJson valueForKey:@"latitude"]] forKey:@"latitude"];
+
+    [rest setValue:[self testIfIsNumber:[dicJson valueForKey:@"latitude"]] forKey:@"latitude"];
+
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"telefone"]] forKey:@"phone1"];
+
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"telefone2"]] forKey:@"phone2"];
+
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"cnpj"]] forKey:@"cnpj"];
+
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"cep"]] forKey:@"cep"];
+
+    [rest setValue:[self testIfIsNumber:[dicJson valueForKey:@"id"]] forKey:@"idRest"];
+
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"nome"]] forKey:@"name"];
     
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"bairro"]] forKey:@"district"];
     
-    [objectContext save:nil];*/
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"empresa"]] forKey:@"company"];
+    
+/*
+    [rest setValue:FALSE forKey:@"favorite"];
+    
+    [rest setValue:[self testIfIsNumber:[dicJson valueForKey:@"destaque"]] forKey:@"featured"];
+    
+    [rest setValue:[NSDate date] forKey:@"dataSincronizado"];
+  */
+    
+    [objectContext save:nil];
     
 }
 
@@ -325,7 +274,11 @@
 }
 
 
-
+-(NSDate*)getDateFromString:(NSString*)strDate{
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"hh:mm:ss"];
+    return [df dateFromString: strDate];
+}
 
 
 

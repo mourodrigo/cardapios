@@ -2,7 +2,7 @@
 //  Restaurant.h
 //  Cardapios
 //
-//  Created by Rodrigo Bueno Tomiosso on 04/02/14.
+//  Created by Rodrigo Bueno Tomiosso on 05/02/14.
 //  Copyright (c) 2014 mourodrigo. All rights reserved.
 //
 
@@ -22,7 +22,7 @@
 @property (nonatomic, retain) NSString * company;
 @property (nonatomic, retain) NSString * district;
 @property (nonatomic, retain) NSString * email;
-@property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSNumber * idRest;
 @property (nonatomic, retain) NSString * image1;
 @property (nonatomic, retain) NSString * image2;
 @property (nonatomic, retain) NSString * image3;
@@ -40,6 +40,6 @@
 @property (nonatomic, retain) NSString * text_pt;
 @property (nonatomic, retain) NSDate * timeClose;
 @property (nonatomic, retain) NSDate * timeOpen;
-@property (nonatomic, retain) NSDate * visa;
+@property (nonatomic, retain) NSNumber * visa;
 
 @end

@@ -18,11 +18,6 @@
 @property(nonatomic,strong) AppDelegate *appdelegate;
 
 -(void)beginWriteData;
--(void)writeDataBaseEmpresa:(NSDictionary*)dicJson;
--(void)writeDataBaseImovel:(NSDictionary *)dicJson;
--(void)writeImages:(NSDictionary*)dicJson;
--(void)writePlantas:(NSDictionary*)dicJson;
-- (void)writeDataImovel:(NSDictionary *)dicJson;
--(void)writePhotos3d:(NSArray*)arrayPhotos3d :(int)idImovel;
--(void)writeArquivos:(NSString*)campo deTipo:(NSString*)tipo paraImovelId:(int)idImovel userId:(int)userId;
+-(void)writeRestaurant:(NSDictionary *)dicJson;
+
 @end

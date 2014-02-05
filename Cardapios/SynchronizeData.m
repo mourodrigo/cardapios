@@ -15,7 +15,7 @@
 
 @implementation SynchronizeData
 {
-    WriteDataBase *manageDAtaObject;
+    WriteDataBase *manageDataObject;
     AppDelegate *_appdelegate;
     NSString *idsImoveisAtualizados;
     
@@ -24,89 +24,48 @@
 @synthesize downloadFinalizado, downloadEmpresaFinalizado,progress, erroSincronismo, continuarDownload, numImoveisSinc;
 - (void)startSincro
 {
-    downloadFinalizado = FALSE;
-    downloadEmpresaFinalizado = FALSE;
-    manageDAtaObject=[[WriteDataBase alloc]init];
+    manageDataObject=[[WriteDataBase alloc]init];
  
-    [manageDAtaObject beginWriteData];
+    [manageDataObject beginWriteData];
+    
     _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    
     [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JsonImoveisDownloaded" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(atualizaImoveis:) name:@"JsonImoveisDownloaded" object:nil];
-    
+    [self getRestaurant];
 }
 
 
--(void)getImoveis{
-    NSLog(@"GETIMOVEIS");
-    /*
+-(void)getRestaurant{
+    
+    NSString *api = @"http://www.gobekdigital.com.br/cliente/cdc/aprovacao/api/restaurantes.php";
+    
+    NSLog(@"getRestaurant %@", api);
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
-        
-        _appdelegate.syncDatabase = true;
-        //  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sqliteNotification:) name:@"sqlite3Notification" object:nil]; //teletar
-
-        NSString *api = [[_appdelegate getInfoPlist]valueForKey:@"api"];
-        NSString *login;
-        NSString *idEmpresa;
-        int userId;
-        @try {
-            
-            NSDictionary *query = [[NSDictionary alloc]initWithDictionary:[[_appdelegate sqliteDoQuery:@"SELECT ZEMAIL, Z_PK FROM ZLOGINS WHERE ZCURRENT = 1;"] objectAtIndex:0]];
-            login = [query valueForKey:@"ZEMAIL"];
-            userId = [_appdelegate getUserId];
-            idEmpresa = [[[_appdelegate sqliteDoQuery:@"SELECT ZIDEMPRESA FROM ZEMPRESA WHERE ZCURRENT = 1;"] objectAtIndex:0] valueForKey:@"ZIDEMPRESA"];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"getImoveis erro %@", exception.description);
-        }
-        
-            NSString *getallimoveis =[ NSString stringWithFormat:@"%@api/getAllImoveisWindows/%@/%@", api, login, idEmpresa];
-        
-        
-        
-            NSLog(@"getallimoveis -> %@", getallimoveis);
-        
-        
-        NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:getallimoveis]];
         [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
-        
-        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-           
-            
-            NSDictionary *sincroInfo = [[NSDictionary alloc]initWithObjectsAndKeys:[NSNumber numberWithInt:userId],@"userId",[NSNumber numberWithInt:[idEmpresa integerValue]],@"idEmpresa", nil];
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"JsonImoveisDownloaded" object:JSON userInfo:sincroInfo];
-            
-           
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:[[NSURLRequest alloc]initWithURL:[NSURL URLWithString:api]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"JsonImoveisDownloaded" object:JSON userInfo:nil];
         } failure:^(NSURLRequest *request, NSHTTPURLResponse *response,NSError *error ,id JSON) {
-            NSMutableArray *arrJson = [[NSMutableArray alloc]initWithArray:JSON];
-            if(!arrJson.count==0){
-                [self getImoveis];
-            }
             NSLog(@"ERRO BAIXANDO JSON response-> %@", response);
             NSLog(@"ERRO BAIXANDO JSON error-> %@", error);
-            erroSincronismo = TRUE;
         }];
-        
         [operation start];
-        
-    });*/
+    });
     
 }
 
 -(void)atualizaImoveis:(NSNotification *)notification{
-   /* idsImoveisAtualizados = @"";
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
+    
+    
         
         
-
         
         NSLog(@"NOTIFICAATUALIZA self:%@", self);
         @try {
-            
-            int userId = [[notification.userInfo valueForKey:@"userId"] integerValue];
-            
             
             progress = 0;
             float count = [notification.object count];
@@ -116,89 +75,18 @@
             
             NSLog(@"JSON count %d", [notification.object count]);
             
-            _appdelegate.infoToSync = [[NSMutableArray alloc]initWithArray:notification.object];
+            _appdelegate.infoToSync = [[NSMutableArray alloc]initWithArray:[notification.object objectForKey:@"resultado"]];
+            
             
             
             while (_appdelegate.infoToSync.count!=0) {
-                //dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW,
-                //                                        (unsigned long)NULL), ^(void) {
                 
                 @try {
                     NSMutableDictionary *dic = [[NSMutableDictionary alloc]initWithDictionary:[_appdelegate.infoToSync objectAtIndex:0]];
-                    [dic setValue:[NSNumber numberWithInt:userId] forKey:@"userId"];
-                    int idImovel =[[dic valueForKey:@"id"] integerValue];
                     
-                    NSArray *query = [_appdelegate sqliteDoQuery:[NSString stringWithFormat:@"SELECT ZLENGHT, ZBIN FROM ZIMOVELSINCRONIZADO WHERE ZIDIMOVEL = %@ AND ZUSERID = %d", [dic valueForKey:@"id"], userId]];
-                    NSData * sincronizedData;
+                    numImoveisSinc++;
                     
-                    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:dic];
-                    
-                    BOOL sincronizar = FALSE;
-                    
-                    if (query.count>0) {
-                        sincronizedData = [[query objectAtIndex:0] valueForKey:@"ZBIN"];
-                        if ([sincronizedData isEqualToData:data]) {
-                            NSLog(@"Imóvel %@ - %@ ja está sincronizado", [dic valueForKey:@"id"], [dic valueForKey:@"titulo"]);
-                        }else{
-                            sincronizar= TRUE;
-                            
-                            [self removeImovelWithId:idImovel andUserId:userId shouldDeleteFile:NO];
-                            [self removeArquivosWithId:idImovel andUserId:userId shouldDeleteFile:NO];
-                            [self removeFotos3dWithId:idImovel andUserId:userId shouldDeleteFile:NO];
-                            [self removeImagesWithId:idImovel andUserId:userId shouldDeleteFile:NO];
-                            [self removePlantasWithId:idImovel andUserId:userId shouldDeleteFile:NO];
-                        }
-                        query = NULL;
-                        
-                    }else{
-                        sincronizar = TRUE;
-                    }
-                    
-                    if (sincronizar){
-                        numImoveisSinc++;
-                        [dic setValue:[notification.userInfo valueForKey:@"idEmpresa"] forKey:@"idEmpresa"];
-                        
-                        NSLog(@"gravando imóvel %d - %@", idImovel, [dic valueForKey:@"titulo"]);
-                       idsImoveisAtualizados = [NSString stringWithFormat:@"%@ %@", idsImoveisAtualizados, [dic valueForKey:@"id"]];
-                        
-                        [manageDAtaObject writeDataImovel:[NSDictionary dictionaryWithObjectsAndKeys:[dic valueForKey:@"id"], @"idImovel",data,@"bin",[NSNumber numberWithInteger:data.length],@"lenght",[NSNumber numberWithInteger:userId],@"userId", nil]];
-                        
-                        [manageDAtaObject writeDataBaseImovel:dic];
-                        
-                        [manageDAtaObject writeImages:dic];
-                        
-                        [manageDAtaObject writePlantas:dic];
-                        
-                        [manageDAtaObject writePhotos3d:[dic valueForKey:@"Fotos3d"] : idImovel];
-                        
-                        [manageDAtaObject writeArquivos:[dic valueForKey:@"novo_disponibilidade_pdf"] deTipo:@"disponibilidade" paraImovelId:idImovel userId:userId];
-                        
-                        [manageDAtaObject writeArquivos:[dic valueForKey:@"novo_diversos"] deTipo:@"diversos" paraImovelId:idImovel userId:userId];
-                        
-                        [manageDAtaObject writeArquivos:[dic valueForKey:@"novo_Memorial_descritivoPDF"] deTipo:@"memorialDescritivo" paraImovelId:idImovel userId:userId];
-                        
-                        [manageDAtaObject writeArquivos:[dic valueForKey:@"novo_pdf_plantas"] deTipo:@"plantas" paraImovelId:idImovel userId:userId];
-                        
-                        [manageDAtaObject writeArquivos:[dic valueForKey:@"novo_pdf_precos"] deTipo:@"precos" paraImovelId:idImovel userId:userId];
-                        
-                        [manageDAtaObject writeArquivos:[dic valueForKey:@"novo_quadro_areasPDFf"] deTipo:@"quadroAreas" paraImovelId:idImovel userId:userId];
-                        
-                        [manageDAtaObject writeArquivos:[dic valueForKey:@"novo_fotos_obra"] deTipo:@"fotosObra" paraImovelId:idImovel userId:userId];
-                        
-                        [manageDAtaObject writeArquivos:[dic valueForKey:@"novo_videos"] deTipo:@"videos" paraImovelId:idImovel userId:userId];
-                       
-                        [manageDAtaObject writePhotos3d:[dic valueForKey:@"Fotos3d"] : idImovel];
-                        
-                        if (![[dic valueForKey:@"url_youtube"] isEqual:[NSNull null]] && ![[dic valueForKey:@"url_youtube"] isEqualToString:@""]) {
-                            NSString *youtube = [[dic valueForKey:@"url_youtube"] stringByReplacingOccurrencesOfString:@"http://" withString:@""];
-                            if (youtube.length>5) {
-                                [manageDAtaObject writeArquivos:[NSString stringWithFormat:@"::%@;", youtube] deTipo:@"youtube" paraImovelId:idImovel userId:userId];
-                            }
-                        }
-                        
-                    }
-                    
-                    
+                    [manageDataObject writeRestaurant:dic];
                     
                     progress = progress+step;
                     
@@ -206,30 +94,21 @@
                     
                 }
                 @catch (NSException *exception) {
-                    NSLog(@"getImoveis expection -> %@", exception.description);
+                    NSLog(@"getRestaurant expection -> %@", exception.description);
                 }
-                //});
             }
-            [self checkImovelRemovido:[[NSMutableArray alloc]initWithArray:notification.object]];
-            downloadFinalizado = TRUE;
-            _appdelegate.syncDatabase = FALSE;
-            //[_appdelegate sincronizaArquivos];
-            NSLog(@"Sincronismo Finalizado");
-            
-            [_appdelegate sqliteDoQuery:[NSString stringWithFormat:@"INSERT INTO ZHISTORICO (ZEMPRESA, ZDATA, ZCOMENTARIO, ZLOGIN, ZTIPO) VALUES ((Select ZIDEMPRESA from ZEMPRESA where ZCURRENT = 1),  datetime('now') , '%d imóveis inseridos/atualizados [%@]', (SELECT ZEMAIL FROM ZLOGINS WHERE ZCURRENT = 1) , 'Sincronização Imóveis')", numImoveisSinc, idsImoveisAtualizados]];
-            
-            //NSDictionary *userInfo = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:10] forKey:@"status"];
-            /*
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"sincroImoveisFinalizado" object:self userInfo:nil];
-            });*/
-      /*      [_appdelegate atualizaArquivos];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"atualizaImoveis erro %@", exception.description);
         }
         
-    });*/
+        @catch (NSException *exception) {
+            NSLog(@"getRestaurant expection -> %@", exception.description);
+        }
+        NSLog(@"Sync restaurante Finalizado");
+
+    
+    });
+    
+    
+   
    
 }
 
@@ -273,7 +152,7 @@
 #pragma mark - Empresa
 
 -(void)atualizaEmpresas:(id)Json{
-    manageDAtaObject=[[WriteDataBase alloc]init];
+    manageDataObject=[[WriteDataBase alloc]init];
     _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
 /*
     NSMutableArray *empresas = [[NSMutableArray alloc] initWithArray:[_appdelegate sqliteDoQuery:@"Select * from ZEMPRESA"]];

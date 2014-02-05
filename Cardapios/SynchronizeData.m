@@ -21,7 +21,7 @@
     
     
 }
-@synthesize downloadFinalizado, downloadEmpresaFinalizado,progress, erroSincronismo, continuarDownload, numImoveisSinc;
+@synthesize progressCity, progressFood, progressMenu, progressRest;
 - (void)startSincro
 {
     manageDataObject=[[WriteDataBase alloc]init];
@@ -31,7 +31,7 @@
     _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     
     [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JsonImoveisDownloaded" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(atualizaImoveis:) name:@"JsonImoveisDownloaded" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRest:) name:@"JsonRestaurant" object:nil];
     [self getRestaurant];
 }
 
@@ -46,7 +46,7 @@
                                              (unsigned long)NULL), ^(void) {
         [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
         AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:[[NSURLRequest alloc]initWithURL:[NSURL URLWithString:api]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"JsonImoveisDownloaded" object:JSON userInfo:nil];
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"JsonRestaurant" object:JSON userInfo:nil];
         } failure:^(NSURLRequest *request, NSHTTPURLResponse *response,NSError *error ,id JSON) {
             NSLog(@"ERRO BAIXANDO JSON response-> %@", response);
             NSLog(@"ERRO BAIXANDO JSON error-> %@", error);
@@ -56,60 +56,29 @@
     
 }
 
--(void)atualizaImoveis:(NSNotification *)notification{
+-(void)updateRest:(NSNotification *)notification{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
-    
-    
-        
-        
-        
-        NSLog(@"NOTIFICAATUALIZA self:%@", self);
         @try {
-            
-            progress = 0;
+            progressRest = 0;
             float count = [notification.object count];
             float step = 1/count;
-            numImoveisSinc = 0;
-            
-            
             NSLog(@"JSON count %d", [notification.object count]);
-            
-            _appdelegate.infoToSync = [[NSMutableArray alloc]initWithArray:[notification.object objectForKey:@"resultado"]];
-            
-            
-            
-            while (_appdelegate.infoToSync.count!=0) {
-                
+            for (NSDictionary *dic in [notification.object objectForKey:@"resultado"]) {
                 @try {
-                    NSMutableDictionary *dic = [[NSMutableDictionary alloc]initWithDictionary:[_appdelegate.infoToSync objectAtIndex:0]];
-                    
-                    numImoveisSinc++;
-                    
                     [manageDataObject writeRestaurant:dic];
-                    
-                    progress = progress+step;
-                    
-                    [_appdelegate.infoToSync removeObjectAtIndex:0];
-                    
+                    progressRest = progressRest+step;
                 }
                 @catch (NSException *exception) {
                     NSLog(@"getRestaurant expection -> %@", exception.description);
                 }
             }
         }
-        
         @catch (NSException *exception) {
             NSLog(@"getRestaurant expection -> %@", exception.description);
         }
         NSLog(@"Sync restaurante Finalizado");
-
-    
     });
-    
-    
-   
-   
 }
 
 

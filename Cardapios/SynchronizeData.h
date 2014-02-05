@@ -10,12 +10,11 @@
 
 @interface SynchronizeData : NSObject
 
-@property (nonatomic) BOOL downloadFinalizado;
-@property (nonatomic) BOOL continuarDownload;
-@property (nonatomic) BOOL downloadEmpresaFinalizado;
-@property (nonatomic) BOOL erroSincronismo;
-@property (nonatomic) float progress;
-@property (nonatomic) int numImoveisSinc;
+@property (nonatomic) float progressFood;
+@property (nonatomic) float progressMenu;
+@property (nonatomic) float progressRest;
+@property (nonatomic) float progressCity;
+
 - (void)getFileWithBaseUrl:(NSString*)directoryname withFileName:(NSString*)nameFile storeAtpath:(NSString*)downloadPath;
 
 - (void)startSincro;

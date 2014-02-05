@@ -76,7 +76,7 @@
 
     [rest setValue:[self testIfIsNumber:[dicJson valueForKey:@"latitude"]] forKey:@"latitude"];
 
-    [rest setValue:[self testIfIsNumber:[dicJson valueForKey:@"latitude"]] forKey:@"latitude"];
+    [rest setValue:[self testIfIsNumber:[dicJson valueForKey:@"longitude"]] forKey:@"longitude"];
 
     [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"telefone"]] forKey:@"phone1"];
 

@@ -1,12 +1,19 @@
 
 #import "WriteDataBase.h"
 #import "Restaurant.h"
+#import "Menu.h"
+#import "City.h"
+#import "FoodCategory.h"
+
 @interface WriteDataBase ()
 {
     
     NSManagedObjectContext *objectContext;    
    
     Restaurant *rest;
+    FoodCategory *category;
+    Menu *menu;
+    City *city;
 }
 
 
@@ -32,7 +39,6 @@
 - (void)writeRestaurant:(NSDictionary *)dicJson
 {
     NSLog(@"dicJson %@", dicJson);
-    
     
     rest = [NSEntityDescription insertNewObjectForEntityForName:@"Restaurant" inManagedObjectContext:objectContext];
   
@@ -105,6 +111,20 @@
     [objectContext save:nil];
     
 }
+
+- (void)writeCity:(NSDictionary *)dicJson
+{
+    NSLog(@"dicJson %@", dicJson);
+    NSLog(@"name %@", [dicJson valueForKey:@"nome"]);
+    city = [NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:objectContext];
+    [city setValue:[self testIfIsNumber:[dicJson valueForKey:@"id"]] forKey:@"idCity"];
+    [city setValue:[self testIfIsNull:[dicJson valueForKey:@"nome"]] forKey:@"name"];
+    
+    [objectContext save:nil];
+    
+}
+
+
 
 -(void)writeImages:(NSDictionary*)dicJson{
     /*if ([self testIfIsNull:[dicJson valueForKey:@"novo_fotos"]].length!=0) {

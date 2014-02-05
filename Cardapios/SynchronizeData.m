@@ -30,11 +30,18 @@
     
     _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     
-    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JsonImoveisDownloaded" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRest:) name:@"JsonRestaurant" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONRestaurant" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRest:) name:@"JSONRestaurant" object:nil];
     [self getRestaurant];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONCity" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCity:) name:@"JSONCity" object:nil];
+    [self getCity];
+    
+    
 }
 
+#pragma Mark - syncRestaurant
 
 -(void)getRestaurant{
     
@@ -46,7 +53,7 @@
                                              (unsigned long)NULL), ^(void) {
         [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
         AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:[[NSURLRequest alloc]initWithURL:[NSURL URLWithString:api]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"JsonRestaurant" object:JSON userInfo:nil];
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"JSONRestaurant" object:JSON userInfo:nil];
         } failure:^(NSURLRequest *request, NSHTTPURLResponse *response,NSError *error ,id JSON) {
             NSLog(@"ERRO BAIXANDO JSON response-> %@", response);
             NSLog(@"ERRO BAIXANDO JSON error-> %@", error);
@@ -82,41 +89,57 @@
 }
 
 
--(void)checkImovelRemovido:(id)json{
- /*   int imoveisRemovidos = 0;
-    NSString *idsImoveisRemovidos = @"";
-    int idEmpresa = [[[_appdelegate getCurrentEmpresa] valueForKey:@"ZIDEMPRESA"] integerValue];
-    
-    NSMutableArray *sincronizadosdb = [[NSMutableArray alloc]initWithArray:[_appdelegate sqliteDoQuery:[NSString stringWithFormat:@"Select ZIDIMOVEL from ZIMOVEL WHERE ZUSERID = %d AND ZIDEMPRESA = %d", [_appdelegate getUserId],idEmpresa ]]];
+#pragma Mark - syncRestaurant
 
-    NSMutableArray *idsSincronizados = [[NSMutableArray alloc]initWithCapacity:0];
-   
-    for (NSDictionary *dic in json) {
-        
-        [idsSincronizados addObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:[[dic valueForKey:@"id"] integerValue]],@"ZIDIMOVEL", nil]];
-        
-    }
+-(void)getCity{
     
-    for (NSDictionary *dic in sincronizadosdb) {
-       
-        if ([idsSincronizados indexOfObject:dic]==NSNotFound) {
-            
-            NSLog(@"NÃO ENCONTRADO %@", dic);
-            idsImoveisRemovidos = [NSString stringWithFormat:@"%@ %@ ",idsImoveisRemovidos, [dic valueForKey:@"ZIDIMOVEL"]];
-            [self eraseImovelWithId:[[dic valueForKey:@"ZIDIMOVEL"] integerValue] andUserId:[_appdelegate getUserId] shouldDeleteFile:YES];
-
-            imoveisRemovidos++;
-            
-            
-            
-        }
-    }
-    if (imoveisRemovidos>0) {
-        [_appdelegate sqliteDoQuery:[NSString stringWithFormat:@"INSERT INTO ZHISTORICO (ZEMPRESA, ZDATA, ZCOMENTARIO, ZLOGIN, ZTIPO) VALUES ((Select ZIDEMPRESA from ZEMPRESA where ZCURRENT = 1),  datetime('now') , '%d imóveis removidos [%@]', (SELECT ZEMAIL FROM ZLOGINS WHERE ZCURRENT = 1) , 'Sincronização Imóveis')", imoveisRemovidos, idsImoveisRemovidos]];
-    }
+    NSString *api = @"http://www.gobekdigital.com.br/cliente/cdc/aprovacao/api/cidades.php";
     
-    */
+    NSLog(@"getCity %@", api);
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void) {
+        [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:[[NSURLRequest alloc]initWithURL:[NSURL URLWithString:api]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"JSONCity" object:JSON userInfo:nil];
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response,NSError *error ,id JSON) {
+            NSLog(@"ERRO BAIXANDO JSON response-> %@", response);
+            NSLog(@"ERRO BAIXANDO JSON error-> %@", error);
+        }];
+        [operation start];
+    });
+    
 }
+
+-(void)updateCity:(NSNotification *)notification{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void) {
+        @try {
+            progressCity = 0;
+            float count = [notification.object count];
+            float step = 1/count;
+            NSLog(@"JSON count %d", [notification.object count]);
+            for (NSDictionary *dic in [notification.object objectForKey:@"resultado"]) {
+                @try {
+                    [manageDataObject writeCity:dic];
+                    progressCity = progressCity+step;
+                }
+                @catch (NSException *exception) {
+                    NSLog(@"getcity expection -> %@", exception.description);
+                }
+            }
+        }
+        @catch (NSException *exception) {
+            NSLog(@"getcity expection -> %@", exception.description);
+        }
+        NSLog(@"Sync city Finalizado");
+    });
+}
+
+
+
+
+
 
 #pragma mark - Empresa
 

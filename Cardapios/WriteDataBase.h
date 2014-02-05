@@ -19,5 +19,5 @@
 
 -(void)beginWriteData;
 -(void)writeRestaurant:(NSDictionary *)dicJson;
-
+- (void)writeCity:(NSDictionary *)dicJson;
 @end

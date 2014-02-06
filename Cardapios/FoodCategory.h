@@ -13,6 +13,6 @@
 @interface FoodCategory : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * idFood;
-@property (nonatomic, retain) NSString * nome;
+@property (nonatomic, retain) NSString * name;
 
 @end

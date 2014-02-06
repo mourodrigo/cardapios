@@ -29,15 +29,25 @@
     [manageDataObject beginWriteData];
     
     _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+/*
+    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONMenu" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateMenu:) name:@"JSONMenu" object:nil];
+    [self getMenu];
+  */
+    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONCity" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCity:) name:@"JSONCity" object:nil];
+    [self performSelector:@selector(getCity) withObject:Nil afterDelay:1];
+
+    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONCategory" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCategory:) name:@"JSONCategory" object:nil];
+    [self performSelector:@selector(getCategory) withObject:Nil afterDelay:2];
+
     
     [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONRestaurant" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRest:) name:@"JSONRestaurant" object:nil];
-    [self getRestaurant];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONCity" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCity:) name:@"JSONCity" object:nil];
-    [self getCity];
-    
+    [self performSelector:@selector(getRestaurant) withObject:nil afterDelay:3];
+
+
     
 }
 
@@ -89,7 +99,7 @@
 }
 
 
-#pragma Mark - syncRestaurant
+#pragma Mark - syncCity
 
 -(void)getCity{
     
@@ -133,6 +143,104 @@
             NSLog(@"getcity expection -> %@", exception.description);
         }
         NSLog(@"Sync city Finalizado");
+    });
+}
+
+
+#pragma Mark - syncMenu
+
+-(void)getMenu{
+    
+    NSString *api = @"http://www.gobekdigital.com.br/cliente/cdc/aprovacao/api/cardapios.php";
+    
+    NSLog(@"getMenu %@", api);
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void) {
+        [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:[[NSURLRequest alloc]initWithURL:[NSURL URLWithString:api]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"JSONMenu" object:JSON userInfo:nil];
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response,NSError *error ,id JSON) {
+            NSLog(@"ERRO BAIXANDO JSON response-> %@", response);
+            NSLog(@"ERRO BAIXANDO JSON error-> %@", error);
+        }];
+        [operation start];
+    });
+    
+}
+
+-(void)updateMenu:(NSNotification *)notification{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void) {
+        @try {
+            progressMenu = 0;
+            float count = [notification.object count];
+            float step = 1/count;
+            NSLog(@"JSON count %d", [notification.object count]);
+            for (NSDictionary *dic in [notification.object objectForKey:@"resultado"]) {
+                @try {
+                    [manageDataObject writeMenu:dic];
+                    progressMenu = progressMenu+step;
+                }
+                @catch (NSException *exception) {
+                    NSLog(@"getMenu expection -> %@", exception.description);
+                }
+            }
+        }
+        @catch (NSException *exception) {
+            NSLog(@"getMenu expection -> %@", exception.description);
+        }
+        NSLog(@"Sync Menu Finalizado");
+    });
+}
+
+
+
+
+#pragma Mark - syncCategory
+
+-(void)getCategory{
+    
+    NSString *api = @"http://www.gobekdigital.com.br/cliente/cdc/aprovacao/api/categorias.php";
+    
+    NSLog(@"getCategory %@", api);
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void) {
+        [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:[[NSURLRequest alloc]initWithURL:[NSURL URLWithString:api]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"JSONCategory" object:JSON userInfo:nil];
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response,NSError *error ,id JSON) {
+            NSLog(@"ERRO BAIXANDO JSON response-> %@", response);
+            NSLog(@"ERRO BAIXANDO JSON error-> %@", error);
+        }];
+        [operation start];
+    });
+    
+}
+
+-(void)updateCategory:(NSNotification *)notification{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void) {
+        @try {
+            progressFood = 0;
+            float count = [notification.object count];
+            float step = 1/count;
+            NSLog(@"JSON count %d", [notification.object count]);
+            for (NSDictionary *dic in [notification.object objectForKey:@"resultado"]) {
+                @try {
+                    [manageDataObject writeCategory:dic];
+                    progressFood = progressFood+step;
+                }
+                @catch (NSException *exception) {
+                    NSLog(@"getcategory expection -> %@", exception.description);
+                }
+            }
+        }
+        @catch (NSException *exception) {
+            NSLog(@"getcategory expection -> %@", exception.description);
+        }
+        NSLog(@"Sync category Finalizado");
     });
 }
 

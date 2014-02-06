@@ -6,7 +6,7 @@
     </entity>
     <entity name="FoodCategory" representedClassName="FoodCategory" syncable="YES">
         <attribute name="idFood" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Menu" representedClassName="Menu" syncable="YES">
         <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>

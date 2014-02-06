@@ -41,8 +41,8 @@
 		30AF409518856F9000EFA8FC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AF409418856F9000EFA8FC /* CoreData.framework */; };
 		30BA628818A2F8A0005ED39E /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BA628718A2F8A0005ED39E /* City.m */; };
 		30BA628B18A2F8A0005ED39E /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BA628A18A2F8A0005ED39E /* Menu.m */; };
-		30BA628E18A2F8A0005ED39E /* FoodCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BA628D18A2F8A0005ED39E /* FoodCategory.m */; };
 		30BA629118A2FBFA005ED39E /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BA629018A2FBFA005ED39E /* Restaurant.m */; };
+		30BA629418A30E7D005ED39E /* FoodCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BA629318A30E7D005ED39E /* FoodCategory.m */; };
 		30BF65C81842C4350091DDD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65C71842C4350091DDD0 /* Foundation.framework */; };
 		30BF65CA1842C4350091DDD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65C91842C4350091DDD0 /* CoreGraphics.framework */; };
 		30BF65CC1842C4350091DDD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65CB1842C4350091DDD0 /* UIKit.framework */; };
@@ -117,14 +117,14 @@
 		3091154C188DFB2C001772D3 /* SynchronizeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynchronizeData.m; sourceTree = "<group>"; };
 		30AF408F188567DE00EFA8FC /* database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = database.xcdatamodel; sourceTree = "<group>"; };
 		30AF409418856F9000EFA8FC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		30BA628618A2F8A0005ED39E /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = City.h; path = Cardapios/City.h; sourceTree = "<group>"; };
-		30BA628718A2F8A0005ED39E /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = Cardapios/City.m; sourceTree = "<group>"; };
-		30BA628918A2F8A0005ED39E /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Menu.h; path = Cardapios/Menu.h; sourceTree = "<group>"; };
-		30BA628A18A2F8A0005ED39E /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Menu.m; path = Cardapios/Menu.m; sourceTree = "<group>"; };
-		30BA628C18A2F8A0005ED39E /* FoodCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoodCategory.h; path = Cardapios/FoodCategory.h; sourceTree = "<group>"; };
-		30BA628D18A2F8A0005ED39E /* FoodCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoodCategory.m; path = Cardapios/FoodCategory.m; sourceTree = "<group>"; };
-		30BA628F18A2FBFA005ED39E /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Restaurant.h; path = Cardapios/Restaurant.h; sourceTree = "<group>"; };
-		30BA629018A2FBFA005ED39E /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Restaurant.m; path = Cardapios/Restaurant.m; sourceTree = "<group>"; };
+		30BA628618A2F8A0005ED39E /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		30BA628718A2F8A0005ED39E /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		30BA628918A2F8A0005ED39E /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
+		30BA628A18A2F8A0005ED39E /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
+		30BA628F18A2FBFA005ED39E /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		30BA629018A2FBFA005ED39E /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		30BA629218A30E7D005ED39E /* FoodCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodCategory.h; sourceTree = "<group>"; };
+		30BA629318A30E7D005ED39E /* FoodCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodCategory.m; sourceTree = "<group>"; };
 		30BF65C41842C4350091DDD0 /* Cardapios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardapios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BF65C71842C4350091DDD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		30BF65C91842C4350091DDD0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -231,6 +231,14 @@
 		30AF408D188567B600EFA8FC /* Db */ = {
 			isa = PBXGroup;
 			children = (
+				30BA628918A2F8A0005ED39E /* Menu.h */,
+				30BA628A18A2F8A0005ED39E /* Menu.m */,
+				30BA628F18A2FBFA005ED39E /* Restaurant.h */,
+				30BA629018A2FBFA005ED39E /* Restaurant.m */,
+				30BA628618A2F8A0005ED39E /* City.h */,
+				30BA628718A2F8A0005ED39E /* City.m */,
+				30BA629218A30E7D005ED39E /* FoodCategory.h */,
+				30BA629318A30E7D005ED39E /* FoodCategory.m */,
 				30AF408E188567DE00EFA8FC /* database.xcdatamodeld */,
 			);
 			name = Db;
@@ -239,14 +247,6 @@
 		30BF65BB1842C4350091DDD0 = {
 			isa = PBXGroup;
 			children = (
-				30BA628C18A2F8A0005ED39E /* FoodCategory.h */,
-				30BA628D18A2F8A0005ED39E /* FoodCategory.m */,
-				30BA628918A2F8A0005ED39E /* Menu.h */,
-				30BA628A18A2F8A0005ED39E /* Menu.m */,
-				30BA628F18A2FBFA005ED39E /* Restaurant.h */,
-				30BA629018A2FBFA005ED39E /* Restaurant.m */,
-				30BA628618A2F8A0005ED39E /* City.h */,
-				30BA628718A2F8A0005ED39E /* City.m */,
 				30BF65CD1842C4350091DDD0 /* Cardapios */,
 				30BF65EC1842C4350091DDD0 /* CardapiosTests */,
 				30BF65C61842C4350091DDD0 /* Frameworks */,
@@ -446,8 +446,8 @@
 				3002A7A618A117DF00734C0F /* ReturnObjects.m in Sources */,
 				3002A79B18A114A100734C0F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3002A79F18A114A100734C0F /* UIImageView+AFNetworking.m in Sources */,
-				30BA628E18A2F8A0005ED39E /* FoodCategory.m in Sources */,
 				3002A79818A114A100734C0F /* AFHTTPRequestOperation.m in Sources */,
+				30BA629418A30E7D005ED39E /* FoodCategory.m in Sources */,
 				3002A79918A114A100734C0F /* AFImageRequestOperation.m in Sources */,
 				3002A79D18A114A100734C0F /* AFURLConnectionOperation.m in Sources */,
 				3002A79718A114A100734C0F /* AFHTTPClient.m in Sources */,

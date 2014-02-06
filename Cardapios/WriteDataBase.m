@@ -114,8 +114,7 @@
 
 - (void)writeCity:(NSDictionary *)dicJson
 {
-    NSLog(@"dicJson %@", dicJson);
-    NSLog(@"name %@", [dicJson valueForKey:@"nome"]);
+    NSLog(@"writeCity %@", dicJson);
     city = [NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:objectContext];
     [city setValue:[self testIfIsNumber:[dicJson valueForKey:@"id"]] forKey:@"idCity"];
     [city setValue:[self testIfIsNull:[dicJson valueForKey:@"nome"]] forKey:@"name"];
@@ -124,7 +123,27 @@
     
 }
 
+- (void)writeMenu:(NSDictionary *)dicJson
+{
+    NSLog(@"writeMenu %@", dicJson);
+    menu = [NSEntityDescription insertNewObjectForEntityForName:@"Menu" inManagedObjectContext:objectContext];
+    [menu setValue:[self testIfIsNumber:[dicJson valueForKey:@"id"]] forKey:@"idCity"];
+    [menu setValue:[self testIfIsNull:[dicJson valueForKey:@"nome"]] forKey:@"name"];
+    
+    [objectContext save:nil];
+    
+}
 
+- (void)writeCategory:(NSDictionary *)dicJson
+{
+    NSLog(@"writeCategory %@", dicJson);
+    category = [NSEntityDescription insertNewObjectForEntityForName:@"FoodCategory" inManagedObjectContext:objectContext];
+    [category setValue:[self testIfIsNumber:[dicJson valueForKey:@"id"]] forKey:@"idFood"];
+    [category setValue:[self testIfIsNull:[dicJson valueForKey:@"nome"]] forKey:@"name"];
+    
+    [objectContext save:nil];
+    
+}
 
 -(void)writeImages:(NSDictionary*)dicJson{
     /*if ([self testIfIsNull:[dicJson valueForKey:@"novo_fotos"]].length!=0) {

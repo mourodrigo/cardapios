@@ -20,4 +20,6 @@
 -(void)beginWriteData;
 -(void)writeRestaurant:(NSDictionary *)dicJson;
 - (void)writeCity:(NSDictionary *)dicJson;
+- (void)writeMenu:(NSDictionary *)dicJson;
+- (void)writeCategory:(NSDictionary *)dicJson;
 @end

@@ -12,6 +12,6 @@
 @implementation FoodCategory
 
 @dynamic idFood;
-@dynamic nome;
+@dynamic name;
 
 @end

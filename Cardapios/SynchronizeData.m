@@ -55,9 +55,9 @@
 
 -(void)getRestaurant{
     
-    NSString *api = @"http://www.gobekdigital.com.br/cliente/cdc/aprovacao/api/restaurantes.php";
+    NSString *api = @"http://cardapiosdacidade.com/xUuiBJ6N/api/restaurantes.php";
     
-    NSLog(@"getRestaurant %@", api);
+    NSLog(@"\n\ngetRestaurant %@", api);
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
@@ -103,9 +103,9 @@
 
 -(void)getCity{
     
-    NSString *api = @"http://www.gobekdigital.com.br/cliente/cdc/aprovacao/api/cidades.php";
+    NSString *api = @"http://cardapiosdacidade.com/xUuiBJ6N/api/cidades.php";
     
-    NSLog(@"getCity %@", api);
+    NSLog(@"\n\ngetCity %@", api);
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
@@ -151,15 +151,40 @@
 
 -(void)getMenu{
     
-    NSString *api = @"http://www.gobekdigital.com.br/cliente/cdc/aprovacao/api/cardapios.php";
+    NSString *api = @"http://cardapiosdacidade.com/xUuiBJ6N/api/cardapios.php";
     
-    NSLog(@"getMenu %@", api);
+    NSLog(@"\n\ngetMenu %@", api);
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
         [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
         AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:[[NSURLRequest alloc]initWithURL:[NSURL URLWithString:api]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
             [[NSNotificationCenter defaultCenter]postNotificationName:@"JSONMenu" object:JSON userInfo:nil];
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response,NSError *error ,id JSON) {
+            NSLog(@"ERRO BAIXANDO JSON response-> %@", response);
+            NSLog(@"ERRO BAIXANDO JSON error-> %@", error);
+        }];
+        [operation start];
+    });
+    
+}
+
+
+
+
+#pragma Mark - syncCategory
+
+-(void)getCategory{
+    
+    NSString *api = @"http://cardapiosdacidade.com/xUuiBJ6N/api/categorias.php";
+    
+    NSLog(@"\n\ngetCategory %@", api);
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void) {
+        [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:[[NSURLRequest alloc]initWithURL:[NSURL URLWithString:api]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"JSONCategory" object:JSON userInfo:nil];
         } failure:^(NSURLRequest *request, NSHTTPURLResponse *response,NSError *error ,id JSON) {
             NSLog(@"ERRO BAIXANDO JSON response-> %@", response);
             NSLog(@"ERRO BAIXANDO JSON error-> %@", error);
@@ -195,29 +220,6 @@
 }
 
 
-
-
-#pragma Mark - syncCategory
-
--(void)getCategory{
-    
-    NSString *api = @"http://www.gobekdigital.com.br/cliente/cdc/aprovacao/api/categorias.php";
-    
-    NSLog(@"getCategory %@", api);
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
-                                             (unsigned long)NULL), ^(void) {
-        [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
-        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:[[NSURLRequest alloc]initWithURL:[NSURL URLWithString:api]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"JSONCategory" object:JSON userInfo:nil];
-        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response,NSError *error ,id JSON) {
-            NSLog(@"ERRO BAIXANDO JSON response-> %@", response);
-            NSLog(@"ERRO BAIXANDO JSON error-> %@", error);
-        }];
-        [operation start];
-    });
-    
-}
 
 -(void)updateCategory:(NSNotification *)notification{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,

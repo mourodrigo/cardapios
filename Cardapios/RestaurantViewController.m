@@ -1,23 +1,23 @@
 //
-//  CityViewController.m
+//  RestaurantViewController.m
 //  Cardapios
 //
-//  Created by Rodrigo Bueno Tomiosso on 14/01/14.
+//  Created by Rodrigo Bueno Tomiosso on 15/02/14.
 //  Copyright (c) 2014 mourodrigo. All rights reserved.
 //
 
-#import "CityViewController.h"
+#import "RestaurantViewController.h"
 #import "RightArrowCell.h"
 #import "AppDelegate.h"
-#import "RestaurantViewController.h"
-@interface CityViewController (){
+#import "RestaurantDetailViewController.h"
+@interface RestaurantViewController (){
     AppDelegate *delegate;
     NSMutableArray *cities;
 }
 
 @end
 
-@implementation CityViewController
+@implementation RestaurantViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    cities = [[NSMutableArray alloc]initWithArray:[delegate sqliteDoQuery:@"Select * from ZCITY"]];
+    cities = [[NSMutableArray alloc]initWithArray:[delegate sqliteDoQuery:[NSString stringWithFormat:@"Select * from ZRESTAURANT where ZCITY = '%@'", delegate.CitySelected]]];
 	// Do any additional setup after loading the view.
 }
 
@@ -58,9 +58,12 @@
     NSLog(@"%@", [cities objectAtIndex:indexPath.row]);
     delegate.CitySelected = [[cities objectAtIndex:indexPath.row] valueForKey:@"ZNAME"];
     
-    RestaurantViewController *rst = (RestaurantViewController*)[delegate getViewControllerWithIdentifier:@"rst"];
+    RestaurantDetailViewController *rst = (RestaurantDetailViewController*)[delegate getViewControllerWithIdentifier:@"rstDetail"];
     [self presentViewController:rst animated:YES completion:nil];
-
 }
 
+
+- (IBAction)actionBtnVoltar:(id)sender {
+    [self.navigationController popViewControllerAnimated:TRUE];
+}
 @end

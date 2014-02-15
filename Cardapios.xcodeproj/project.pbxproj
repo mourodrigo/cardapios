@@ -26,6 +26,7 @@
 		3002A7A318A115BB00734C0F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3002A7A218A115BB00734C0F /* SystemConfiguration.framework */; };
 		3002A7A618A117DF00734C0F /* Core.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002A7A518A117DF00734C0F /* Core.m */; };
 		3002A7AE18A1192400734C0F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3002A7AD18A1192400734C0F /* libsqlite3.0.dylib */; };
+		302A703218AFFB210088F1E0 /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302A703118AFFB210088F1E0 /* RestaurantViewController.m */; };
 		302CCEF7188558FB00788ECC /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 302CCEF5188558FB00788ECC /* home.png */; };
 		302CCEF8188558FB00788ECC /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 302CCEF6188558FB00788ECC /* home@2x.png */; };
 		302CCEFE188559E900788ECC /* MainTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CCEFD188559E900788ECC /* MainTabBar.m */; };
@@ -35,6 +36,25 @@
 		302CCF0818855DF300788ECC /* RightArrowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CCF0718855DF300788ECC /* RightArrowCell.m */; };
 		302D6A9318509B90004239A5 /* constants.plist in Resources */ = {isa = PBXBuildFile; fileRef = 302D6A9218509B90004239A5 /* constants.plist */; };
 		302D6A991850A00D004239A5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D6A981850A00D004239A5 /* MainViewController.m */; };
+		30785A4518B00DA0007B037C /* RestaurantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30785A4418B00DA0007B037C /* RestaurantDetailViewController.m */; };
+		30785A5218B01246007B037C /* amex.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A4618B01246007B037C /* amex.png */; };
+		30785A5318B01246007B037C /* amex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A4718B01246007B037C /* amex@2x.png */; };
+		30785A5418B01246007B037C /* estrela.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A4818B01246007B037C /* estrela.png */; };
+		30785A5518B01246007B037C /* estrela@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A4918B01246007B037C /* estrela@2x.png */; };
+		30785A5618B01246007B037C /* LogoRestaurante.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A4A18B01246007B037C /* LogoRestaurante.png */; };
+		30785A5718B01246007B037C /* LogoRestaurante@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A4B18B01246007B037C /* LogoRestaurante@2x.png */; };
+		30785A5818B01246007B037C /* mast.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A4C18B01246007B037C /* mast.png */; };
+		30785A5918B01246007B037C /* mast@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A4D18B01246007B037C /* mast@2x.png */; };
+		30785A5A18B01246007B037C /* rota.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A4E18B01246007B037C /* rota.png */; };
+		30785A5B18B01246007B037C /* rota@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A4F18B01246007B037C /* rota@2x.png */; };
+		30785A5C18B01246007B037C /* visa.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A5018B01246007B037C /* visa.png */; };
+		30785A5D18B01246007B037C /* visa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A5118B01246007B037C /* visa@2x.png */; };
+		30785A6018B014A8007B037C /* Ligar.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A5E18B014A8007B037C /* Ligar.png */; };
+		30785A6118B014A8007B037C /* Ligar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A5F18B014A8007B037C /* Ligar@2x.png */; };
+		30785A6618B01A33007B037C /* separador.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A6218B01A32007B037C /* separador.png */; };
+		30785A6718B01A33007B037C /* separador@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A6318B01A32007B037C /* separador@2x.png */; };
+		30785A6818B01A33007B037C /* voltar.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A6418B01A33007B037C /* voltar.png */; };
+		30785A6918B01A33007B037C /* voltar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A6518B01A33007B037C /* voltar@2x.png */; };
 		3091154A188DFB0E001772D3 /* WriteDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 30911549188DFB0E001772D3 /* WriteDataBase.m */; };
 		3091154D188DFB2C001772D3 /* SynchronizeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3091154C188DFB2C001772D3 /* SynchronizeData.m */; };
 		30AF4090188567DE00EFA8FC /* database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30AF408E188567DE00EFA8FC /* database.xcdatamodeld */; };
@@ -98,6 +118,8 @@
 		3002A7A418A117DF00734C0F /* Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		3002A7A518A117DF00734C0F /* Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Core.m; sourceTree = "<group>"; };
 		3002A7AD18A1192400734C0F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		302A703018AFFB210088F1E0 /* RestaurantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantViewController.h; sourceTree = "<group>"; };
+		302A703118AFFB210088F1E0 /* RestaurantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantViewController.m; sourceTree = "<group>"; };
 		302CCEF5188558FB00788ECC /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		302CCEF6188558FB00788ECC /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
 		302CCEFC188559E900788ECC /* MainTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBar.h; sourceTree = "<group>"; };
@@ -111,6 +133,26 @@
 		302D6A9218509B90004239A5 /* constants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = constants.plist; sourceTree = "<group>"; };
 		302D6A971850A00D004239A5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		302D6A981850A00D004239A5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		30785A4318B00DA0007B037C /* RestaurantDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailViewController.h; sourceTree = "<group>"; };
+		30785A4418B00DA0007B037C /* RestaurantDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailViewController.m; sourceTree = "<group>"; };
+		30785A4618B01246007B037C /* amex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amex.png; sourceTree = "<group>"; };
+		30785A4718B01246007B037C /* amex@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "amex@2x.png"; sourceTree = "<group>"; };
+		30785A4818B01246007B037C /* estrela.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = estrela.png; sourceTree = "<group>"; };
+		30785A4918B01246007B037C /* estrela@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "estrela@2x.png"; sourceTree = "<group>"; };
+		30785A4A18B01246007B037C /* LogoRestaurante.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoRestaurante.png; sourceTree = "<group>"; };
+		30785A4B18B01246007B037C /* LogoRestaurante@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LogoRestaurante@2x.png"; sourceTree = "<group>"; };
+		30785A4C18B01246007B037C /* mast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mast.png; sourceTree = "<group>"; };
+		30785A4D18B01246007B037C /* mast@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mast@2x.png"; sourceTree = "<group>"; };
+		30785A4E18B01246007B037C /* rota.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rota.png; sourceTree = "<group>"; };
+		30785A4F18B01246007B037C /* rota@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rota@2x.png"; sourceTree = "<group>"; };
+		30785A5018B01246007B037C /* visa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visa.png; sourceTree = "<group>"; };
+		30785A5118B01246007B037C /* visa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visa@2x.png"; sourceTree = "<group>"; };
+		30785A5E18B014A8007B037C /* Ligar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ligar.png; sourceTree = "<group>"; };
+		30785A5F18B014A8007B037C /* Ligar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ligar@2x.png"; sourceTree = "<group>"; };
+		30785A6218B01A32007B037C /* separador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separador.png; sourceTree = "<group>"; };
+		30785A6318B01A32007B037C /* separador@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separador@2x.png"; sourceTree = "<group>"; };
+		30785A6418B01A33007B037C /* voltar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voltar.png; sourceTree = "<group>"; };
+		30785A6518B01A33007B037C /* voltar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "voltar@2x.png"; sourceTree = "<group>"; };
 		30911548188DFB0E001772D3 /* WriteDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteDataBase.h; sourceTree = "<group>"; };
 		30911549188DFB0E001772D3 /* WriteDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteDataBase.m; sourceTree = "<group>"; };
 		3091154B188DFB2C001772D3 /* SynchronizeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynchronizeData.h; sourceTree = "<group>"; };
@@ -185,6 +227,24 @@
 				30022FC9186E032600F2082B /* BtnInicial@2x.png */,
 				30022FCA186E032600F2082B /* BtnInicialSel.png */,
 				30022FCB186E032600F2082B /* BtnInicialSel@2x.png */,
+				30785A4618B01246007B037C /* amex.png */,
+				30785A4718B01246007B037C /* amex@2x.png */,
+				30785A4818B01246007B037C /* estrela.png */,
+				30785A4918B01246007B037C /* estrela@2x.png */,
+				30785A4A18B01246007B037C /* LogoRestaurante.png */,
+				30785A4B18B01246007B037C /* LogoRestaurante@2x.png */,
+				30785A5E18B014A8007B037C /* Ligar.png */,
+				30785A5F18B014A8007B037C /* Ligar@2x.png */,
+				30785A4C18B01246007B037C /* mast.png */,
+				30785A4D18B01246007B037C /* mast@2x.png */,
+				30785A4E18B01246007B037C /* rota.png */,
+				30785A4F18B01246007B037C /* rota@2x.png */,
+				30785A5018B01246007B037C /* visa.png */,
+				30785A5118B01246007B037C /* visa@2x.png */,
+				30785A6218B01A32007B037C /* separador.png */,
+				30785A6318B01A32007B037C /* separador@2x.png */,
+				30785A6418B01A33007B037C /* voltar.png */,
+				30785A6518B01A33007B037C /* voltar@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -291,6 +351,10 @@
 				302CCF0718855DF300788ECC /* RightArrowCell.m */,
 				302CCEFF18855B7400788ECC /* CityViewController.h */,
 				302CCF0018855B7400788ECC /* CityViewController.m */,
+				302A703018AFFB210088F1E0 /* RestaurantViewController.h */,
+				302A703118AFFB210088F1E0 /* RestaurantViewController.m */,
+				30785A4318B00DA0007B037C /* RestaurantDetailViewController.h */,
+				30785A4418B00DA0007B037C /* RestaurantDetailViewController.m */,
 				30BF65DC1842C4350091DDD0 /* IdiomViewController.h */,
 				30BF65DD1842C4350091DDD0 /* IdiomViewController.m */,
 				302D6A971850A00D004239A5 /* MainViewController.h */,
@@ -410,18 +474,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30785A6918B01A33007B037C /* voltar@2x.png in Resources */,
+				30785A6118B014A8007B037C /* Ligar@2x.png in Resources */,
 				30022FC6186DE10800F2082B /* LogoInicial.png in Resources */,
 				30022FC7186DE10800F2082B /* LogoInicial@2x.png in Resources */,
+				30785A5718B01246007B037C /* LogoRestaurante@2x.png in Resources */,
+				30785A5B18B01246007B037C /* rota@2x.png in Resources */,
+				30785A6718B01A33007B037C /* separador@2x.png in Resources */,
 				30022FCC186E032600F2082B /* BtnInicial.png in Resources */,
+				30785A5618B01246007B037C /* LogoRestaurante.png in Resources */,
 				30BF65E01842C4350091DDD0 /* Images.xcassets in Resources */,
+				30785A6818B01A33007B037C /* voltar.png in Resources */,
+				30785A5518B01246007B037C /* estrela@2x.png in Resources */,
+				30785A6618B01A33007B037C /* separador.png in Resources */,
 				302D6A9318509B90004239A5 /* constants.plist in Resources */,
 				30022FCF186E032600F2082B /* BtnInicialSel@2x.png in Resources */,
 				302CCEF7188558FB00788ECC /* home.png in Resources */,
 				30022FCE186E032600F2082B /* BtnInicialSel.png in Resources */,
 				30022FCD186E032600F2082B /* BtnInicial@2x.png in Resources */,
+				30785A5D18B01246007B037C /* visa@2x.png in Resources */,
 				30BF65DB1842C4350091DDD0 /* Main.storyboard in Resources */,
+				30785A5C18B01246007B037C /* visa.png in Resources */,
+				30785A5318B01246007B037C /* amex@2x.png in Resources */,
 				302CCF0518855CDE00788ECC /* ArrowRight@2x.png in Resources */,
 				302CCF0418855CDE00788ECC /* ArrowRight.png in Resources */,
+				30785A5818B01246007B037C /* mast.png in Resources */,
+				30785A5918B01246007B037C /* mast@2x.png in Resources */,
+				30785A5218B01246007B037C /* amex.png in Resources */,
+				30785A5A18B01246007B037C /* rota.png in Resources */,
+				30785A6018B014A8007B037C /* Ligar.png in Resources */,
+				30785A5418B01246007B037C /* estrela.png in Resources */,
 				302CCEF8188558FB00788ECC /* home@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +534,7 @@
 				3002A79D18A114A100734C0F /* AFURLConnectionOperation.m in Sources */,
 				3002A79718A114A100734C0F /* AFHTTPClient.m in Sources */,
 				30AF4090188567DE00EFA8FC /* database.xcdatamodeld in Sources */,
+				30785A4518B00DA0007B037C /* RestaurantDetailViewController.m in Sources */,
 				30BF65D41842C4350091DDD0 /* main.m in Sources */,
 				302CCF0118855B7400788ECC /* CityViewController.m in Sources */,
 				302CCEFE188559E900788ECC /* MainTabBar.m in Sources */,
@@ -464,6 +547,7 @@
 				3091154A188DFB0E001772D3 /* WriteDataBase.m in Sources */,
 				3002A79C18A114A100734C0F /* AFPropertyListRequestOperation.m in Sources */,
 				3091154D188DFB2C001772D3 /* SynchronizeData.m in Sources */,
+				302A703218AFFB210088F1E0 /* RestaurantViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

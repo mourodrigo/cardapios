@@ -2,11 +2,15 @@
 
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
-@implementation AppDelegate
+#import "Core.h"
+@implementation AppDelegate{
+    Core *db;
+}
 @synthesize window = _window;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+//@synthesize db;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -156,6 +160,27 @@
 
 
 #pragma - mark Database
+
+-(NSArray*)sqliteDoQuery:(NSString*)query{
+    @try {
+        //NSLog(@"query -> %@", query);
+        if (!db) {
+            db= [[Core alloc]init];
+        }
+        NSArray *arr = [db sqliteDoQuery:query];
+         
+         if (arr==nil) {
+             [NSException raise:@"SQLITE_DO_QUERY_ERROR" format:@"SQLITE_DO_QUERY_ERROR"];
+         }
+  
+        return [db sqliteDoQuery:query];
+        
+    }
+    @catch (NSException *exception) {
+        NSLog(@"exception sqliteDoQuery -> %@", exception.description);
+        return nil;
+    }
+}
 
 
 @end

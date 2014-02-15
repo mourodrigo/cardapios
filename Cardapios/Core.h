@@ -9,12 +9,12 @@
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
 #import <sqlite3.h>
-@interface ReturnObjects : NSObject<NSFetchedResultsControllerDelegate>{
+@interface Core : NSObject<NSFetchedResultsControllerDelegate>{
     //sqlite3_stmt *selectstmt;
     
 }
 
-@property(nonatomic,strong) AppDelegate *appdelegate;
+//@property(nonatomic,strong) AppDelegate *appdelegate;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

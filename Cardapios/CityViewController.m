@@ -8,7 +8,10 @@
 
 #import "CityViewController.h"
 #import "RightArrowCell.h"
-@interface CityViewController ()
+#import "AppDelegate.h"
+@interface CityViewController (){
+    AppDelegate *delegate;
+}
 
 @end
 
@@ -26,6 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    NSLog(@"rests %@ ",[delegate sqliteDoQuery:@"Select * from Zrestaurant"]);
+    
 	// Do any additional setup after loading the view.
 }
 

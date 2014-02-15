@@ -24,7 +24,7 @@
 		3002A79F18A114A100734C0F /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002A79618A114A100734C0F /* UIImageView+AFNetworking.m */; };
 		3002A7A118A114EC00734C0F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3002A7A018A114EC00734C0F /* MobileCoreServices.framework */; };
 		3002A7A318A115BB00734C0F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3002A7A218A115BB00734C0F /* SystemConfiguration.framework */; };
-		3002A7A618A117DF00734C0F /* ReturnObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002A7A518A117DF00734C0F /* ReturnObjects.m */; };
+		3002A7A618A117DF00734C0F /* Core.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002A7A518A117DF00734C0F /* Core.m */; };
 		3002A7AE18A1192400734C0F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3002A7AD18A1192400734C0F /* libsqlite3.0.dylib */; };
 		302CCEF7188558FB00788ECC /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 302CCEF5188558FB00788ECC /* home.png */; };
 		302CCEF8188558FB00788ECC /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 302CCEF6188558FB00788ECC /* home@2x.png */; };
@@ -95,8 +95,8 @@
 		3002A79618A114A100734C0F /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		3002A7A018A114EC00734C0F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3002A7A218A115BB00734C0F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		3002A7A418A117DF00734C0F /* ReturnObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnObjects.h; sourceTree = "<group>"; };
-		3002A7A518A117DF00734C0F /* ReturnObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnObjects.m; sourceTree = "<group>"; };
+		3002A7A418A117DF00734C0F /* Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
+		3002A7A518A117DF00734C0F /* Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Core.m; sourceTree = "<group>"; };
 		3002A7AD18A1192400734C0F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		302CCEF5188558FB00788ECC /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		302CCEF6188558FB00788ECC /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
@@ -196,8 +196,8 @@
 				30911549188DFB0E001772D3 /* WriteDataBase.m */,
 				3091154B188DFB2C001772D3 /* SynchronizeData.h */,
 				3091154C188DFB2C001772D3 /* SynchronizeData.m */,
-				3002A7A418A117DF00734C0F /* ReturnObjects.h */,
-				3002A7A518A117DF00734C0F /* ReturnObjects.m */,
+				3002A7A418A117DF00734C0F /* Core.h */,
+				3002A7A518A117DF00734C0F /* Core.m */,
 			);
 			name = Sync;
 			sourceTree = "<group>";
@@ -443,7 +443,7 @@
 				30BA628B18A2F8A0005ED39E /* Menu.m in Sources */,
 				30BF65DE1842C4350091DDD0 /* IdiomViewController.m in Sources */,
 				30BF65D81842C4350091DDD0 /* AppDelegate.m in Sources */,
-				3002A7A618A117DF00734C0F /* ReturnObjects.m in Sources */,
+				3002A7A618A117DF00734C0F /* Core.m in Sources */,
 				3002A79B18A114A100734C0F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3002A79F18A114A100734C0F /* UIImageView+AFNetworking.m in Sources */,
 				3002A79818A114A100734C0F /* AFHTTPRequestOperation.m in Sources */,

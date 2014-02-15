@@ -1,69 +1,18 @@
-//
-//  ReturnObjectArquivos.m
-//  Embraed
-//
-//  Created by Reinaldo Martins de Padua on 22/02/13.
-//  Copyright (c) 2013 catalogbrasil. All rights reserved.
-//
-
-
-/* 
-    Classe responsavel por retornar um vetor contendo os objetos de uma entidade
-    especifica.
-    A classe externa deve criar um ojbeto da classe ReturnObjects e estanciar por
-    parametro o nome da entidade a chave para ordenação: Dessa forma, quando chamar o método "returnArray", ele retornar um vetor contendo todos os objetos da entidade especifica.
- 
-    ReturnObjects *returnObj=[[ReturnObjects alloc]init];
-    [returnObj setEntityName:@"Imoveis"];
-    [returnObj setSortDescriptorKey:@"name"];
- 
- 
-    Para retornar os objetos das entidades Arquivos e Fotos3d especificos de um imovel, é 
-    necessario usar um NSPredicate passando como argumento o NSManagedObjeto que contem a chave primaria da relação. Exemplo:
- 
-    ReturnObjects *returnObj=[[ReturnObjects alloc]init];
-    [returnObj setEntityName:@"Fotos3d"];
-    [returnObj setSortDescriptorKey:@"title"];
-    [returnObj setPredicate:[NSPredicate predicateWithFormat:@"relationship = %@  = %@",_objectImovel]];
- 
-    
-    Para retornar um tipo especifico de arquivo, deve se passado no NSPredicate o tipo 
-    desejado,  nesse projeot em especifico, imagens normais estão sendo gravadas com o 
-    tipo "photos" e as plantas com "floorPlan", então o retorno 
- 
-    exemplo:
- 
-    [returnObj setPredicate:[NSPredicate predicateWithFormat:@"relationship = %@ AND typeFile = %@",_objectImovel,@"floorPlan"]];
- 
-    ou
- 
-    [returnObj setPredicate:[NSPredicate predicateWithFormat:@"relationship = %@ AND typeFile = %@",_objectImovel,@"photos"]];
-
-    e para obter os resultados:
- 
-    arrayFiles=[returnObj returnArray];
- 
- 
- */
-
-
-
-#import "ReturnObjects.h"
+#import "Core.h"
 #import <sqlite3.h>
-
-@implementation ReturnObjects{
+#import "AppDelegate.h"
+@implementation Core{
     sqlite3 *database;
     NSString *dbPath;
+    AppDelegate *_appdelegate;
     
 }
-//@synthesize database;
 
 - (NSArray*)returnArray;
 {
     return [self.fetchedResultsController fetchedObjects];
 
 }
-
 
 #pragma mark - Fetched results controller
 
@@ -118,12 +67,10 @@
 -(NSMutableArray*)sqliteDoQuery:(NSString *)query{
 	
     @try {
-        //sqlite3 *database;
         if (!_appdelegate || dbPath.length==0) {
             _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
             dbPath = [_appdelegate getDBPath];
         }
-        //NSLog(@"db path -> %@", dbPath);
         NSMutableArray *resultArray = [[NSMutableArray alloc]initWithCapacity:0];
         if (!database) {
             if (sqlite3_open([dbPath UTF8String], &database) == SQLITE_OK){
@@ -132,7 +79,7 @@
                 NSLog(@"sqlite3_open FAIL");
                 return nil;
             }
-        }else{
+        }
             const char *sql = [query UTF8String];
             sqlite3_stmt *selectstmt;
             if(sqlite3_prepare_v2(database, sql, -1, &selectstmt, NULL) == SQLITE_OK) {
@@ -171,23 +118,13 @@
                     [resultArray addObject:rowDictionary];
                     
                 }
-                //sqlite3_db_release_memory(database);
-                //sqlite3_clear_bindings(selectstmt);
-                
-               // NSLog(@"SQLITE OK %@", query);
             }else{
-                
-                //Even though the open call failed, close the database connection to release all the memory.
                 NSLog(@"sqlite3_prepare_v2 failed");
                 NSLog(@"QUERY -> %@", query);
-               // sqlite3_close(database);
-               // sqlite3_db_release_memory(database);
-               // NSLog(@"RELEASED-> %d", sqlite3_release_memory(1024));
-                
                 return nil;
             
             }
-        }
+        
         
         
         if (resultArray.count!=0) {
@@ -201,9 +138,6 @@
         NSLog(@"exception ReturnObjects doquery : %@", exception.description);
   
     }
-    
-    
-    
 }
 
 -(void)cleanDB{

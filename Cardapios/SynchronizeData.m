@@ -11,7 +11,7 @@
 #import "AFNetworking.h"
 #import "WriteDataBase.h"
 
-#import "ReturnObjects.h"
+#import "Core.h"
 
 @implementation SynchronizeData
 {

@@ -9,7 +9,7 @@
 	<key>telefone</key>
 	<string></string>
 	<key>idioma</key>
-	<string></string>
+	<string>pt</string>
 	<key>storyboard</key>
 	<string>Main</string>
 	<key>api</key>

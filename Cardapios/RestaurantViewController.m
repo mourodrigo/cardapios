@@ -56,7 +56,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%@", [cities objectAtIndex:indexPath.row]);
-    delegate.CitySelected = [[cities objectAtIndex:indexPath.row] valueForKey:@"ZNAME"];
+    delegate.idRestSelected = [[[cities objectAtIndex:indexPath.row] valueForKey:@"Z_PK"] integerValue];
     
     RestaurantDetailViewController *rst = (RestaurantDetailViewController*)[delegate getViewControllerWithIdentifier:@"rstDetail"];
     [self presentViewController:rst animated:YES completion:nil];

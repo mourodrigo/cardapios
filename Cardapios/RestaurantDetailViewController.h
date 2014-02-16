@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RestaurantDetailViewController : UIViewController
+@interface RestaurantDetailViewController : UIViewController <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UINavigationItem *lblTitle;
 @property (weak, nonatomic) IBOutlet UIScrollView *outletScrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *outletImgViewLogo;

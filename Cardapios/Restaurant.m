@@ -2,7 +2,7 @@
 //  Restaurant.m
 //  Cardapios
 //
-//  Created by Rodrigo Bueno Tomiosso on 05/02/14.
+//  Created by Rodrigo Bueno Tomiosso on 16/02/14.
 //  Copyright (c) 2014 mourodrigo. All rights reserved.
 //
 
@@ -40,5 +40,6 @@
 @dynamic timeClose;
 @dynamic timeOpen;
 @dynamic visa;
+@dynamic favorite;
 
 @end

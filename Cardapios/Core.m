@@ -125,8 +125,6 @@
             
             }
         
-        
-        
         if (resultArray.count!=0) {
             //NSLog(@"resultSQL \n%@", resultArray);
             return resultArray;

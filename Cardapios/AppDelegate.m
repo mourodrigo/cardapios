@@ -3,6 +3,8 @@
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
 #import "Core.h"
+#import "AFHTTPClient.h"
+#import "AFImageRequestOperation.h"
 @implementation AppDelegate{
     Core *db;
 }
@@ -118,7 +120,30 @@
     return _persistentStoreCoordinator;
 }
 
-- (void)eraseAllDataBAse
+-(NSArray*)sqliteDoQuery:(NSString*)query{
+    @try {
+        //NSLog(@"query -> %@", query);
+        if (!db) {
+            db= [[Core alloc]init];
+        }
+        NSArray *arr = [db sqliteDoQuery:query];
+        
+        if (arr==nil) {
+            [NSException raise:@"SQLITE_DO_QUERY_ERROR" format:@"SQLITE_DO_QUERY_ERROR"];
+        }
+        
+        return [db sqliteDoQuery:query];
+        
+    }
+    @catch (NSException *exception) {
+        NSLog(@"exception sqliteDoQuery -> %@", exception.description);
+        return nil;
+    }
+}
+
+
+
+- (void)eraseDb
 {
     NSError *error = nil;
     [[NSFileManager defaultManager] removeItemAtURL:[NSURL URLWithString:[self getDBPath]] error:&error];
@@ -159,28 +184,69 @@
 }
 
 
-#pragma - mark Database
+#pragma - mark Download
 
--(NSArray*)sqliteDoQuery:(NSString*)query{
-    @try {
-        //NSLog(@"query -> %@", query);
-        if (!db) {
-            db= [[Core alloc]init];
-        }
-        NSArray *arr = [db sqliteDoQuery:query];
-         
-         if (arr==nil) {
-             [NSException raise:@"SQLITE_DO_QUERY_ERROR" format:@"SQLITE_DO_QUERY_ERROR"];
-         }
-  
-        return [db sqliteDoQuery:query];
-        
-    }
-    @catch (NSException *exception) {
-        NSLog(@"exception sqliteDoQuery -> %@", exception.description);
-        return nil;
-    }
+- (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL
+{
+     //NSLog(@"addskipbackup: %@", URL);
+     assert([[NSFileManager defaultManager] fileExistsAtPath: [URL path]]);
+     
+     NSError *error = nil;
+     BOOL success = [URL setResourceValue: [NSNumber numberWithBool: YES]
+     forKey: NSURLIsExcludedFromBackupKey error: &error];
+     if(!success){
+     NSLog(@"Error excluding %@ from backup %@", [URL lastPathComponent], error);
+     }
+     //NSLog(@"%@ backup %i",URL, success);*/
+    
+    //NSLog(@"ATIVAR ADD SKIP BACKUP");
+    return TRUE;
 }
+
+
+- (void)imageRequest:(NSString*)directoryname withFileName:(NSString*)nameFile storeAtpath:(NSString*)downloadPath{
+    NSString *api = [[self getInfoPlist]valueForKey:@"api"];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:[api stringByAppendingString:@"%@%@"],directoryname,nameFile]]];
+    
+     NSLog(@"getFile url %@", request.URL);
+    
+    AFImageRequestOperation *operation = [AFImageRequestOperation imageRequestOperationWithRequest:request imageProcessingBlock:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW,
+                                                 (unsigned long)NULL), ^(void) {
+            
+            NSString *pathToWriteFile = [[NSString stringWithFormat:@"~/Documents/%@%@",downloadPath,nameFile] stringByExpandingTildeInPath];
+            
+            NSError *erro;
+            if (![[NSFileManager defaultManager] fileExistsAtPath:[[NSString stringWithFormat:@"~/Documents/%@",downloadPath] stringByExpandingTildeInPath]]){
+                [[NSFileManager defaultManager] createDirectoryAtPath:[[NSString stringWithFormat:@"~/Documents/%@",downloadPath] stringByExpandingTildeInPath] withIntermediateDirectories:NO attributes:nil error:&erro];
+            }
+            
+            if ([[nameFile pathExtension]isEqualToString:@"png"]) {
+                [UIImagePNGRepresentation(image) writeToFile:pathToWriteFile atomically:YES];
+                
+            }else{
+                [UIImageJPEGRepresentation(image, 1.0) writeToFile:pathToWriteFile atomically:YES];
+            }
+            
+            [self addSkipBackupAttributeToItemAtURL:[NSURL URLWithString:pathToWriteFile]];
+            
+            NSLog(@"\n\nGetFileRequest: %@", request.URL);
+            NSLog(@"downloadpath %@\n\n", pathToWriteFile);
+            
+            
+        });
+        
+    }  failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+        [self imageRequest:directoryname withFileName:nameFile storeAtpath:downloadPath];
+        NSLog(@"%@ responsefailcode %d", nameFile, error.code);
+    }];
+
+    [operation start];
+}
+
 
 
 @end

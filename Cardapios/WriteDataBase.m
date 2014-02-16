@@ -28,7 +28,7 @@
 
     _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     
-    //[_appdelegate eraseAllDataBAse]; //SINCRO //teletar
+    [_appdelegate eraseDb]; //SINCRO //teletar
     
     objectContext = [_appdelegate managedObjectContext];
     
@@ -100,9 +100,8 @@
     
     [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"empresa"]] forKey:@"company"];
     
-/*
     [rest setValue:FALSE forKey:@"favorite"];
-    
+/*
     [rest setValue:[self testIfIsNumber:[dicJson valueForKey:@"destaque"]] forKey:@"featured"];
     
     [rest setValue:[NSDate date] forKey:@"dataSincronizado"];
@@ -129,7 +128,8 @@
     menu = [NSEntityDescription insertNewObjectForEntityForName:@"Menu" inManagedObjectContext:objectContext];
     [menu setValue:[self testIfIsNumber:[dicJson valueForKey:@"id"]] forKey:@"idCity"];
     [menu setValue:[self testIfIsNull:[dicJson valueForKey:@"nome"]] forKey:@"name"];
-    
+    [menu setValue:FALSE forKey:@"favorite"];
+
     [objectContext save:nil];
     
 }
@@ -144,156 +144,6 @@
     [objectContext save:nil];
     
 }
-
--(void)writeImages:(NSDictionary*)dicJson{
-    /*if ([self testIfIsNull:[dicJson valueForKey:@"novo_fotos"]].length!=0) {
-        NSArray *arrFotos = [[NSArray alloc]initWithArray:[[self testIfIsNull:[dicJson valueForKey:@"novo_fotos"]] componentsSeparatedByString:@";"]];
-        
-        
-        for (NSString *infoFoto in arrFotos) {
-            
-            NSArray *foto  = [[NSArray alloc]initWithArray:[infoFoto componentsSeparatedByString:@":"]];
-            if (foto.count>2) {
-                
-                
-                Imagens *images = [NSEntityDescription insertNewObjectForEntityForName:@"Imagens" inManagedObjectContext:objectContext];
-                
-                [images setValue:[self testIfIsNumber:[dicJson valueForKey:@"id"]]forKey:@"idImovel"];
-                
-                [images setValue:[self testIfIsNull:[foto objectAtIndex:0]] forKey:@"category"];
-                
-                [images setValue:[self testIfIsNull:[foto objectAtIndex:1]] forKey:@"title"];
-                
-                [images setValue:[self testIfIsNull:[foto objectAtIndex:2]] forKey:@"name"];
-                
-                [images setValue:[self testIfIsNumber:[dicJson valueForKey:@"userId"]] forKey:@"userId"];
-                
-                [objectContext save:nil];
-                
-            }
-        }
-    }*/
-}
-
--(void)writePlantas:(NSDictionary*)dicJson{
-  /*  if ([self testIfIsNull:[dicJson valueForKey:@"novo_plantas"]].length!=0) {
-        NSArray *arrFotos = [[NSArray alloc]initWithArray:[[self testIfIsNull:[dicJson valueForKey:@"novo_plantas"]] componentsSeparatedByString:@";"]];
-        for (NSString *infoFoto in arrFotos) {
-            
-                NSArray *foto  = [[NSArray alloc]initWithArray:[infoFoto componentsSeparatedByString:@":"]];
-                if (foto.count>2) {
-                   
-                    Plantas *plants = [NSEntityDescription insertNewObjectForEntityForName:@"Plantas" inManagedObjectContext:objectContext];
-                    
-                    [plants setValue:[self testIfIsNumber:[dicJson valueForKey:@"id"]]forKey:@"idImovel"];
-                    
-                    [plants setValue:[self testIfIsNull:[foto objectAtIndex:0]] forKey:@"category"];
-                    
-                    [plants setValue:[self testIfIsNull:[foto objectAtIndex:1]] forKey:@"title"];
-                    
-                    [plants setValue:[self testIfIsNull:[foto objectAtIndex:2]] forKey:@"name"];
-                    
-                    [plants setValue:[self testIfIsNumber:[dicJson valueForKey:@"userId"]] forKey:@"userId"];
-                    
-                    [objectContext save:nil];
-                    
-                }
-            
-        }
-    }*/
-}
-
--(void)writeArquivos:(NSString*)campo deTipo:(NSString*)tipo paraImovelId:(int)idImovel userId:(int)userId{
-    /* if (campo.length!=0) {
-        NSLog(@"\n\nwrite arquivos %@", campo);
-         
-        NSArray *arquivo = [[NSArray alloc]initWithArray:[campo componentsSeparatedByString:@";"]];
-        
-        for (NSString *infoArquivo in arquivo) {
-            NSLog(@"arquivo %@", infoArquivo);
-            NSArray *arrArquivo  = [[NSArray alloc]initWithArray:[infoArquivo componentsSeparatedByString:@":"]];
-            if (arrArquivo.count>2) {
-                
-                NSLog(@"gravando arquivo %@", arrArquivo);
-                
-                Arquivos *dateFiles= [NSEntityDescription insertNewObjectForEntityForName:@"Arquivos" inManagedObjectContext:objectContext];
-                
-                [dateFiles setValue:tipo forKey:@"typeFile"];
-                
-                [dateFiles setValue:[self testIfIsNull:[arrArquivo objectAtIndex:0]]  forKey:@"category"];
-                
-                [dateFiles setValue:[self testIfIsNull:[arrArquivo objectAtIndex:1]] forKey:@"title"];
-                
-                [dateFiles setValue:[self testIfIsNull:[arrArquivo objectAtIndex:2]]  forKey:@"name"];
-                
-                [dateFiles setValue:[NSNumber numberWithInt:idImovel]  forKey:@"idImovel"];
-
-                [dateFiles setValue:[NSNumber numberWithInt:userId]  forKey:@"userId"];
-
-                [dataImovel addRelationshipObject:dateFiles];
-                [objectContext save:nil];
-            }else{
-                NSLog(@"paraetros inválidos para gravar arquivo");
-            }
-            
-        }
-    }*/
-}
-
-
--(void)writeFiles:(NSArray*)arrayFiles :(NSString*)type{
-/*
-    for (NSString *stringInArray in arrayFiles) {
-        
-        if ([[stringInArray componentsSeparatedByString:@":"] count]==3) {
-            
-            Arquivos *dateFiles= [NSEntityDescription insertNewObjectForEntityForName:@"Arquivos" inManagedObjectContext:objectContext];
-            
-            [dateFiles setValue:type forKey:@"typeFile"];
-            
-            [dateFiles setValue:[[stringInArray componentsSeparatedByString:@":"] objectAtIndex:0] forKey:@"category"];
-            
-            [dateFiles setValue:[[stringInArray componentsSeparatedByString:@":"] objectAtIndex:1] forKey:@"title"];
-            
-            [dateFiles setValue:[[stringInArray componentsSeparatedByString:@":"] objectAtIndex:2]  forKey:@"name"];
-            
-            [dataImovel addRelationshipObject:dateFiles];
-
-        }
-        
-    }
-*/
-}
-
-
--(void)writePhotos3d:(NSArray*)arrayPhotos3d :(int)idImovel{
-    /*
-    for (NSDictionary *dic in arrayPhotos3d) {
-      
-        Fotos3d *dataFotos3d = [NSEntityDescription insertNewObjectForEntityForName:@"Fotos3d" inManagedObjectContext:objectContext];
-        
-        [dataFotos3d setValue:[dic objectForKey:@"titulo"] forKey:@"title"];
-        [dataFotos3d setValue:[dic objectForKey:@"front"] forKey:@"front"];
-        [dataFotos3d setValue:[dic objectForKey:@"left"] forKey:@"left"];
-        [dataFotos3d setValue:[dic objectForKey:@"right"] forKey:@"right"];
-        [dataFotos3d setValue:[dic objectForKey:@"back"] forKey:@"back"];
-        [dataFotos3d setValue:[dic objectForKey:@"top"] forKey:@"top"];
-        [dataFotos3d setValue:[dic objectForKey:@"down"] forKey:@"down"];
-        [dataFotos3d setValue:[self testIfIsNumber:[dic valueForKey:@"id"]] forKey:@"idImovel"];
-        [dataFotos3d setValue:[NSNumber numberWithInt:[_appdelegate getUserId]] forKey:@"userId"];
-        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-        [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        [dataFotos3d setValue:[f numberFromString:[dic objectForKey:@"id"]] forKey:@"id"];
-        
-        //NSNumber*imovel_id = [f numberFromString:[dic objectForKey:@"idImovel"]];
-        
-        [dataFotos3d setValue:[NSNumber numberWithInt:idImovel] forKey:@"idImovel"];
-    
-        [dataImovel addRelationship1Object:dataFotos3d];
-        
-    }*/
-}
-
 
 -(NSString*)testIfIsNull:(NSString*)text{
     

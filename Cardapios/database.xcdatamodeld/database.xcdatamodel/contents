@@ -10,6 +10,7 @@
     </entity>
     <entity name="Menu" representedClassName="Menu" syncable="YES">
         <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" defaultValueString="0.0" syncable="YES"/>
         <attribute name="idCategory" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="idMenu" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="idRestaurant" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -27,6 +28,7 @@
         <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="district" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="idRest" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="image1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image2" optional="YES" attributeType="String" syncable="YES"/>

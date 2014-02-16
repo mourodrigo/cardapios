@@ -19,7 +19,7 @@
 - (NSManagedObjectContext *)managedObjectContext;
 - (NSManagedObjectModel *)managedObjectModel;
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
-- (void)eraseAllDataBAse;
+- (void)eraseDb;
 - (NSString *)getDBPath;
 @property (strong, nonatomic) NSMutableArray *infoToSync;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;

@@ -2,7 +2,7 @@
 //  Menu.m
 //  Cardapios
 //
-//  Created by Rodrigo Bueno Tomiosso on 05/02/14.
+//  Created by Rodrigo Bueno Tomiosso on 16/02/14.
 //  Copyright (c) 2014 mourodrigo. All rights reserved.
 //
 
@@ -12,10 +12,11 @@
 @implementation Menu
 
 @dynamic descr;
-@dynamic idMenu;
 @dynamic idCategory;
+@dynamic idMenu;
 @dynamic idRestaurant;
 @dynamic name;
 @dynamic value;
+@dynamic favorite;
 
 @end

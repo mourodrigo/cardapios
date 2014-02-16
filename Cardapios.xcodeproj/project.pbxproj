@@ -55,13 +55,13 @@
 		30785A6718B01A33007B037C /* separador@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A6318B01A32007B037C /* separador@2x.png */; };
 		30785A6818B01A33007B037C /* voltar.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A6418B01A33007B037C /* voltar.png */; };
 		30785A6918B01A33007B037C /* voltar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30785A6518B01A33007B037C /* voltar@2x.png */; };
+		30785A6C18B14671007B037C /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30785A6B18B14671007B037C /* Menu.m */; };
+		30785A6F18B14672007B037C /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 30785A6E18B14672007B037C /* Restaurant.m */; };
 		3091154A188DFB0E001772D3 /* WriteDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 30911549188DFB0E001772D3 /* WriteDataBase.m */; };
 		3091154D188DFB2C001772D3 /* SynchronizeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3091154C188DFB2C001772D3 /* SynchronizeData.m */; };
 		30AF4090188567DE00EFA8FC /* database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30AF408E188567DE00EFA8FC /* database.xcdatamodeld */; };
 		30AF409518856F9000EFA8FC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AF409418856F9000EFA8FC /* CoreData.framework */; };
 		30BA628818A2F8A0005ED39E /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BA628718A2F8A0005ED39E /* City.m */; };
-		30BA628B18A2F8A0005ED39E /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BA628A18A2F8A0005ED39E /* Menu.m */; };
-		30BA629118A2FBFA005ED39E /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BA629018A2FBFA005ED39E /* Restaurant.m */; };
 		30BA629418A30E7D005ED39E /* FoodCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BA629318A30E7D005ED39E /* FoodCategory.m */; };
 		30BF65C81842C4350091DDD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65C71842C4350091DDD0 /* Foundation.framework */; };
 		30BF65CA1842C4350091DDD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BF65C91842C4350091DDD0 /* CoreGraphics.framework */; };
@@ -153,6 +153,10 @@
 		30785A6318B01A32007B037C /* separador@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separador@2x.png"; sourceTree = "<group>"; };
 		30785A6418B01A33007B037C /* voltar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voltar.png; sourceTree = "<group>"; };
 		30785A6518B01A33007B037C /* voltar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "voltar@2x.png"; sourceTree = "<group>"; };
+		30785A6A18B14671007B037C /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
+		30785A6B18B14671007B037C /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
+		30785A6D18B14672007B037C /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		30785A6E18B14672007B037C /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		30911548188DFB0E001772D3 /* WriteDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteDataBase.h; sourceTree = "<group>"; };
 		30911549188DFB0E001772D3 /* WriteDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteDataBase.m; sourceTree = "<group>"; };
 		3091154B188DFB2C001772D3 /* SynchronizeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynchronizeData.h; sourceTree = "<group>"; };
@@ -161,10 +165,6 @@
 		30AF409418856F9000EFA8FC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		30BA628618A2F8A0005ED39E /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
 		30BA628718A2F8A0005ED39E /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
-		30BA628918A2F8A0005ED39E /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
-		30BA628A18A2F8A0005ED39E /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
-		30BA628F18A2FBFA005ED39E /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
-		30BA629018A2FBFA005ED39E /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		30BA629218A30E7D005ED39E /* FoodCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodCategory.h; sourceTree = "<group>"; };
 		30BA629318A30E7D005ED39E /* FoodCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodCategory.m; sourceTree = "<group>"; };
 		30BF65C41842C4350091DDD0 /* Cardapios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardapios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,15 +291,15 @@
 		30AF408D188567B600EFA8FC /* Db */ = {
 			isa = PBXGroup;
 			children = (
-				30BA628918A2F8A0005ED39E /* Menu.h */,
-				30BA628A18A2F8A0005ED39E /* Menu.m */,
-				30BA628F18A2FBFA005ED39E /* Restaurant.h */,
-				30BA629018A2FBFA005ED39E /* Restaurant.m */,
 				30BA628618A2F8A0005ED39E /* City.h */,
 				30BA628718A2F8A0005ED39E /* City.m */,
 				30BA629218A30E7D005ED39E /* FoodCategory.h */,
 				30BA629318A30E7D005ED39E /* FoodCategory.m */,
 				30AF408E188567DE00EFA8FC /* database.xcdatamodeld */,
+				30785A6D18B14672007B037C /* Restaurant.h */,
+				30785A6E18B14672007B037C /* Restaurant.m */,
+				30785A6A18B14671007B037C /* Menu.h */,
+				30785A6B18B14671007B037C /* Menu.m */,
 			);
 			name = Db;
 			sourceTree = "<group>";
@@ -522,24 +522,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30BA628B18A2F8A0005ED39E /* Menu.m in Sources */,
 				30BF65DE1842C4350091DDD0 /* IdiomViewController.m in Sources */,
 				30BF65D81842C4350091DDD0 /* AppDelegate.m in Sources */,
 				3002A7A618A117DF00734C0F /* Core.m in Sources */,
 				3002A79B18A114A100734C0F /* AFNetworkActivityIndicatorManager.m in Sources */,
+				30785A6F18B14672007B037C /* Restaurant.m in Sources */,
 				3002A79F18A114A100734C0F /* UIImageView+AFNetworking.m in Sources */,
 				3002A79818A114A100734C0F /* AFHTTPRequestOperation.m in Sources */,
 				30BA629418A30E7D005ED39E /* FoodCategory.m in Sources */,
 				3002A79918A114A100734C0F /* AFImageRequestOperation.m in Sources */,
 				3002A79D18A114A100734C0F /* AFURLConnectionOperation.m in Sources */,
 				3002A79718A114A100734C0F /* AFHTTPClient.m in Sources */,
+				30785A6C18B14671007B037C /* Menu.m in Sources */,
 				30AF4090188567DE00EFA8FC /* database.xcdatamodeld in Sources */,
 				30785A4518B00DA0007B037C /* RestaurantDetailViewController.m in Sources */,
 				30BF65D41842C4350091DDD0 /* main.m in Sources */,
 				302CCF0118855B7400788ECC /* CityViewController.m in Sources */,
 				302CCEFE188559E900788ECC /* MainTabBar.m in Sources */,
 				302D6A991850A00D004239A5 /* MainViewController.m in Sources */,
-				30BA629118A2FBFA005ED39E /* Restaurant.m in Sources */,
 				302CCF0818855DF300788ECC /* RightArrowCell.m in Sources */,
 				30BA628818A2F8A0005ED39E /* City.m in Sources */,
 				3002A79E18A114A100734C0F /* AFXMLRequestOperation.m in Sources */,

@@ -26,8 +26,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tabBar.tintColor = [UIColor whiteColor];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIColor whiteColor], NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
     
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil]
+                                             forState:UIControlStateNormal];
 	// Do any additional setup after loading the view.
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+ //   [self.tabBar setBackgroundImage:[UIImage imageNamed:@"backgroundBottonBar.png"]];
 }
 
 - (void)didReceiveMemoryWarning

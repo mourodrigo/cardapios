@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CityViewController : UIViewController //<UITableViewDataSource, UITableViewDelegate>
+- (IBAction)actionBtnVoltar:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *uiTvCity;
 
 @end

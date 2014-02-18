@@ -143,10 +143,17 @@
 
 
 
-- (void)eraseDb
-{
+- (void)eraseDb{
     NSError *error = nil;
     [[NSFileManager defaultManager] removeItemAtURL:[NSURL URLWithString:[self getDBPath]] error:&error];
+}
+
+-(void)storeFav:(NSMutableArray*)favs{
+    [favs writeToFile:[[NSString stringWithFormat:@"~/Documents/fav.plist"] stringByExpandingTildeInPath] atomically:YES];
+}
+
+-(NSMutableArray*)loadAllFav{
+    return [[NSMutableArray alloc]initWithContentsOfFile:[[NSString stringWithFormat:@"~/Documents/fav.plist"] stringByExpandingTildeInPath]];
 }
 
 #pragma - mark Interface

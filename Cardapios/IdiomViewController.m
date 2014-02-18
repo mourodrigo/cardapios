@@ -26,7 +26,7 @@
     [super viewDidLoad];
     delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     sinc = [[SynchronizeData alloc]init];
-    
+ self.navigationController.navigationBar.hidden = YES;   
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -55,7 +55,7 @@
 
 -(void)showMainVC{
     MainViewController *main = (MainViewController*)[delegate getViewControllerWithIdentifier:@"mainvc"];
-    [self presentViewController:main animated:YES completion:nil];
+    [self.navigationController pushViewController:main animated:YES];
 }
 
 @end

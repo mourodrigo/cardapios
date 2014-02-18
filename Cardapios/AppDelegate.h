@@ -27,6 +27,7 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, strong) NSString *CitySelected;
 @property (nonatomic) int idRestSelected;
-
+-(void)storeFav:(NSMutableArray*)favs;
+-(NSMutableArray*)loadAllFav;
 -(NSArray*)sqliteDoQuery:(NSString*)query;
 @end

@@ -18,7 +18,7 @@
 @end
 
 @implementation RestaurantViewController
-
+@synthesize uiTvRest;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,6 +36,9 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [uiTvRest deselectRowAtIndexPath:[uiTvRest indexPathForSelectedRow] animated:YES];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -59,7 +62,7 @@
     delegate.idRestSelected = [[[cities objectAtIndex:indexPath.row] valueForKey:@"Z_PK"] integerValue];
     
     RestaurantDetailViewController *rst = (RestaurantDetailViewController*)[delegate getViewControllerWithIdentifier:@"rstDetail"];
-    [self presentViewController:rst animated:YES completion:nil];
+    [self.navigationController pushViewController:rst animated:YES];
 }
 
 

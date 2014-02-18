@@ -18,7 +18,7 @@
 @end
 
 @implementation CityViewController
-
+@synthesize uiTvCity;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,6 +34,10 @@
     delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     cities = [[NSMutableArray alloc]initWithArray:[delegate sqliteDoQuery:@"Select * from ZCITY"]];
 	// Do any additional setup after loading the view.
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [uiTvCity deselectRowAtIndexPath:[uiTvCity indexPathForSelectedRow] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,8 +63,11 @@
     delegate.CitySelected = [[cities objectAtIndex:indexPath.row] valueForKey:@"ZNAME"];
     
     RestaurantViewController *rst = (RestaurantViewController*)[delegate getViewControllerWithIdentifier:@"rst"];
-    [self presentViewController:rst animated:YES completion:nil];
+    [self.navigationController pushViewController:rst animated:YES];
 
 }
 
+- (IBAction)actionBtnVoltar:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

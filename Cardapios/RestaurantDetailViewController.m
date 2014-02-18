@@ -39,12 +39,18 @@
         
     }
     
+    
+    
+    
     NSLog(@"IDIOM %@", idiom);
 }
 -(void)viewDidAppear:(BOOL)animated{
     [outletScrollView setDelegate:self];
     [outletScrollView setScrollEnabled:YES];
-
+    
+    [outletBtnStar setImage:[UIImage imageNamed:@"estrela.png"] forState:UIControlStateNormal];
+    [outletBtnStar setImage:[UIImage imageNamed:@"estrela_selected.png"] forState:UIControlStateSelected];
+    
     [outletScrollView setContentSize:CGSizeMake(outletScrollView.frame.size.width, outletScrollView.frame.size.height+100)];
 
 //    [outletScrollView setContentOffset:CGPointMake(0, outletBtnMenu.frame.origin.y+outletBtnMenu.frame.size.height-30) animated:YES];
@@ -52,6 +58,11 @@
     NSLog(@"outletBtnMenu.frame.origin.y+outletBtnMenu.frame.size.height %f", outletBtnMenu.frame.origin.y+outletBtnMenu.frame.size.height);
     NSLog(@"height %f", self.view.frame.size.height);
     
+    NSMutableArray *favs = [delegate loadAllFav];
+    NSUInteger index = [favs indexOfObject:[NSString stringWithFormat:@"%d", delegate.idRestSelected]];
+    if (index!=NSNotFound || !favs) {
+        [outletBtnStar setSelected:TRUE];
+    }
     
 }
 
@@ -60,6 +71,24 @@
 }
 
 - (IBAction)actionBtnStar:(id)sender {
+    if (outletBtnStar.selected) {
+        NSMutableArray *favs = [delegate loadAllFav];
+        NSUInteger index = [favs indexOfObject:[NSString stringWithFormat:@"%d", delegate.idRestSelected]];
+        if (index!=NSNotFound) {
+            [favs removeObjectAtIndex:index];
+        }
+        [outletBtnStar setSelected:FALSE];
+        [delegate storeFav:favs];
+        
+    }else{
+        NSMutableArray *favs = [delegate loadAllFav];
+        if (!favs) {
+            favs = [[NSMutableArray alloc]initWithCapacity:0];
+        }
+        [favs addObject:[NSString stringWithFormat:@"%d", delegate.idRestSelected]];
+        [delegate storeFav:favs];
+        [outletBtnStar setSelected:TRUE];
+    }
 }
 
 - (IBAction)actionBtnVoltar:(id)sender {

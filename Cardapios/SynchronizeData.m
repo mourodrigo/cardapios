@@ -43,6 +43,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRest:) name:@"JSONRestaurant" object:nil];
     [self performSelector:@selector(getRestaurant) withObject:nil afterDelay:3];
 
+    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONMenu" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateMenu:) name:@"JSONMenu" object:nil];
+    [self performSelector:@selector(getMenu) withObject:nil afterDelay:4];
+    
 
     
 }
@@ -166,30 +170,6 @@
 }
 
 
-
-
-#pragma Mark - syncCategory
-
--(void)getCategory{
-    
-    NSString *api = @"http://cardapiosdacidade.com/xUuiBJ6N/api/categorias.php";
-    
-    NSLog(@"\n\ngetCategory %@", api);
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
-                                             (unsigned long)NULL), ^(void) {
-        [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
-        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:[[NSURLRequest alloc]initWithURL:[NSURL URLWithString:api]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"JSONCategory" object:JSON userInfo:nil];
-        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response,NSError *error ,id JSON) {
-            NSLog(@"ERRO BAIXANDO JSON response-> %@", response);
-            NSLog(@"ERRO BAIXANDO JSON error-> %@", error);
-        }];
-        [operation start];
-    });
-    
-}
-
 -(void)updateMenu:(NSNotification *)notification{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
@@ -213,6 +193,30 @@
         }
         NSLog(@"Sync Menu Finalizado");
     });
+}
+
+
+
+#pragma Mark - syncCategory
+
+-(void)getCategory{
+    
+    NSString *api = @"http://cardapiosdacidade.com/xUuiBJ6N/api/categorias.php";
+    
+    NSLog(@"\n\ngetCategory %@", api);
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void) {
+        [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:[[NSURLRequest alloc]initWithURL:[NSURL URLWithString:api]] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"JSONCategory" object:JSON userInfo:nil];
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response,NSError *error ,id JSON) {
+            NSLog(@"ERRO BAIXANDO JSON response-> %@", response);
+            NSLog(@"ERRO BAIXANDO JSON error-> %@", error);
+        }];
+        [operation start];
+    });
+    
 }
 
 

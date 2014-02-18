@@ -17,6 +17,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+   // [self eraseDb];
     [self persistentStoreCoordinator];
     
     return YES;
@@ -144,8 +145,15 @@
 
 
 - (void)eraseDb{
+    NSString *dbpath = [[NSString alloc]initWithString:[self getDBPath]];
+    NSLog(@"%@", dbpath);
+
     NSError *error = nil;
-    [[NSFileManager defaultManager] removeItemAtURL:[NSURL URLWithString:[self getDBPath]] error:&error];
+    if ([[NSFileManager defaultManager]fileExistsAtPath:dbpath]) {
+        [[NSFileManager defaultManager] removeItemAtURL:[NSURL URLWithString:dbpath] error:&error];
+            [[NSFileManager defaultManager]removeItemAtURL:[NSURL URLWithString:dbpath] error:&error]
+        ;
+    }
 }
 
 -(void)storeFav:(NSMutableArray*)favs{
@@ -163,6 +171,21 @@
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     return [mainStoryboard instantiateViewControllerWithIdentifier:identifier];
+}
+
+-(UIImage *)getImageWithColor:(UIColor *)color;
+{
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
 #pragma - mark Constants

@@ -30,4 +30,6 @@
 -(void)storeFav:(NSMutableArray*)favs;
 -(NSMutableArray*)loadAllFav;
 -(NSArray*)sqliteDoQuery:(NSString*)query;
+-(UIImage *)getImageWithColor:(UIColor *)color;
+
 @end

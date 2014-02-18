@@ -126,10 +126,16 @@
 {
     NSLog(@"writeMenu %@", dicJson);
     menu = [NSEntityDescription insertNewObjectForEntityForName:@"Menu" inManagedObjectContext:objectContext];
-    [menu setValue:[self testIfIsNumber:[dicJson valueForKey:@"id"]] forKey:@"idCity"];
+    
+    [menu setValue:[self testIfIsNull:[dicJson valueForKey:@"descricao"]] forKey:@"descr"];
+    [menu setValue:[self testIfIsNumber:[dicJson valueForKey:@"id"]] forKey:@"idMenu"];
+    [menu setValue:[self testIfIsNumber:[dicJson valueForKey:@"id_categoria"]] forKey:@"idCategory"];
+    [menu setValue:[self testIfIsNumber:[dicJson valueForKey:@"id_restaurante"]] forKey:@"idRestaurant"];
     [menu setValue:[self testIfIsNull:[dicJson valueForKey:@"nome"]] forKey:@"name"];
+    [menu setValue:[self testIfIsNumber:[dicJson valueForKey:@"valor"]] forKey:@"value"];
     [menu setValue:FALSE forKey:@"favorite"];
-
+    
+    
     [objectContext save:nil];
     
 }
@@ -142,7 +148,6 @@
     [category setValue:[self testIfIsNull:[dicJson valueForKey:@"nome"]] forKey:@"name"];
     
     [objectContext save:nil];
-    
 }
 
 -(NSString*)testIfIsNull:(NSString*)text{

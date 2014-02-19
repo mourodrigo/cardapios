@@ -24,7 +24,7 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated{
     delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     [outletBtnRest setBackgroundImage:[delegate getImageWithColor:[UIColor colorWithRed:(82.0f/255.0f) green:(82.0f/255.0f) blue:(82.0f/255.0f) alpha:.29]]
  forState:UIControlStateNormal];
@@ -112,6 +112,8 @@
     
 }
 
-
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    [self updateTable];
+}
 
 @end

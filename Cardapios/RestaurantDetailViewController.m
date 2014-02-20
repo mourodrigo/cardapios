@@ -68,7 +68,7 @@
     
     NSMutableArray *favs = [delegate loadAllFav];
     NSUInteger index = [favs indexOfObject:[NSString stringWithFormat:@"%d", delegate.idRestSelected]];
-    if (index!=NSNotFound || !favs) {
+    if (index!=NSNotFound && favs) {
         [outletBtnStar setSelected:TRUE];
     }
     

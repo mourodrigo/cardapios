@@ -15,7 +15,7 @@
 @end
 
 @implementation MenuDetailViewController
-@synthesize outletNomeRest, outletValue, txtDetailRest, outletPrato;
+@synthesize outletNomeRest, outletValue, txtDetailRest, outletPrato, outletBtnHeart;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -41,6 +41,17 @@
     [outletValue setTitle:[NSString stringWithFormat:@"$ %@", [menu valueForKey:@"ZVALUE"]] forState:UIControlStateNormal];
 	// Do any additional setup after loading the view.
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [outletBtnHeart setImage:[UIImage imageNamed:@"estrela.png"] forState:UIControlStateNormal];
+    [outletBtnHeart setImage:[UIImage imageNamed:@"estrela_selected.png"] forState:UIControlStateSelected];
+    NSMutableArray *favs = [delegate loadAllMenuFav];
+    NSUInteger index = [favs indexOfObject:[NSString stringWithFormat:@"%d", delegate.idMenu]];
+    if (index!=NSNotFound || !favs) {
+        [outletBtnHeart setSelected:TRUE];
+    }
+
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -49,6 +60,25 @@
 }
 
 - (IBAction)actionBtnHeart:(id)sender {
+    if (outletBtnHeart.selected) {
+        NSMutableArray *favs = [delegate loadAllMenuFav];
+        NSUInteger index = [favs indexOfObject:[NSString stringWithFormat:@"%d", delegate.idMenu]];
+        if (index!=NSNotFound) {
+            [favs removeObjectAtIndex:index];
+        }
+        [outletBtnHeart setSelected:FALSE];
+        [delegate storeMenuFav:favs];
+        
+    }else{
+        NSMutableArray *favs = [delegate loadAllMenuFav];
+        if (!favs) {
+            favs = [[NSMutableArray alloc]initWithCapacity:0];
+        }
+        [favs addObject:[NSString stringWithFormat:@"%d", delegate.idMenu]];
+        [delegate storeMenuFav:favs];
+        [outletBtnHeart setSelected:TRUE];
+    }
+
 }
 
 - (IBAction)actionBtnVoltar:(id)sender {

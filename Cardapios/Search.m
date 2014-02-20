@@ -41,6 +41,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [uiTVSearch deselectRowAtIndexPath:[uiTVSearch indexPathForSelectedRow] animated:YES];
 }
+
 - (IBAction)actionBtnRest:(id)sender {
     
     [outletBtnRest setSelected:TRUE];

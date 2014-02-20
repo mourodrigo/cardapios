@@ -1105,6 +1105,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="9np-Xt-6Ti"/>
                     <connections>
+                        <outlet property="outletBtnHeart" destination="P7a-eV-Fzd" id="5mD-b5-7OQ"/>
                         <outlet property="outletNomeRest" destination="vDv-ac-d9l" id="lXI-Rl-hdj"/>
                         <outlet property="outletPrato" destination="AZs-tP-Ew6" id="nbU-Zg-Ing"/>
                         <outlet property="outletValue" destination="8Ei-fx-gQC" id="4K5-NG-0V2"/>

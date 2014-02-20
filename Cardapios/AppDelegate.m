@@ -164,6 +164,15 @@
     return [[NSMutableArray alloc]initWithContentsOfFile:[[NSString stringWithFormat:@"~/Documents/fav.plist"] stringByExpandingTildeInPath]];
 }
 
+-(void)storeMenuFav:(NSMutableArray*)favs{
+    [favs writeToFile:[[NSString stringWithFormat:@"~/Documents/favMenu.plist"] stringByExpandingTildeInPath] atomically:YES];
+}
+
+-(NSMutableArray*)loadAllMenuFav{
+    return [[NSMutableArray alloc]initWithContentsOfFile:[[NSString stringWithFormat:@"~/Documents/favMenu.plist"] stringByExpandingTildeInPath]];
+}
+
+
 #pragma - mark Interface
 
 

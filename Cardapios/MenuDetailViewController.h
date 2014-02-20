@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *txtDetailRest;
 @property (weak, nonatomic) IBOutlet UIButton *outletValue;
 @property (weak, nonatomic) IBOutlet UILabel *outletPrato;
+@property (weak, nonatomic) IBOutlet UIButton *outletBtnHeart;
 
 @end

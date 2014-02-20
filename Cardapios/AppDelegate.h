@@ -33,4 +33,6 @@
 -(NSArray*)sqliteDoQuery:(NSString*)query;
 -(UIImage *)getImageWithColor:(UIColor *)color;
 - (void)imageRequest:(NSString*)directoryname withFileName:(NSString*)nameFile storeAtpath:(NSString*)downloadPath;
+-(NSMutableArray*)loadAllMenuFav;
+-(void)storeMenuFav:(NSMutableArray*)favs;
 @end

@@ -59,7 +59,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%@", [cities objectAtIndex:indexPath.row]);
-    delegate.idRestSelected = [[[cities objectAtIndex:indexPath.row] valueForKey:@"Z_PK"] integerValue];
+    delegate.idRestSelected = [[[cities objectAtIndex:indexPath.row] valueForKey:@"ZIDREST"] integerValue];
     
     RestaurantDetailViewController *rst = (RestaurantDetailViewController*)[delegate getViewControllerWithIdentifier:@"rstDetail"];
     [self.navigationController pushViewController:rst animated:YES];

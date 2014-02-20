@@ -19,7 +19,7 @@
     delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     NSString *idiom = [[delegate getInfoPlist] valueForKey:@"idioma"];
     
-    info= [[delegate sqliteDoQuery:[NSString stringWithFormat:@"Select * from ZRESTAURANT where Z_PK = %d", delegate.idRestSelected]] objectAtIndex:0];
+    info= [[delegate sqliteDoQuery:[NSString stringWithFormat:@"Select * from ZRESTAURANT where ZIDREST = %d", delegate.idRestSelected]] objectAtIndex:0];
 
     NSLog(@"info %@", info);
 

@@ -316,6 +316,8 @@
                     <connections>
                         <segue destination="dDJ-vo-afR" kind="relationship" relationship="viewControllers" id="RqH-Oy-qXJ"/>
                         <segue destination="3YV-nM-D4p" kind="relationship" relationship="viewControllers" id="8oC-4u-YKq"/>
+                        <segue destination="fTc-aG-1p8" kind="relationship" relationship="viewControllers" id="qyQ-ma-7xZ"/>
+                        <segue destination="4Wc-bf-o0s" kind="relationship" relationship="viewControllers" id="IWE-Qr-M1e"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HmK-v2-Uu8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1328,4 +1330,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="qyQ-ma-7xZ"/>
+    </inferredMetricsTieBreakers>
 </document>

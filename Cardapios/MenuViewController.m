@@ -17,7 +17,7 @@
 @end
 
 @implementation MenuViewController
-
+@synthesize uitvmenu;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -33,6 +33,24 @@
     delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     menus = [[NSMutableArray alloc]initWithArray:[delegate sqliteDoQuery:[NSString stringWithFormat:@"Select * from ZMENU where ZIDRESTAURANT = %d", delegate.idRestSelected]]];
 	// Do any additional setup after loading the view.
+}
+-(void)viewDidAppear:(BOOL)animated{
+    if (self.tabBarController.selectedIndex==2) {
+        NSMutableArray *favs = [delegate loadAllMenuFav];
+        NSLog(@"favs %@", favs);
+        NSString *where = @"";
+        NSString *OR = @"";
+        for (int x=0; x<favs.count; x++) {
+            if (x>0) {
+                OR = @"OR";
+            }
+            NSLog(@"davs %@", [favs objectAtIndex:x]);
+            where = [NSString stringWithFormat:@"%@ %@ ZIDMENU = %@", where, OR, [favs objectAtIndex:x]];
+        }
+        
+        menus = [[NSMutableArray alloc]initWithArray:[delegate sqliteDoQuery:[NSString stringWithFormat:@"Select * from ZMENU where %@", where]]];
+        [uitvmenu reloadData];
+    }
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return menus.count;

@@ -80,9 +80,9 @@
 
     [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"img3"]] forKey:@"image4"];
 
-    [rest setValue:[self testIfIsNumber:[dicJson valueForKey:@"latitude"]] forKey:@"latitude"];
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"latitude"]] forKey:@"latitude"];
 
-    [rest setValue:[self testIfIsNumber:[dicJson valueForKey:@"longitude"]] forKey:@"longitude"];
+    [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"longitude"]] forKey:@"longitude"];
 
     [rest setValue:[self testIfIsNull:[dicJson valueForKey:@"telefone"]] forKey:@"phone1"];
 

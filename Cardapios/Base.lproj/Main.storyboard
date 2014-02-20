@@ -672,6 +672,7 @@
                                         </state>
                                         <connections>
                                             <action selector="actionBtnRoute:" destination="V9t-6Q-A0n" eventType="touchUpInside" id="uoz-Yk-Ce4"/>
+                                            <segue destination="gYg-PO-Q8g" kind="push" id="ORF-IA-M30"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ado-hy-LgV">
@@ -917,6 +918,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qI6-9Z-OvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2155" y="-602"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="4nT-1C-kzV">
+            <objects>
+                <viewController id="gYg-PO-Q8g" customClass="Map" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xcq-Zd-neJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ng4-DT-WsO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c9E-WQ-hKq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPK-se-uoc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cb3-6f-375">
+                                        <rect key="frame" x="6" y="6" width="34" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="voltar.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionBtnSair:" destination="gYg-PO-Q8g" eventType="touchUpInside" id="ip7-rg-Ixs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.49803921569999998" green="0.20784313730000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="R1E-iG-4oH">
+                                <rect key="frame" x="0.0" y="50" width="320" height="518"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gYg-PO-Q8g" id="yD9-Q3-WDu"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2OY-zz-Ik1"/>
+                    <connections>
+                        <outlet property="outletmap" destination="R1E-iG-4oH" id="lry-Ge-2EE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bqx-HV-GCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2543" y="-602"/>
         </scene>
     </scenes>
     <resources>

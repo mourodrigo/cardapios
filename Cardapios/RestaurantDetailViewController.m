@@ -76,6 +76,7 @@
 
 
 - (IBAction)actionBtnMenu:(id)sender {
+    NSLog(@"actionbtnmenu");
 }
 
 - (IBAction)actionBtnStar:(id)sender {
@@ -110,6 +111,7 @@
 }
 
 - (IBAction)actionBtnRoute:(id)sender {
+    
 }
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{

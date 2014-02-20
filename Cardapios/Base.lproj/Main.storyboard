@@ -9,6 +9,7 @@
         <scene sceneID="OOI-aJ-r48">
             <objects>
                 <navigationController definesPresentationContext="YES" id="ugr-jW-xtv" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AbA-2l-mS1">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -105,7 +106,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9hR-Q1-QjU"/>
-                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -131,8 +132,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uim-e2-cav">
-                                <rect key="frame" x="0.0" y="44" width="320" height="392"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uim-e2-cav">
+                                <rect key="frame" x="0.0" y="48" width="320" height="383"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -176,8 +177,8 @@
                                     <outlet property="delegate" destination="dDJ-vo-afR" id="BJM-cH-Qnx"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PiE-7d-P4a">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PiE-7d-P4a">
+                                <rect key="frame" x="0.0" y="5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="barTintColor" red="0.49803921569999998" green="0.20784313730000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -216,9 +217,19 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.49803921569999998" green="0.20784313730000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="uim-e2-cav" firstAttribute="top" secondItem="PiE-7d-P4a" secondAttribute="bottom" constant="-1" id="Ebp-63-4pw"/>
+                            <constraint firstItem="PiE-7d-P4a" firstAttribute="top" secondItem="c9F-Ae-Dif" secondAttribute="top" constant="5" id="EoI-kl-6Rt"/>
+                            <constraint firstItem="uim-e2-cav" firstAttribute="leading" secondItem="PiE-7d-P4a" secondAttribute="leading" id="HAi-ua-lcl"/>
+                            <constraint firstItem="uim-e2-cav" firstAttribute="trailing" secondItem="PiE-7d-P4a" secondAttribute="trailing" id="HE9-5X-avB"/>
+                            <constraint firstItem="2BH-FD-aQQ" firstAttribute="top" secondItem="uim-e2-cav" secondAttribute="bottom" id="MfA-sA-hCa"/>
+                            <constraint firstItem="uim-e2-cav" firstAttribute="leading" secondItem="c9F-Ae-Dif" secondAttribute="leading" id="PiB-pr-RU6"/>
+                            <constraint firstAttribute="trailing" secondItem="uim-e2-cav" secondAttribute="trailing" id="fgs-nC-Shh"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="HOME" image="home.png" id="8F2-z8-Tuq"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="uiTvCity" destination="uim-e2-cav" id="1iq-bc-mgr"/>
                     </connections>
@@ -276,6 +287,7 @@
         <scene sceneID="Asg-U2-3ns">
             <objects>
                 <tabBarController restorationIdentifier="mainvc" storyboardIdentifier="mainvc" title="mainvc" definesPresentationContext="YES" id="Kpo-Yd-Toi" userLabel="mainvc" customClass="MainViewController" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" backgroundImage="backgroundBottonBar.png" id="kS2-uR-Mi1" customClass="MainTabBar">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -572,6 +584,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="home.png" id="5qH-NW-txP"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="uiTvRest" destination="R7z-gJ-ip1" id="pL1-mo-hEN"/>
                     </connections>
@@ -592,12 +605,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30H-iB-FMn">
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30H-iB-FMn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.49803921568627452" green="0.20784313725490194" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ZUh-Pg-k1p"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="barTintColor" red="0.49803921569999998" green="0.20784313730000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.91764705879999997" green="0.2666666667" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="RESTAURANTE" id="jen-kf-u8s" userLabel="lblTitulo">
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="qb1-LC-OGE">
@@ -632,12 +648,12 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npY-Ki-DQZ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="npY-Ki-DQZ">
                                 <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoRestaurante.png" translatesAutoresizingMaskIntoConstraints="NO" id="BhT-j3-IVF">
-                                        <rect key="frame" x="20" y="20" width="100" height="100"/>
+                                        <rect key="frame" x="20" y="20" width="100" height="91"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do Restaurante" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4VH-oE-t29">
@@ -770,19 +786,14 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6JQ-9A-XHN">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JQ-9A-XHN">
                                         <rect key="frame" x="20" y="481" width="279" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.91764705882352937" green="0.26666666666666666" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="CARDÁPIO">
-                                                    <attributes>
-                                                        <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="11" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="CARDÁPIO">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="actionBtnMenu:" destination="V9t-6Q-A0n" eventType="touchUpInside" id="hYT-ME-AH0"/>
@@ -794,23 +805,19 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.23921568630000001" green="0.91764705879999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="436" id="MFG-1t-wLn"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="V9t-6Q-A0n" id="J2Y-Tn-oBJ"/>
                                 </connections>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.23921568630000001" green="0.91764705879999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.49803921569999998" green="0.20784313730000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="30H-iB-FMn" firstAttribute="trailing" secondItem="npY-Ki-DQZ" secondAttribute="trailing" id="K7A-6N-rve"/>
-                            <constraint firstItem="30H-iB-FMn" firstAttribute="leading" secondItem="npY-Ki-DQZ" secondAttribute="leading" id="PJY-jn-ENh"/>
-                            <constraint firstItem="npY-Ki-DQZ" firstAttribute="top" secondItem="30H-iB-FMn" secondAttribute="bottom" id="Q1q-Oo-GIX"/>
-                            <constraint firstAttribute="trailing" secondItem="npY-Ki-DQZ" secondAttribute="trailing" id="Qgl-FD-3qW"/>
-                            <constraint firstAttribute="trailing" secondItem="30H-iB-FMn" secondAttribute="trailing" id="bFm-r9-wQ0"/>
-                            <constraint firstItem="npY-Ki-DQZ" firstAttribute="leading" secondItem="qUF-CK-HSR" secondAttribute="leading" id="fWn-xJ-Pfy"/>
-                            <constraint firstItem="30H-iB-FMn" firstAttribute="leading" secondItem="qUF-CK-HSR" secondAttribute="leading" id="iJ6-x3-W1s"/>
-                            <constraint firstItem="30H-iB-FMn" firstAttribute="top" secondItem="Zoa-Tf-HUf" secondAttribute="bottom" id="lCN-7t-yqW"/>
-                            <constraint firstItem="90d-Tl-0fA" firstAttribute="top" secondItem="npY-Ki-DQZ" secondAttribute="bottom" id="oIU-qt-hi8"/>
-                            <constraint firstItem="30H-iB-FMn" firstAttribute="top" secondItem="qUF-CK-HSR" secondAttribute="top" id="oTe-WP-TC9"/>
+                            <constraint firstItem="npY-Ki-DQZ" firstAttribute="top" secondItem="30H-iB-FMn" secondAttribute="bottom" id="FGs-Ql-igb"/>
+                            <constraint firstItem="npY-Ki-DQZ" firstAttribute="top" secondItem="30H-iB-FMn" secondAttribute="bottom" id="qjd-XV-bNj"/>
+                            <constraint firstItem="90d-Tl-0fA" firstAttribute="top" secondItem="npY-Ki-DQZ" secondAttribute="bottom" id="vXN-Pc-sx2"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="home.png" id="O0T-gg-mdq"/>

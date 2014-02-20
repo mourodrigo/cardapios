@@ -42,11 +42,13 @@
     
     [outletBtnRest setSelected:TRUE];
     [outletBtnMenu setSelected:FALSE];
+    outletSearchBar.placeholder = NSLocalizedString(@"BUSCAR RESTAURANTE", nil);
     [self updateTable];
 }
 - (IBAction)actionBtnMenu:(id)sender {
     [outletBtnRest setSelected:FALSE];
     [outletBtnMenu setSelected:TRUE];
+    outletSearchBar.placeholder = NSLocalizedString(@"BUSCAR PRATO", nil);
     [self updateTable];
 }
 

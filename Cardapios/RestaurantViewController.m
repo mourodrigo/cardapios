@@ -56,7 +56,7 @@
         rests = [[NSMutableArray alloc]initWithArray:[delegate sqliteDoQuery:[NSString stringWithFormat:@"Select * from ZRESTAURANT where %@", where]]];
         [uiTvRest reloadData];
     }
-    [uiTvRest deselectRowAtIndexPath:[uiTvRest indexPathForSelectedRow] animated:NO];
+
 }
 - (void)didReceiveMemoryWarning
 {
@@ -81,6 +81,8 @@
     delegate.idRestSelected = [[[rests objectAtIndex:indexPath.row] valueForKey:@"ZIDREST"] integerValue];
     
     RestaurantDetailViewController *rst = (RestaurantDetailViewController*)[delegate getViewControllerWithIdentifier:@"rstDetail"];
+    [uiTvRest deselectRowAtIndexPath:[uiTvRest indexPathForSelectedRow] animated:NO];
+
     [self.navigationController pushViewController:rst animated:YES];
 }
 

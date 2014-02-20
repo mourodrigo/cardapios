@@ -34,50 +34,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiF-bX-GrO">
-                                <rect key="frame" x="64" y="316" width="192" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="PORTUGUÊS" backgroundImage="BtnInicial.png">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="actionBtnPortuguese:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OVD-0c-zXY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elo-gR-WKq">
-                                <rect key="frame" x="64" y="368" width="192" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="06T-Fg-kWG"/>
-                                    <constraint firstAttribute="width" constant="192" id="HYj-xf-Ney"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="ENGLISH" backgroundImage="BtnInicial.png">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="actionBtnEnglish:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qDs-BJ-i1h"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYN-8S-1qk">
-                                <rect key="frame" x="64" y="420" width="192" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="192" id="8Xo-BZ-dCg"/>
-                                    <constraint firstAttribute="height" constant="42" id="B8F-BT-TmY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="ESPANOL" backgroundImage="BtnInicial.png">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="actionBtnSpanish:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cTE-Uh-iy7"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoInicial.png" translatesAutoresizingMaskIntoConstraints="NO" id="eyl-BP-2Kz">
                                 <rect key="frame" x="40" y="81" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -86,23 +42,81 @@
                                     <constraint firstAttribute="height" constant="128" id="fmV-C4-E4d"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="XPs-mI-jGI">
+                                <rect key="frame" x="142" y="316" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weK-4o-83Y">
+                                <rect key="frame" x="64" y="247" width="192" height="283"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiF-bX-GrO">
+                                        <rect key="frame" x="0.0" y="71" width="192" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="PORTUGUÊS" backgroundImage="BtnInicial.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionBtnPortuguese:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OVD-0c-zXY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elo-gR-WKq">
+                                        <rect key="frame" x="0.0" y="121" width="192" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="06T-Fg-kWG"/>
+                                            <constraint firstAttribute="width" constant="192" id="HYj-xf-Ney"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="ENGLISH" backgroundImage="BtnInicial.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionBtnEnglish:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qDs-BJ-i1h"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYN-8S-1qk">
+                                        <rect key="frame" x="0.0" y="171" width="192" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="192" id="8Xo-BZ-dCg"/>
+                                            <constraint firstAttribute="height" constant="42" id="B8F-BT-TmY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="ESPANOL" backgroundImage="BtnInicial.png">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionBtnSpanish:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cTE-Uh-iy7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="GYN-8S-1qk" firstAttribute="leading" secondItem="weK-4o-83Y" secondAttribute="leading" id="8eY-W7-gTo"/>
+                                    <constraint firstAttribute="bottom" secondItem="GYN-8S-1qk" secondAttribute="bottom" constant="70" id="IyR-nw-DbY"/>
+                                    <constraint firstItem="GYN-8S-1qk" firstAttribute="leading" secondItem="Elo-gR-WKq" secondAttribute="leading" id="J71-NE-3TP"/>
+                                    <constraint firstItem="GYN-8S-1qk" firstAttribute="leading" secondItem="qiF-bX-GrO" secondAttribute="leading" id="Lo1-q3-Jme"/>
+                                    <constraint firstAttribute="trailing" secondItem="GYN-8S-1qk" secondAttribute="trailing" id="Rei-Ba-7nj"/>
+                                    <constraint firstItem="GYN-8S-1qk" firstAttribute="top" secondItem="Elo-gR-WKq" secondAttribute="bottom" constant="8" symbolic="YES" id="cnm-hN-78P"/>
+                                    <constraint firstItem="Elo-gR-WKq" firstAttribute="top" secondItem="qiF-bX-GrO" secondAttribute="bottom" constant="8" symbolic="YES" id="gnO-i7-oHM"/>
+                                    <constraint firstItem="GYN-8S-1qk" firstAttribute="top" secondItem="weK-4o-83Y" secondAttribute="top" constant="171" id="k9k-nB-MQp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.91764705882352937" green="0.26666666666666666" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="GYN-8S-1qk" secondAttribute="centerX" id="0oV-qS-i9a"/>
-                            <constraint firstItem="GYN-8S-1qk" firstAttribute="trailing" secondItem="Elo-gR-WKq" secondAttribute="trailing" id="5Q6-3g-g2O"/>
-                            <constraint firstAttribute="centerX" secondItem="Elo-gR-WKq" secondAttribute="centerX" id="Aus-oo-QSa"/>
                             <constraint firstAttribute="centerX" secondItem="eyl-BP-2Kz" secondAttribute="centerX" id="FjE-fg-dl3"/>
-                            <constraint firstItem="GYN-8S-1qk" firstAttribute="leading" secondItem="qiF-bX-GrO" secondAttribute="leading" id="GN1-kD-Cfb"/>
-                            <constraint firstItem="GYN-8S-1qk" firstAttribute="centerX" secondItem="Elo-gR-WKq" secondAttribute="centerX" id="Otp-o7-GSM"/>
+                            <constraint firstItem="weK-4o-83Y" firstAttribute="centerX" secondItem="eyl-BP-2Kz" secondAttribute="centerX" id="IGj-RM-3Mo"/>
                             <constraint firstItem="eyl-BP-2Kz" firstAttribute="top" secondItem="I6x-h5-u2d" secondAttribute="bottom" constant="61" id="SZk-CU-Jaj"/>
-                            <constraint firstItem="GYN-8S-1qk" firstAttribute="top" secondItem="Elo-gR-WKq" secondAttribute="bottom" constant="10" id="Yg5-cy-5fM"/>
-                            <constraint firstItem="GYN-8S-1qk" firstAttribute="centerX" secondItem="qiF-bX-GrO" secondAttribute="centerX" id="YnT-c0-RO7"/>
-                            <constraint firstItem="GYN-8S-1qk" firstAttribute="leading" secondItem="Elo-gR-WKq" secondAttribute="leading" id="jmR-IN-T9c"/>
-                            <constraint firstItem="Elo-gR-WKq" firstAttribute="top" secondItem="qiF-bX-GrO" secondAttribute="bottom" constant="10" id="kef-hD-sWa"/>
-                            <constraint firstAttribute="centerX" secondItem="qiF-bX-GrO" secondAttribute="centerX" id="nEN-Ki-hU8"/>
-                            <constraint firstItem="qiF-bX-GrO" firstAttribute="top" secondItem="eyl-BP-2Kz" secondAttribute="bottom" constant="107" id="sCq-vX-eqx"/>
-                            <constraint firstItem="GYN-8S-1qk" firstAttribute="trailing" secondItem="qiF-bX-GrO" secondAttribute="trailing" id="utv-e3-MuR"/>
+                            <constraint firstItem="weK-4o-83Y" firstAttribute="top" secondItem="eyl-BP-2Kz" secondAttribute="bottom" constant="38" id="TUT-qS-0w9"/>
+                            <constraint firstItem="weK-4o-83Y" firstAttribute="centerX" secondItem="XPs-mI-jGI" secondAttribute="centerX" id="f81-cp-NtV"/>
+                            <constraint firstItem="Pa2-RU-KmV" firstAttribute="top" secondItem="XPs-mI-jGI" secondAttribute="bottom" constant="215" id="t5P-xQ-QpY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9hR-Q1-QjU"/>
@@ -110,10 +124,12 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="outletActivity" destination="XPs-mI-jGI" id="wba-mO-EXs"/>
                         <outlet property="outletBtnEnglish" destination="Elo-gR-WKq" id="x2K-0E-gdb"/>
                         <outlet property="outletBtnPortuguese" destination="qiF-bX-GrO" id="6Jl-8Q-DlL"/>
                         <outlet property="outletBtnSpanish" destination="GYN-8S-1qk" id="Qcn-cC-YSa"/>
                         <outlet property="outletImgLogo" destination="eyl-BP-2Kz" id="f9k-DJ-WYL"/>
+                        <outlet property="outletViewBtns" destination="weK-4o-83Y" id="cJd-wt-isJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

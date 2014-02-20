@@ -10,16 +10,13 @@
 
 @interface SynchronizeData : NSObject
 
-@property (nonatomic) float progressFood;
-@property (nonatomic) float progressMenu;
-@property (nonatomic) float progressRest;
-@property (nonatomic) float progressCity;
+@property (nonatomic) bool progressCategory;
+@property (nonatomic) bool progressMenu;
+@property (nonatomic) bool progressRest;
+@property (nonatomic) bool progressCity;
 
 - (void)getFileWithBaseUrl:(NSString*)directoryname withFileName:(NSString*)nameFile storeAtpath:(NSString*)downloadPath;
 
 - (void)startSincro;
--(void)getImoveis;
--(void)resumeSincro;
--(void)atualizaEmpresas:(id)Json;
 -(void)eraseImovelWithId:(int)idImovel andUserId:(int)userId shouldDeleteFile:(BOOL)deleteFile;
 @end

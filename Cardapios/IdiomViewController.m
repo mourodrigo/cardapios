@@ -19,7 +19,7 @@
 @end
 
 @implementation IdiomViewController
-@synthesize outletBtnEnglish, outletBtnPortuguese, outletBtnSpanish;
+@synthesize outletBtnEnglish, outletBtnPortuguese, outletBtnSpanish, outletActivity, outletViewBtns;
 
 - (void)viewDidLoad
 {
@@ -28,8 +28,20 @@
     sinc = [[SynchronizeData alloc]init];
  self.navigationController.navigationBar.hidden = YES;   
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self checkDownload];
 }
 
+-(void)checkDownload{
+    if (sinc.progressCategory && sinc.progressCity && sinc.progressMenu && sinc.progressRest) {
+        [outletViewBtns setHidden:FALSE];
+        [outletActivity setHidden:TRUE];
+    }else{
+        [outletViewBtns setHidden:TRUE];
+        [outletActivity setHidden:FALSE];
+    }
+    [self performSelector:@selector(checkDownload) withObject:Nil afterDelay:1];
+}
 -(void)viewDidAppear:(BOOL)animated{
     [sinc startSincro];
 }

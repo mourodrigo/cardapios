@@ -31,5 +31,5 @@
 -(NSMutableArray*)loadAllFav;
 -(NSArray*)sqliteDoQuery:(NSString*)query;
 -(UIImage *)getImageWithColor:(UIColor *)color;
-
+- (void)imageRequest:(NSString*)directoryname withFileName:(NSString*)nameFile storeAtpath:(NSString*)downloadPath;
 @end

@@ -21,7 +21,7 @@
     
     
 }
-@synthesize progressCity, progressFood, progressMenu, progressRest;
+@synthesize progressCity, progressCategory, progressMenu, progressRest;
 - (void)startSincro
 {
     manageDataObject=[[WriteDataBase alloc]init];
@@ -46,7 +46,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONMenu" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateMenu:) name:@"JSONMenu" object:nil];
     [self performSelector:@selector(getMenu) withObject:nil afterDelay:4];
-    
+    progressCity = progressCategory = progressMenu = progressRest = FALSE;
 
     
 }
@@ -77,19 +77,21 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
         @try {
-            progressRest = 0;
-            float count = [notification.object count];
-            float step = 1/count;
             NSLog(@"JSON count %d", [notification.object count]);
             for (NSDictionary *dic in [notification.object objectForKey:@"resultado"]) {
                 @try {
                     [manageDataObject writeRestaurant:dic];
-                    progressRest = progressRest+step;
+         /*           NSLog(@"DICC %@", dic);
+                    if (![[dic valueForKey:@"img0"] isEqualToString:@""]) {
+                        _appdelegate imageRequest:<#(NSString *)#> withFileName:[dic valueForKey:@"img0"] storeAtpath:@""
+                    }
+      */
                 }
                 @catch (NSException *exception) {
                     NSLog(@"getRestaurant expection -> %@", exception.description);
                 }
             }
+            progressRest = true;
         }
         @catch (NSException *exception) {
             NSLog(@"getRestaurant expection -> %@", exception.description);
@@ -125,19 +127,16 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
         @try {
-            progressCity = 0;
-            float count = [notification.object count];
-            float step = 1/count;
             NSLog(@"JSON count %d", [notification.object count]);
             for (NSDictionary *dic in [notification.object objectForKey:@"resultado"]) {
                 @try {
                     [manageDataObject writeCity:dic];
-                    progressCity = progressCity+step;
                 }
                 @catch (NSException *exception) {
                     NSLog(@"getcity expection -> %@", exception.description);
                 }
             }
+            progressCity = TRUE;
         }
         @catch (NSException *exception) {
             NSLog(@"getcity expection -> %@", exception.description);
@@ -174,19 +173,16 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
         @try {
-            progressMenu = 0;
-            float count = [notification.object count];
-            float step = 1/count;
             NSLog(@"JSON count %d", [notification.object count]);
             for (NSDictionary *dic in [notification.object objectForKey:@"resultado"]) {
                 @try {
                     [manageDataObject writeMenu:dic];
-                    progressMenu = progressMenu+step;
                 }
                 @catch (NSException *exception) {
                     NSLog(@"getMenu expection -> %@", exception.description);
                 }
             }
+            progressMenu = TRUE;
         }
         @catch (NSException *exception) {
             NSLog(@"getMenu expection -> %@", exception.description);
@@ -225,19 +221,16 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
         @try {
-            progressFood = 0;
-            float count = [notification.object count];
-            float step = 1/count;
             NSLog(@"JSON count %d", [notification.object count]);
             for (NSDictionary *dic in [notification.object objectForKey:@"resultado"]) {
                 @try {
                     [manageDataObject writeCategory:dic];
-                    progressFood = progressFood+step;
                 }
                 @catch (NSException *exception) {
                     NSLog(@"getcategory expection -> %@", exception.description);
                 }
             }
+            progressCategory = true;
         }
         @catch (NSException *exception) {
             NSLog(@"getcategory expection -> %@", exception.description);

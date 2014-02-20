@@ -18,5 +18,7 @@
 - (IBAction)actionBtnEnglish:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *outletBtnSpanish;
 - (IBAction)actionBtnSpanish:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *outletViewBtns;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *outletActivity;
 @end

@@ -710,7 +710,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XbN-0R-ZsL">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XbN-0R-ZsL">
                                                 <rect key="frame" x="10" y="25" width="258" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -987,7 +987,7 @@
         <!--Menu Detail View Controller-->
         <scene sceneID="exo-S1-rTL">
             <objects>
-                <viewController id="ikc-B9-hdX" customClass="MenuDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menuDetail" id="ikc-B9-hdX" customClass="MenuDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zOh-Yl-Tyv"/>
                         <viewControllerLayoutGuide type="bottom" id="FYD-fV-tsY"/>
@@ -1045,7 +1045,7 @@
                                         <rect key="frame" x="20" y="59" width="280" height="233"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5bp-zt-Czs">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bp-zt-Czs">
                                                 <rect key="frame" x="0.0" y="32" width="280" height="160"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

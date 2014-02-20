@@ -9,6 +9,8 @@
 #import "Search.h"
 #import "AppDelegate.h"
 #import "RightArrowCell.h"
+#import "RestaurantDetailViewController.h"
+#import "MenuDetailViewController.h"
 @interface Search (){
     AppDelegate *delegate;
     NSMutableArray *result;
@@ -21,13 +23,9 @@
 @synthesize outletBtnMenu, outletBtnRest, outletNavItem, outletSearchBar, uiTVSearch;
 
 -(void)viewDidLoad{
-    
-}
-
--(void)viewWillAppear:(BOOL)animated{
     delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     [outletBtnRest setBackgroundImage:[delegate getImageWithColor:[UIColor colorWithRed:(82.0f/255.0f) green:(82.0f/255.0f) blue:(82.0f/255.0f) alpha:.29]]
- forState:UIControlStateNormal];
+                             forState:UIControlStateNormal];
     [outletBtnMenu setBackgroundImage:[delegate getImageWithColor:[UIColor colorWithRed:(82.0f/255.0f) green:(82.0f/255.0f) blue:(82.0f/255.0f) alpha:.29]]
                              forState:UIControlStateNormal];
     
@@ -37,6 +35,11 @@
                              forState:UIControlStateSelected];
 
     [self actionBtnRest:nil];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [uiTVSearch deselectRowAtIndexPath:[uiTVSearch indexPathForSelectedRow] animated:YES];
 }
 - (IBAction)actionBtnRest:(id)sender {
     
@@ -107,11 +110,17 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%@", [result objectAtIndex:indexPath.row]);
-    delegate.CitySelected = [[result objectAtIndex:indexPath.row] valueForKey:@"ZNAME"];
-    
-//    RestaurantViewController *rst = (RestaurantViewController*)[delegate getViewControllerWithIdentifier:@"rst"];
-  //  [self.navigationController pushViewController:rst animated:YES];
-    
+
+    if (outletBtnRest.selected) {
+        delegate.idRestSelected = [[[result objectAtIndex:indexPath.row] valueForKey:@"ZIDREST"] integerValue];
+            RestaurantDetailViewController *rstd = (RestaurantDetailViewController*)[delegate getViewControllerWithIdentifier:@"rstDetail"];
+          [self.navigationController pushViewController:rstd animated:YES];
+
+    }else{
+        delegate.idMenu = [[[result objectAtIndex:indexPath.row] valueForKey:@"ZIDMENU"] integerValue];
+        MenuDetailViewController *mnu = (MenuDetailViewController*)[delegate getViewControllerWithIdentifier:@"menuDetail"];
+        [self.navigationController pushViewController:mnu animated:YES];
+    }
 }
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{

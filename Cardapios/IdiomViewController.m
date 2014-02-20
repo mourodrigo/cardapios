@@ -29,7 +29,6 @@
  self.navigationController.navigationBar.hidden = YES;   
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [self checkDownload];
 }
 
 -(void)checkDownload{
@@ -43,7 +42,9 @@
     [self performSelector:@selector(checkDownload) withObject:Nil afterDelay:1];
 }
 -(void)viewDidAppear:(BOOL)animated{
-    [sinc startSincro];
+    //[sinc startSincro];
+//    [self checkDownload];
+
 }
 - (void)didReceiveMemoryWarning
 {

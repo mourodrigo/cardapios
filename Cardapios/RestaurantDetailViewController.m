@@ -44,19 +44,24 @@
     
     NSLog(@"IDIOM %@", idiom);
 }
+-(void)viewWillAppear:(BOOL)animated{
+    
+
+}
+
 -(void)viewDidAppear:(BOOL)animated{
+//    [outletScrollView setContentOffset:CGPointMake(0, outletImgViewLogo.frame.origin.y) animated:NO];
     [outletScrollView setDelegate:self];
     [outletScrollView setScrollEnabled:YES];
-    [outletScrollView setMinimumZoomScale:1];
-    [outletScrollView setMaximumZoomScale:1];
+  //  [outletScrollView setMinimumZoomScale:1];
+   // [outletScrollView setMaximumZoomScale:1];
     
     [outletBtnStar setImage:[UIImage imageNamed:@"estrela.png"] forState:UIControlStateNormal];
     [outletBtnStar setImage:[UIImage imageNamed:@"estrela_selected.png"] forState:UIControlStateSelected];
     
-    [outletScrollView setContentSize:CGSizeMake(outletScrollView.frame.size.width, outletScrollView.frame.size.height+100)];
+ //   [outletScrollView setContentSize:CGSizeMake(outletScrollView.frame.size.width, outletScrollView.frame.size.height+100)];
 
-//    [outletScrollView setContentOffset:CGPointMake(0, outletBtnMenu.frame.origin.y+outletBtnMenu.frame.size.height-30) animated:YES];
-
+ 
     NSLog(@"content width: %f content heigt: %f", outletScrollView.frame.size.width, outletScrollView.frame.size.height+100);
 
     NSLog(@"height %f", self.view.frame.size.height);

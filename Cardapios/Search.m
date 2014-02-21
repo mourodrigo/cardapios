@@ -87,10 +87,6 @@
 }
 
 
--(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-    NSLog(@"searchbar %@", searchBar.text );
-}
-
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     [self updateTable];
     [outletSearchBar resignFirstResponder];
@@ -126,6 +122,11 @@
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     [self updateTable];
+}
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if (searchText.length==0) {
+        [self updateTable];
+    }
 }
 
 @end

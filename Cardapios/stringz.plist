@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CIDADE</key>
+	<dict>
+		<key>pt</key>
+		<string>CIDADE</string>
+		<key>en</key>
+		<string>CITY</string>
+		<key>es</key>
+		<string>CIUDAD</string>
+	</dict>
+	<key>HOME</key>
+	<dict>
+		<key>pt</key>
+		<string>HOME</string>
+		<key>en</key>
+		<string>HOME</string>
+		<key>es</key>
+		<string>HOME</string>
+	</dict>
+	<key>FAVORITOS</key>
+	<dict>
+		<key>pt</key>
+		<string>FAVORITOS</string>
+		<key>en</key>
+		<string>FAVORITOS</string>
+		<key>es</key>
+		<string>FAVORITOS</string>
+	</dict>
+	<key>MEUS PRATOS</key>
+	<dict>
+		<key>pt</key>
+		<string>MEUS PRATOS</string>
+		<key>en</key>
+		<string>MY DISHES</string>
+		<key>es</key>
+		<string>MIS PLATOS</string>
+	</dict>
+	<key>RESTAURANTE</key>
+	<dict>
+		<key>pt</key>
+		<string>RESTAURANTE</string>
+		<key>en</key>
+		<string>RESTAURANT</string>
+		<key>es</key>
+		<string>RESTAURANTE</string>
+	</dict>
+	<key>LIGAR</key>
+	<dict>
+		<key>pt</key>
+		<string>LIGAR</string>
+		<key>en</key>
+		<string>CALL</string>
+		<key>es</key>
+		<string>LIGAR</string>
+	</dict>
+	<key>ROTA</key>
+	<dict>
+		<key>pt</key>
+		<string>ROTA</string>
+		<key>en</key>
+		<string>ROUTE</string>
+		<key>es</key>
+		<string>RUTA</string>
+	</dict>
+	<key>SOBRE O RESTAURANTE</key>
+	<dict>
+		<key>pt</key>
+		<string>SOBRE O RESTAURANTE</string>
+		<key>en</key>
+		<string>ABOUT THE RESTAURANT</string>
+		<key>es</key>
+		<string>ACERCA DEL RESTAURANTE</string>
+	</dict>
+	<key>HORÁRIO DE FUNCIONAMENTO</key>
+	<dict>
+		<key>pt</key>
+		<string>HORÁRIO DE FUNCIONAMENTO</string>
+		<key>en</key>
+		<string>OPENING HOURS</string>
+		<key>es</key>
+		<string>HORARIO</string>
+	</dict>
+	<key>CARTÕES ACEITOS</key>
+	<dict>
+		<key>pt</key>
+		<string>CARTÕES ACEITOS</string>
+		<key>en</key>
+		<string>ACCEPTED CARDS</string>
+		<key>es</key>
+		<string>TARJETAS ACEPTADAS</string>
+	</dict>
+	<key>CARDÁPIO</key>
+	<dict>
+		<key>pt</key>
+		<string>CARDÁPIO</string>
+		<key>en</key>
+		<string>MENU</string>
+		<key>es</key>
+		<string>MENÚ</string>
+	</dict>
+	<key>PRATO</key>
+	<dict>
+		<key>pt</key>
+		<string>PRATO</string>
+		<key>en</key>
+		<string>DISH</string>
+		<key>es</key>
+		<string>PLATO</string>
+	</dict>
+</dict>
+</plist>

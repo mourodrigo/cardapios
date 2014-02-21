@@ -105,6 +105,7 @@
 		30C6757B18B70FB000545B22 /* busca@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30C6757918B70FB000545B22 /* busca@2x.png */; };
 		30C6757E18B70FD500545B22 /* meusPratos.png in Resources */ = {isa = PBXBuildFile; fileRef = 30C6757C18B70FD500545B22 /* meusPratos.png */; };
 		30C6757F18B70FD500545B22 /* meusPratos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30C6757D18B70FD500545B22 /* meusPratos@2x.png */; };
+		30C6758118B7126400545B22 /* stringz.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30C6758018B7126400545B22 /* stringz.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +249,7 @@
 		30C6757918B70FB000545B22 /* busca@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "busca@2x.png"; sourceTree = "<group>"; };
 		30C6757C18B70FD500545B22 /* meusPratos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meusPratos.png; sourceTree = "<group>"; };
 		30C6757D18B70FD500545B22 /* meusPratos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meusPratos@2x.png"; sourceTree = "<group>"; };
+		30C6758018B7126400545B22 /* stringz.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stringz.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,6 +438,7 @@
 				30BF65D61842C4350091DDD0 /* AppDelegate.h */,
 				30BF65D71842C4350091DDD0 /* AppDelegate.m */,
 				30BF65D91842C4350091DDD0 /* Main.storyboard */,
+				30C6758018B7126400545B22 /* stringz.plist */,
 				30785A8A18B5C157007B037C /* MenuDetailViewController.h */,
 				30785A8B18B5C157007B037C /* MenuDetailViewController.m */,
 				30785A8318B5BB0F007B037C /* MenuViewController.h */,
@@ -605,6 +608,7 @@
 				30022FCE186E032600F2082B /* BtnInicialSel.png in Resources */,
 				30022FCD186E032600F2082B /* BtnInicial@2x.png in Resources */,
 				30C6756418B6FF7C00545B22 /* msg.png in Resources */,
+				30C6758118B7126400545B22 /* stringz.plist in Resources */,
 				30C6757618B70F8F00545B22 /* favoritos.png in Resources */,
 				30785A5D18B01246007B037C /* visa@2x.png in Resources */,
 				30BF65DB1842C4350091DDD0 /* Main.storyboard in Resources */,

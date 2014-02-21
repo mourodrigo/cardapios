@@ -221,6 +221,16 @@
     }
 }
 
+-(NSString *)getStr:(NSString*)string{
+        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"stringz" ofType:@"plist"];
+        NSDictionary *info = [[NSDictionary alloc]initWithContentsOfFile:plistPath];
+    if ([[info valueForKey:string] valueForKey:[[self getInfoPlist] valueForKey:@"idioma"]]) {
+     return [[info valueForKey:string] valueForKey:[[self getInfoPlist] valueForKey:@"idioma"]];
+    }else{
+        return string;
+    }
+}
+
 -(void)setInfoPlist:(NSDictionary*)constants{
     [constants writeToFile:[@"~/Documents/constants.plist" stringByExpandingTildeInPath] atomically:YES];
 }

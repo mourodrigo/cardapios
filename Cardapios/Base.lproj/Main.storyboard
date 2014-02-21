@@ -315,7 +315,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" backgroundImage="backgroundBottonBar.png" id="kS2-uR-Mi1" customClass="MainTabBar">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.23921568630000001" green="0.91764705879999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -331,7 +331,7 @@
             </objects>
             <point key="canvasLocation" x="594" y="-275"/>
         </scene>
-        <!--Search-->
+        <!--Search - BUSCA-->
         <scene sceneID="AND-pw-LeS">
             <objects>
                 <viewController id="4Wc-bf-o0s" customClass="Search" sceneMemberID="viewController">
@@ -469,7 +469,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.78823529411764703" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="Efs-2w-9C5"/>
+                    <tabBarItem key="tabBarItem" title="BUSCA" image="busca.png" id="Efs-2w-9C5"/>
                     <connections>
                         <outlet property="outletBtnMenu" destination="4EA-NB-zJd" id="3wC-ia-QbL"/>
                         <outlet property="outletBtnRest" destination="069-OP-NjC" id="BOB-zK-Pw4"/>
@@ -678,10 +678,15 @@
                                             <segue destination="gYg-PO-Q8g" kind="push" id="ORF-IA-M30"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RQP-Fz-PoS">
+                                        <rect key="frame" x="142" y="158" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ado-hy-LgV">
                                         <rect key="frame" x="20" y="111" width="280" height="131"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" white="1" alpha="0.45000000000000001" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="131" id="evM-Ba-u0U"/>
                                         </constraints>
@@ -980,7 +985,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FYD-fV-tsY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="c6P-eM-nfh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nDO-9S-KhM">
@@ -1025,7 +1030,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpF-Ku-cmP">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="475"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QR7-8G-iZD">
@@ -1112,11 +1117,11 @@
                         <viewControllerLayoutGuide type="bottom" id="hOa-Ag-KjX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bY5-7f-qhW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jg6-iO-aWH">
-                                <rect key="frame" x="0.0" y="44" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="431"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1290,9 +1295,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.23921568630000001" green="0.91764705879999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="home.png" id="Bc3-Ct-at2"/>
+                    <tabBarItem key="tabBarItem" title="MEUS PRATOS" image="meusPratos.png" id="Bc3-Ct-at2"/>
                     <navigationItem key="navigationItem" id="lU0-Ov-Sd9"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="uitvmenu" destination="Jg6-iO-aWH" id="Idf-zK-6u7"/>
                     </connections>
@@ -1406,7 +1412,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.23921568630000001" green="0.91764705879999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" systemItem="favorites" id="77U-Lz-kiF"/>
+                    <tabBarItem key="tabBarItem" title="FAVORITOS" image="favoritos.png" id="77U-Lz-kiF"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="uiTvRest" destination="IXV-dO-RM2" id="qtv-Ho-0sg"/>
@@ -1425,7 +1431,7 @@
                         <viewControllerLayoutGuide type="bottom" id="BaO-ww-AsS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5iO-CL-3Dz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oTx-rH-nt4">
@@ -1470,7 +1476,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMc-12-6rL">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="475"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y2H-zV-3Xn">
@@ -1562,11 +1568,14 @@
         <image name="LogoRestaurante.png" width="91" height="96"/>
         <image name="amex.png" width="32" height="19"/>
         <image name="backgroundBottonBar.png" width="320" height="48"/>
+        <image name="busca.png" width="22" height="27"/>
         <image name="estrela.png" width="23" height="22"/>
+        <image name="favoritos.png" width="29" height="27"/>
         <image name="fundo_destaque.png" width="280" height="106"/>
         <image name="heart.png" width="23" height="20"/>
         <image name="home.png" width="28" height="27"/>
         <image name="mast.png" width="32" height="19"/>
+        <image name="meusPratos.png" width="28" height="23"/>
         <image name="rota.png" width="76" height="23"/>
         <image name="visa.png" width="32" height="19"/>
         <image name="voltar.png" width="13" height="22"/>
@@ -1577,6 +1586,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jgx-y6-rjW"/>
+        <segue reference="qyQ-ma-7xZ"/>
     </inferredMetricsTieBreakers>
 </document>

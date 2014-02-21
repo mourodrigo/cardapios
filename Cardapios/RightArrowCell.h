@@ -10,6 +10,7 @@
 
 @interface RightArrowCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *outletLblTitle;
+@property (weak, nonatomic) IBOutlet UILabel *outletLblSubTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *outletImgArrow;
 
 @end

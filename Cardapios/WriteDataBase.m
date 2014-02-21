@@ -133,7 +133,7 @@
     [menu setValue:[self testIfIsNumber:[dicJson valueForKey:@"id_restaurante"]] forKey:@"idRestaurant"];
     [menu setValue:[self testIfIsNull:[dicJson valueForKey:@"nome"]] forKey:@"name"];
     [menu setValue:[self testIfIsNumber:[dicJson valueForKey:@"valor"]] forKey:@"value"];
-    [menu setValue:FALSE forKey:@"favorite"];
+    [menu setValue:[self testIfIsNumber:[dicJson valueForKey:@"destaque"]] forKey:@"favorite"];
     
     
     [objectContext save:nil];

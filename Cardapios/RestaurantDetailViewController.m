@@ -39,7 +39,20 @@
         
     }
     
+    if (![[info valueForKey:@"ZAMERICAN"] boolValue]) {
+        [outletImgAmex setHidden:TRUE];
+    }
+
+    if (![[info valueForKey:@"ZVISA"] boolValue]) {
+        [outletImgVisa setHidden:TRUE];
+    }
     
+    if (![[info valueForKey:@"ZMASTER"] boolValue]) {
+        [outletImgMaster setHidden:TRUE];
+    }
+    
+    
+
     
     
     NSLog(@"IDIOM %@", idiom);

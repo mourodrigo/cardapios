@@ -15,8 +15,5 @@
 @property (nonatomic) bool progressRest;
 @property (nonatomic) bool progressCity;
 
-- (void)getFileWithBaseUrl:(NSString*)directoryname withFileName:(NSString*)nameFile storeAtpath:(NSString*)downloadPath;
-
 - (void)startSincro;
--(void)eraseImovelWithId:(int)idImovel andUserId:(int)userId shouldDeleteFile:(BOOL)deleteFile;
 @end

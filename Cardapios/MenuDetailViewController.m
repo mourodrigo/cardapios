@@ -25,6 +25,17 @@
     return self;
 }
 
+-(NSString*)testIfIsNull:(NSString*)text{
+    
+    if (![text isEqual:[NSNull null]]) {
+        
+        return text;
+        
+    } else  return @"";
+    
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -36,7 +47,12 @@
     
     NSLog(@"menu %@", menu);
     [outletNomeRest setText:[NSString stringWithFormat:@" %@", [rest valueForKey:@"ZNAME"]]];
-    [outletPrato setText:[NSString stringWithFormat:@" %@", [menu valueForKey:@"ZNAME"]]];
+    if ([menu valueForKey:@"ZNAME"]) {
+        [outletPrato setText:[NSString stringWithFormat:@" %@", [self testIfIsNull:[menu valueForKey:@"ZNAME"]]]];
+        
+    }else{
+        outletPrato.text = @"";
+    }
     txtDetailRest.text = [menu valueForKey:@"ZDESCR"];
     [outletValue setTitle:[NSString stringWithFormat:@"$ %@", [menu valueForKey:@"ZVALUE"]] forState:UIControlStateNormal];
 	// Do any additional setup after loading the view.

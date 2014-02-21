@@ -42,8 +42,8 @@
     [self performSelector:@selector(checkDownload) withObject:Nil afterDelay:1];
 }
 -(void)viewDidAppear:(BOOL)animated{
-    //[sinc startSincro];
-//    [self checkDownload];
+    [sinc startSincro];
+    [self checkDownload];
 
 }
 - (void)didReceiveMemoryWarning

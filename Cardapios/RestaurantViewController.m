@@ -56,6 +56,7 @@
         rests = [[NSMutableArray alloc]initWithArray:[delegate sqliteDoQuery:[NSString stringWithFormat:@"Select * from ZRESTAURANT where %@", where]]];
         [uiTvRest reloadData];
     }
+    [uiTvRest deselectRowAtIndexPath:[uiTvRest indexPathForSelectedRow] animated:NO];
 
 }
 - (void)didReceiveMemoryWarning

@@ -55,7 +55,7 @@
 
 -(void)getRestaurant{
     
-    NSString *api = @"http://cardapiosdacidade.com/xUuiBJ6N/api/restaurantes.php";
+    NSString *api = @"http://ambiente.gobekdigital.com.br/cdc/api/restaurantes.php";
     
     NSLog(@"\n\ngetRestaurant %@", api);
     
@@ -105,7 +105,7 @@
 
 -(void)getCity{
     
-    NSString *api = @"http://cardapiosdacidade.com/xUuiBJ6N/api/cidades.php";
+    NSString *api = @"http://ambiente.gobekdigital.com.br/cdc/api/cidades.php";
     
     NSLog(@"\n\ngetCity %@", api);
     
@@ -150,7 +150,7 @@
 
 -(void)getMenu{
     
-    NSString *api = @"http://cardapiosdacidade.com/xUuiBJ6N/api/cardapios.php";
+    NSString *api = @"http://ambiente.gobekdigital.com.br/cdc/api/cardapios.php";
     
     NSLog(@"\n\ngetMenu %@", api);
     
@@ -197,7 +197,7 @@
 
 -(void)getCategory{
     
-    NSString *api = @"http://cardapiosdacidade.com/xUuiBJ6N/api/categorias.php";
+    NSString *api = @"http://ambiente.gobekdigital.com.br/cdc/api/categorias.php";
     
     NSLog(@"\n\ngetCategory %@", api);
     

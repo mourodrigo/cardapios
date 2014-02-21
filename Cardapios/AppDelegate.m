@@ -16,8 +16,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     // Override point for customization after application launch.
-   // [self eraseDb];
+    [self eraseDb];
     [self persistentStoreCoordinator];
     
     return YES;
@@ -130,6 +131,8 @@
         NSArray *arr = [db sqliteDoQuery:query];
         
         if (arr==nil) {
+            NSLog(@"exception sqliteDoQuery -> %@", query);
+            
             [NSException raise:@"SQLITE_DO_QUERY_ERROR" format:@"SQLITE_DO_QUERY_ERROR"];
         }
         
@@ -145,15 +148,21 @@
 
 
 - (void)eraseDb{
+    /*
     NSString *dbpath = [[NSString alloc]initWithString:[self getDBPath]];
-    NSLog(@"%@", dbpath);
+    NSLog(@"erase db %@", dbpath);
 
     NSError *error = nil;
     if ([[NSFileManager defaultManager]fileExistsAtPath:dbpath]) {
         [[NSFileManager defaultManager] removeItemAtURL:[NSURL URLWithString:dbpath] error:&error];
             [[NSFileManager defaultManager]removeItemAtURL:[NSURL URLWithString:dbpath] error:&error]
         ;
-    }
+    }*/
+    [self sqliteDoQuery:@"DELETE FROM ZCITY WHERE 1"];
+    [self sqliteDoQuery:@"DELETE FROM ZFOODCATEGORY WHERE 1"];
+    [self sqliteDoQuery:@"DELETE FROM ZRESTAURANT WHERE 1"];
+    [self sqliteDoQuery:@"DELETE FROM ZMENU WHERE 1"];
+
 }
 
 -(void)storeFav:(NSMutableArray*)favs{

@@ -37,7 +37,6 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [uiTvCity deselectRowAtIndexPath:[uiTvCity indexPathForSelectedRow] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,10 +59,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%@", [cities objectAtIndex:indexPath.row]);
-    delegate.CitySelected = [[cities objectAtIndex:indexPath.row] valueForKey:@"ZNAME"];
+    delegate.CitySelected = [[cities objectAtIndex:indexPath.row] valueForKey:@"ZIDCITY"];
     
     RestaurantViewController *rst = (RestaurantViewController*)[delegate getViewControllerWithIdentifier:@"rst"];
     [self.navigationController pushViewController:rst animated:YES];
+    [uiTvCity deselectRowAtIndexPath:[uiTvCity indexPathForSelectedRow] animated:NO];
 
 }
 

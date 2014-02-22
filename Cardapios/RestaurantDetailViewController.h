@@ -34,5 +34,8 @@
 - (IBAction)actionBtnCall:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *outletBtnRoute;
 - (IBAction)actionBtnRoute:(id)sender;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *navItem;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navLblItem;
 
 @end

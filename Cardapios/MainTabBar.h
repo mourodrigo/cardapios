@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MainTabBar : UITabBar
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *navItem;
 
 @end

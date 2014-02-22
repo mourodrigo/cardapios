@@ -15,6 +15,7 @@
     NSDictionary *info;
 }
 @synthesize outletmap;
+@synthesize navBar, navItem;
 
 -(void)viewDidLoad{
      delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];

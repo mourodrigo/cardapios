@@ -15,6 +15,8 @@
 @end
 
 @implementation MenuDetailViewController
+@synthesize navBar, navItem;
+
 @synthesize outletNomeRest, outletValue, txtDetailRest, outletPrato, outletBtnHeart;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

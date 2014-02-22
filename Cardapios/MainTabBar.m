@@ -9,6 +9,7 @@
 #import "MainTabBar.h"
 
 @implementation MainTabBar
+@synthesize navBar, navItem;
 
 - (id)initWithFrame:(CGRect)frame
 {

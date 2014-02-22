@@ -11,5 +11,9 @@
 @interface RestaurantViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *uiTvRest;
 - (IBAction)actionBtnVoltar:(id)sender;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *navItem;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationLblItem;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navLblItem;
 
 @end

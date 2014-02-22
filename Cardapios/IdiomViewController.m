@@ -20,6 +20,7 @@
 
 @implementation IdiomViewController
 @synthesize outletBtnEnglish, outletBtnPortuguese, outletBtnSpanish, outletActivity, outletViewBtns;
+@synthesize navBar, navItem;
 
 - (void)viewDidLoad
 {

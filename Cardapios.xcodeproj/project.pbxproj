@@ -106,6 +106,7 @@
 		30C6757E18B70FD500545B22 /* meusPratos.png in Resources */ = {isa = PBXBuildFile; fileRef = 30C6757C18B70FD500545B22 /* meusPratos.png */; };
 		30C6757F18B70FD500545B22 /* meusPratos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30C6757D18B70FD500545B22 /* meusPratos@2x.png */; };
 		30C6758118B7126400545B22 /* stringz.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30C6758018B7126400545B22 /* stringz.plist */; };
+		30C6758418B8BFA600545B22 /* About.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C6758318B8BFA600545B22 /* About.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +251,8 @@
 		30C6757C18B70FD500545B22 /* meusPratos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meusPratos.png; sourceTree = "<group>"; };
 		30C6757D18B70FD500545B22 /* meusPratos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meusPratos@2x.png"; sourceTree = "<group>"; };
 		30C6758018B7126400545B22 /* stringz.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stringz.plist; sourceTree = "<group>"; };
+		30C6758218B8BFA600545B22 /* About.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = About.h; sourceTree = "<group>"; };
+		30C6758318B8BFA600545B22 /* About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = About.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +464,8 @@
 				30785A7918B2FB33007B037C /* Search.m */,
 				30785A7B18B5A590007B037C /* Map.h */,
 				30785A7C18B5A590007B037C /* Map.m */,
+				30C6758218B8BFA600545B22 /* About.h */,
+				30C6758318B8BFA600545B22 /* About.m */,
 				30C6756E18B7007C00545B22 /* Group-4.png */,
 				30C6756F18B7007C00545B22 /* Group-4@2x.png */,
 				30BF65DF1842C4350091DDD0 /* Images.xcassets */,
@@ -678,6 +683,7 @@
 				3002A79A18A114A100734C0F /* AFJSONRequestOperation.m in Sources */,
 				3091154A188DFB0E001772D3 /* WriteDataBase.m in Sources */,
 				3002A79C18A114A100734C0F /* AFPropertyListRequestOperation.m in Sources */,
+				30C6758418B8BFA600545B22 /* About.m in Sources */,
 				3091154D188DFB2C001772D3 /* SynchronizeData.m in Sources */,
 				302A703218AFFB210088F1E0 /* RestaurantViewController.m in Sources */,
 			);

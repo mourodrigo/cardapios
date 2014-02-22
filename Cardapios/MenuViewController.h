@@ -11,5 +11,8 @@
 @interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *uitvmenu;
 - (IBAction)actionBtnVoltar:(id)sender;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *navItem;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navLblItem;
 
 @end

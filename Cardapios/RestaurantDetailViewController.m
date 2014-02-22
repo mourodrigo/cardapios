@@ -14,6 +14,7 @@
     
 }
 @synthesize outletScrollView, outletBtnMenu, outletBtnCall, outletBtnRoute, outletBtnStar, outletImgAmex, outletImgMaster, outletImgView, outletImgViewLogo, outletImgVisa, outletLblAbout, outletLblCards, outletLblCity, outletLblEmail, outletLblName, outletLblTime, outletLblTimeDetail, outletLblType, outletTxtAbout;
+@synthesize navBar, navItem;
 
 -(void)viewDidLoad{
     delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];

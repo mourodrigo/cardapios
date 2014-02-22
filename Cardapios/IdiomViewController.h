@@ -21,4 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIView *outletViewBtns;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *outletActivity;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *navItem;
+
 @end

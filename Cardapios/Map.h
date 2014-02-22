@@ -11,5 +11,7 @@
 @interface Map : UIViewController <MKMapViewDelegate>
 - (IBAction)actionBtnSair:(id)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *outletmap;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *navItem;
 
 @end

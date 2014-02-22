@@ -13,6 +13,7 @@
 @end
 
 @implementation MainViewController
+@synthesize navBar, navItem;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

@@ -19,6 +19,7 @@
 @end
 
 @implementation Search
+@synthesize navBar, navItem;
 
 @synthesize outletBtnMenu, outletBtnRest, outletNavItem, outletSearchBar, uiTVSearch;
 

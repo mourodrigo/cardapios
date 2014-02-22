@@ -254,6 +254,9 @@
                     <tabBarItem key="tabBarItem" title="HOME" image="home.png" id="8F2-z8-Tuq"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="navBar" destination="PiE-7d-P4a" id="uhr-2m-S79"/>
+                        <outlet property="navItem" destination="3HZ-Ah-3wa" id="Wx3-03-URW"/>
+                        <outlet property="navLblItem" destination="XG8-HG-xFr" id="blO-y1-g4a"/>
                         <outlet property="uiTvCity" destination="uim-e2-cav" id="1iq-bc-mgr"/>
                     </connections>
                 </viewController>
@@ -261,10 +264,10 @@
             </objects>
             <point key="canvasLocation" x="1128" y="-602"/>
         </scene>
-        <!--View Controller-->
+        <!--About-->
         <scene sceneID="2Qh-KW-Gsw">
             <objects>
-                <viewController id="zsQ-UP-cb2" sceneMemberID="viewController">
+                <viewController id="zsQ-UP-cb2" customClass="About" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qpg-ZM-7hw"/>
                         <viewControllerLayoutGuide type="bottom" id="QKV-QA-M6T"/>
@@ -273,34 +276,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fg3-KJ-QeT">
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fg3-KJ-QeT">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.49803921569999998" green="0.20784313730000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem title="SOBRE" id="F08-g8-YWN">
-                                        <barButtonItem key="rightBarButtonItem" style="done" id="VVo-38-JTk">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KdZ-uL-8rd">
-                                                <rect key="frame" x="258" y="7" width="46" height="30"/>
+                                    <navigationItem title="PRATO" id="N48-X0-19H" userLabel="lblTitulo">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="Pql-2Q-d91">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FiM-la-6t1">
+                                                <rect key="frame" x="16" y="11" width="13" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="|||">
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" image="voltar.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="actionBtnVoltar:" destination="zsQ-UP-cb2" eventType="touchUpInside" id="CCP-gc-SFf"/>
+                                                </connections>
                                             </button>
+                                            <connections>
+                                                <action selector="actionBtnVoltar:" destination="fTc-aG-1p8" id="65P-ZO-Etd"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29g-Oh-spk">
-                                <rect key="frame" x="220" y="44" width="100" height="36"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer-75.png" translatesAutoresizingMaskIntoConstraints="NO" id="tsa-F4-Xas">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p4x-06-Hcm">
+                                <rect key="frame" x="20" y="65" width="280" height="365"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Logo_verde.png" translatesAutoresizingMaskIntoConstraints="NO" id="p0C-e5-jbS">
+                                        <rect key="frame" x="45" y="20" width="190" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S2d-6y-Lhv">
+                                        <rect key="frame" x="0.0" y="74" width="280" height="291"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="365" id="FCK-UE-c1s"/>
+                                    <constraint firstAttribute="width" constant="280" id="pH6-bV-jdn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p4x-06-Hcm" firstAttribute="top" secondItem="Fg3-KJ-QeT" secondAttribute="bottom" constant="21" id="L2v-4R-XHx"/>
+                            <constraint firstItem="p4x-06-Hcm" firstAttribute="leading" secondItem="78F-LP-Qde" secondAttribute="leading" constant="20" id="ygl-dT-yO7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MYP-mM-Wgy"/>
+                    <connections>
+                        <outlet property="navLblItem" destination="N48-X0-19H" id="PB5-a9-pa7"/>
+                        <outlet property="outletTxt" destination="S2d-6y-Lhv" id="k2x-FZ-4wF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coS-eL-nRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -471,9 +515,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="BUSCA" image="busca.png" id="Efs-2w-9C5"/>
                     <connections>
+                        <outlet property="navLblItem" destination="Tzm-TF-Pqf" id="qms-99-E6C"/>
                         <outlet property="outletBtnMenu" destination="4EA-NB-zJd" id="3wC-ia-QbL"/>
                         <outlet property="outletBtnRest" destination="069-OP-NjC" id="BOB-zK-Pw4"/>
-                        <outlet property="outletNavItem" destination="Tzm-TF-Pqf" id="SRc-SU-7Et"/>
                         <outlet property="outletSearchBar" destination="F3u-Iz-Eca" id="cWC-cR-uiH"/>
                         <outlet property="uiTVSearch" destination="6VH-m3-ckC" id="YXf-9H-Xxc"/>
                     </connections>
@@ -589,6 +633,7 @@
                     <tabBarItem key="tabBarItem" title="" image="home.png" id="5qH-NW-txP"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="navigationLblItem" destination="x8O-da-51L" id="SkG-Rm-05F"/>
                         <outlet property="uiTvRest" destination="R7z-gJ-ip1" id="pL1-mo-hEN"/>
                     </connections>
                 </viewController>
@@ -902,7 +947,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="lblTitle" destination="jen-kf-u8s" id="F3N-Dc-h64"/>
+                        <outlet property="navLblItem" destination="jen-kf-u8s" id="WEd-2a-nhR"/>
                         <outlet property="outletBtnCall" destination="jgP-yS-dTC" id="zRe-MP-1iD"/>
                         <outlet property="outletBtnMenu" destination="6JQ-9A-XHN" id="CJ5-1h-dCt"/>
                         <outlet property="outletBtnRoute" destination="oHM-PI-npQ" id="sAB-ru-RIp"/>
@@ -1097,6 +1142,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="9np-Xt-6Ti"/>
                     <connections>
+                        <outlet property="navLblItem" destination="Qec-Gl-QQB" id="ywE-QQ-j3D"/>
                         <outlet property="outletBtnHeart" destination="P7a-eV-Fzd" id="5mD-b5-7OQ"/>
                         <outlet property="outletNomeRest" destination="vDv-ac-d9l" id="lXI-Rl-hdj"/>
                         <outlet property="outletPrato" destination="AZs-tP-Ew6" id="nbU-Zg-Ing"/>
@@ -1300,6 +1346,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
+                        <outlet property="navLblItem" destination="CX7-h6-vgY" id="OWu-TY-dKm"/>
                         <outlet property="uitvmenu" destination="Jg6-iO-aWH" id="Idf-zK-6u7"/>
                     </connections>
                 </viewController>
@@ -1415,6 +1462,8 @@
                     <tabBarItem key="tabBarItem" title="FAVORITOS" image="favoritos.png" id="77U-Lz-kiF"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="navBar" destination="CTx-D3-VHL" id="RXo-kg-UTl"/>
+                        <outlet property="navLblItem" destination="Ha2-ht-T07" id="VT8-zu-u5B"/>
                         <outlet property="uiTvRest" destination="IXV-dO-RM2" id="qtv-Ho-0sg"/>
                     </connections>
                 </viewController>
@@ -1547,6 +1596,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="RYE-Xl-F4q"/>
                     <connections>
+                        <outlet property="navigationLblItem" destination="oTx-rH-nt4" id="hrw-D5-D2K"/>
                         <outlet property="outletBtnHeart" destination="hxq-S7-W4p" id="Zxm-at-Kdd"/>
                         <outlet property="outletNomeRest" destination="gjO-fA-muq" id="Vq8-G6-b3W"/>
                         <outlet property="outletPrato" destination="S3k-X4-ZkI" id="adB-BO-Au7"/>
@@ -1563,9 +1613,11 @@
         <image name="ArrowRight.png" width="13" height="22"/>
         <image name="BtnInicial.png" width="192" height="42"/>
         <image name="Group-4.png" width="139" height="106"/>
+        <image name="Layer-75.png" width="320" height="480"/>
         <image name="Ligar.png" width="76" height="23"/>
         <image name="LogoInicial.png" width="193" height="47"/>
         <image name="LogoRestaurante.png" width="91" height="96"/>
+        <image name="Logo_verde.png" width="190" height="46"/>
         <image name="amex.png" width="32" height="19"/>
         <image name="backgroundBottonBar.png" width="320" height="48"/>
         <image name="busca.png" width="22" height="27"/>
@@ -1586,6 +1638,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qyQ-ma-7xZ"/>
+        <segue reference="jgx-y6-rjW"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -29,7 +29,9 @@
     sinc = [[SynchronizeData alloc]init];
  self.navigationController.navigationBar.hidden = YES;   
 	// Do any additional setup after loading the view, typically from a nib.
-    
+    [sinc startSincro];
+    [self checkDownload];
+
 }
 
 -(void)checkDownload{
@@ -43,8 +45,6 @@
     [self performSelector:@selector(checkDownload) withObject:Nil afterDelay:1];
 }
 -(void)viewDidAppear:(BOOL)animated{
-    [sinc startSincro];
-    [self checkDownload];
 
 }
 - (void)didReceiveMemoryWarning

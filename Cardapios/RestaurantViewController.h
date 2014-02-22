@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *navItem;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationLblItem;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navLblItem;
+@property (weak, nonatomic) IBOutlet UILabel *outletLblTitle;
 
 @end

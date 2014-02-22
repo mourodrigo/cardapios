@@ -20,7 +20,7 @@
 @implementation RestaurantViewController
 @synthesize uiTvRest;
 @synthesize navBar, navItem;
-
+@synthesize outletLblTitle;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -37,6 +37,7 @@
 
     rests = [[NSMutableArray alloc]initWithArray:[delegate sqliteDoQuery:[NSString stringWithFormat:@"Select * from ZRESTAURANT where ZCITY = '%@'", delegate.CitySelected]]];
     
+    outletLblTitle.text = [delegate getStr:@"RESTAURANTE"];
     
 	// Do any additional setup after loading the view.
 }
@@ -57,6 +58,8 @@
 
         rests = [[NSMutableArray alloc]initWithArray:[delegate sqliteDoQuery:[NSString stringWithFormat:@"Select * from ZRESTAURANT where %@", where]]];
         [uiTvRest reloadData];
+        outletLblTitle.text = [delegate getStr:@"FAVORITOS"];
+        
     }
     [uiTvRest deselectRowAtIndexPath:[uiTvRest indexPathForSelectedRow] animated:NO];
 

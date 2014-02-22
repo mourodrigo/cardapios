@@ -14,7 +14,7 @@
     
 }
 @synthesize outletScrollView, outletBtnMenu, outletBtnCall, outletBtnRoute, outletBtnStar, outletImgAmex, outletImgMaster, outletImgView, outletImgViewLogo, outletImgVisa, outletLblAbout, outletLblCards, outletLblCity, outletLblEmail, outletLblName, outletLblTime, outletLblTimeDetail, outletLblType, outletTxtAbout;
-@synthesize navBar, navItem;
+@synthesize navBar, navItem, outletLblTitle, outletLblCall, outletLblRoute;
 
 -(void)viewDidLoad{
     delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
@@ -52,9 +52,13 @@
         [outletImgMaster setHidden:TRUE];
     }
     
-    
-
-    
+    outletLblTitle.text = [delegate getStr:@"RESTAURANTE"];
+    outletLblAbout.text = [delegate getStr:@"SOBRE O RESTAURANTE"];
+    outletLblTime.text = [delegate getStr:@"HORÁRIO DE FUNCIONAMENTO"];
+    outletLblCards.text = [delegate getStr:@"CARTÕES ACEITOS"];
+    [outletBtnMenu setTitle:[delegate getStr:@"CARDÁPIO"] forState:UIControlStateNormal];
+    outletLblRoute.text = [delegate getStr:@"ROTA"];
+    outletLblCall.text = [delegate getStr:@"LIGAR"];
     
     NSLog(@"IDIOM %@", idiom);
 }

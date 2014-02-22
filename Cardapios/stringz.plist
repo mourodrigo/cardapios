@@ -25,7 +25,7 @@
 		<key>pt</key>
 		<string>FAVORITOS</string>
 		<key>en</key>
-		<string>FAVORITOS</string>
+		<string>FAVORITES</string>
 		<key>es</key>
 		<string>FAVORITOS</string>
 	</dict>
@@ -101,6 +101,14 @@
 		<key>es</key>
 		<string>MENÚ</string>
 	</dict>
+	<key>BUSCA</key>
+	<dict/>
+	<key>pt</key>
+	<string>BUSCA</string>
+	<key>en</key>
+	<string>SEARCH</string>
+	<key>es</key>
+	<string>BUSCA</string>
 	<key>PRATO</key>
 	<dict>
 		<key>pt</key>

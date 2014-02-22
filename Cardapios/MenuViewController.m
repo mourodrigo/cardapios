@@ -19,6 +19,8 @@
 @implementation MenuViewController
 @synthesize uitvmenu;
 @synthesize navBar, navItem;
+@synthesize outletLblTitle;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +36,9 @@
     [super viewDidLoad];
     delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     menus = [[NSMutableArray alloc]initWithArray:[delegate sqliteDoQuery:[NSString stringWithFormat:@"Select * from ZMENU where ZIDRESTAURANT = %d ORDER BY ZFAVORITE DESC", delegate.idRestSelected]]];
+    
+    outletLblTitle.text = [delegate getStr:@"CARDÁPIO"];
+
 	// Do any additional setup after loading the view.
 }
 -(void)viewDidAppear:(BOOL)animated{
@@ -49,7 +54,15 @@
             NSLog(@"davs %@", [favs objectAtIndex:x]);
             where = [NSString stringWithFormat:@"%@ %@ ZIDMENU = %@", where, OR, [favs objectAtIndex:x]];
         }
+
+        if (favs.count==0) {
+            [uitvmenu setHidden:TRUE];
+        }else{
+            [uitvmenu setHidden:FALSE];
+        }
         
+        outletLblTitle.text = [delegate getStr:@"MEUS PRATOS"];
+
         menus = [[NSMutableArray alloc]initWithArray:[delegate sqliteDoQuery:[NSString stringWithFormat:@"Select * from ZMENU where %@", where]]];
         [uitvmenu reloadData];
     }

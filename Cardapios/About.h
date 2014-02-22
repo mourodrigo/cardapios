@@ -10,6 +10,7 @@
 
 @interface About : UIViewController
 @property (weak, nonatomic) IBOutlet UINavigationItem *navLblItem;
+- (IBAction)actionBtnMsg:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *outletTxt;
 
 - (IBAction)actionBtnVoltar:(id)sender;

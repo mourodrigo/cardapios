@@ -209,7 +209,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="CIDADE" id="XG8-HG-xFr" userLabel="lblCidade">
+                                    <navigationItem id="XG8-HG-xFr" userLabel="lblCidade">
                                         <barButtonItem key="leftBarButtonItem" id="3HZ-Ah-3wa">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Evv-Ji-v4d">
                                                 <rect key="frame" x="16" y="11" width="13" height="22"/>
@@ -239,6 +239,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CIDADE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HB-rb-Akt">
+                                <rect key="frame" x="44" y="11" width="232" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.23921568630000001" green="0.91764705879999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -257,6 +264,7 @@
                         <outlet property="navBar" destination="PiE-7d-P4a" id="uhr-2m-S79"/>
                         <outlet property="navItem" destination="3HZ-Ah-3wa" id="Wx3-03-URW"/>
                         <outlet property="navLblItem" destination="XG8-HG-xFr" id="blO-y1-g4a"/>
+                        <outlet property="outletLblTitle" destination="4HB-rb-Akt" id="Uyp-6a-pCC"/>
                         <outlet property="uiTvCity" destination="uim-e2-cav" id="1iq-bc-mgr"/>
                     </connections>
                 </viewController>
@@ -284,7 +292,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="PRATO" id="N48-X0-19H" userLabel="lblTitulo">
+                                    <navigationItem id="N48-X0-19H" userLabel="lblTitulo">
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="Pql-2Q-d91">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FiM-la-6t1">
                                                 <rect key="frame" x="16" y="11" width="13" height="22"/>
@@ -300,6 +308,12 @@
                                             </button>
                                             <connections>
                                                 <action selector="actionBtnVoltar:" destination="fTc-aG-1p8" id="65P-ZO-Etd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="msg.png" id="NRH-o5-lm4">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="actionBtnMsg:" destination="zsQ-UP-cb2" id="5Yu-gX-BPR"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -333,6 +347,10 @@
                                     <constraint firstAttribute="width" constant="280" id="pH6-bV-jdn"/>
                                 </constraints>
                             </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Logo_tranparente.png" translatesAutoresizingMaskIntoConstraints="NO" id="hZD-tt-2wA">
+                                <rect key="frame" x="149" y="3" width="22" height="37"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -348,7 +366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coS-eL-nRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1667" y="-1307"/>
+            <point key="canvasLocation" x="1585" y="-1305"/>
         </scene>
         <!--mainvc-->
         <scene sceneID="Asg-U2-3ns">
@@ -396,7 +414,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="CIDADE" id="Tzm-TF-Pqf" userLabel="lblCidade">
+                                    <navigationItem id="Tzm-TF-Pqf" userLabel="lblCidade">
                                         <barButtonItem key="leftBarButtonItem" id="8Qp-Ee-4dp">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="w7D-Hb-2hz">
                                                 <rect key="frame" x="16" y="11" width="13" height="22"/>
@@ -423,6 +441,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BUSCA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3D-lO-Omz">
+                                <rect key="frame" x="44" y="10" width="232" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="069-OP-NjC">
                                 <rect key="frame" x="20" y="75" width="133" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -518,6 +543,7 @@
                         <outlet property="navLblItem" destination="Tzm-TF-Pqf" id="qms-99-E6C"/>
                         <outlet property="outletBtnMenu" destination="4EA-NB-zJd" id="3wC-ia-QbL"/>
                         <outlet property="outletBtnRest" destination="069-OP-NjC" id="BOB-zK-Pw4"/>
+                        <outlet property="outletLblTitle" destination="V3D-lO-Omz" id="QFc-8A-S5Q"/>
                         <outlet property="outletSearchBar" destination="F3u-Iz-Eca" id="cWC-cR-uiH"/>
                         <outlet property="uiTVSearch" destination="6VH-m3-ckC" id="YXf-9H-Xxc"/>
                     </connections>
@@ -597,7 +623,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="RESTAURANTE" id="2mj-pU-nWF" userLabel="lblTitulo">
+                                    <navigationItem id="2mj-pU-nWF" userLabel="lblTitulo">
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="krI-X8-rHK">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qjh-3l-3Ln">
                                                 <rect key="frame" x="16" y="11" width="13" height="22"/>
@@ -627,6 +653,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RESTAURANTE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clp-UV-3sx">
+                                <rect key="frame" x="44" y="10" width="232" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.23921568630000001" green="0.91764705879999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -634,6 +667,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="navigationLblItem" destination="x8O-da-51L" id="SkG-Rm-05F"/>
+                        <outlet property="outletLblTitle" destination="clp-UV-3sx" id="y3a-pu-7sE"/>
                         <outlet property="uiTvRest" destination="R7z-gJ-ip1" id="pL1-mo-hEN"/>
                     </connections>
                 </viewController>
@@ -715,7 +749,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHM-PI-npQ">
                                         <rect key="frame" x="223" y="80" width="76" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="rota.png">
+                                        <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                        <state key="normal" title="ROTA" backgroundImage="rota.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -840,6 +875,20 @@
                                         <rect key="frame" x="279" y="472" width="13" height="17"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ROTA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azh-uE-t2G">
+                                        <rect key="frame" x="250" y="80" width="50" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LIGAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABB-Ea-CEa">
+                                        <rect key="frame" x="154" y="80" width="50" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.23921568630000001" green="0.91764705879999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -898,7 +947,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="RESTAURANTE" id="jen-kf-u8s" userLabel="lblTitulo">
+                                    <navigationItem id="jen-kf-u8s" userLabel="lblTitulo">
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="qb1-LC-OGE">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6us-N1-4hb">
                                                 <rect key="frame" x="16" y="11" width="13" height="22"/>
@@ -931,6 +980,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RESTAURANTE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3X-J6-j9m">
+                                <rect key="frame" x="44" y="10" width="232" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.49803921569999998" green="0.20784313730000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -958,12 +1014,15 @@
                         <outlet property="outletImgViewLogo" destination="BhT-j3-IVF" id="W8v-gK-jpC"/>
                         <outlet property="outletImgVisa" destination="oH7-v7-K1n" id="1Ur-jx-iwQ"/>
                         <outlet property="outletLblAbout" destination="DBy-bg-pCT" id="Uf8-CH-kVZ"/>
+                        <outlet property="outletLblCall" destination="ABB-Ea-CEa" id="952-cz-CG8"/>
                         <outlet property="outletLblCards" destination="TIQ-e4-VEc" id="GUO-cZ-kgW"/>
                         <outlet property="outletLblCity" destination="IgK-RO-3L0" id="5iM-5K-30E"/>
                         <outlet property="outletLblEmail" destination="yRG-UC-q6G" id="tHE-bd-NNo"/>
                         <outlet property="outletLblName" destination="4VH-oE-t29" id="qZs-AV-ljD"/>
+                        <outlet property="outletLblRoute" destination="azh-uE-t2G" id="mZ1-gT-bne"/>
                         <outlet property="outletLblTime" destination="MK0-cI-LX6" id="hxl-sq-bFx"/>
                         <outlet property="outletLblTimeDetail" destination="vll-qf-Iae" id="q5P-aN-TCA"/>
+                        <outlet property="outletLblTitle" destination="c3X-J6-j9m" id="ynU-o3-BGh"/>
                         <outlet property="outletLblType" destination="iAB-7Z-RB3" id="TN0-m4-LwI"/>
                         <outlet property="outletScrollView" destination="npY-Ki-DQZ" id="ULL-ag-9qt"/>
                         <outlet property="outletTxtAbout" destination="XbN-0R-ZsL" id="iKS-O0-SjX"/>
@@ -999,6 +1058,13 @@
                                             <action selector="actionBtnSair:" destination="gYg-PO-Q8g" eventType="touchUpInside" id="ip7-rg-Ixs"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MAPA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiE-x8-PBP">
+                                        <rect key="frame" x="44" y="12" width="232" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.20784313730000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -1014,6 +1080,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="2OY-zz-Ik1"/>
                     <connections>
+                        <outlet property="outletLblTitle" destination="PiE-x8-PBP" id="rbf-u7-7w2"/>
                         <outlet property="outletmap" destination="R1E-iG-4oH" id="lry-Ge-2EE"/>
                     </connections>
                 </viewController>
@@ -1041,7 +1108,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="PRATO" id="Qec-Gl-QQB" userLabel="lblTitulo">
+                                    <navigationItem id="Qec-Gl-QQB" userLabel="lblTitulo">
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="CKB-xu-CM1">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0hx-nL-1hu">
                                                 <rect key="frame" x="16" y="11" width="13" height="22"/>
@@ -1074,6 +1141,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PRATO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiW-an-hne">
+                                <rect key="frame" x="44" y="10" width="232" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpF-Ku-cmP">
                                 <rect key="frame" x="0.0" y="44" width="320" height="475"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1144,6 +1218,7 @@
                     <connections>
                         <outlet property="navLblItem" destination="Qec-Gl-QQB" id="ywE-QQ-j3D"/>
                         <outlet property="outletBtnHeart" destination="P7a-eV-Fzd" id="5mD-b5-7OQ"/>
+                        <outlet property="outletLblTitle" destination="AiW-an-hne" id="9RL-Qr-gso"/>
                         <outlet property="outletNomeRest" destination="vDv-ac-d9l" id="lXI-Rl-hdj"/>
                         <outlet property="outletPrato" destination="AZs-tP-Ew6" id="nbU-Zg-Ing"/>
                         <outlet property="outletValue" destination="8Ei-fx-gQC" id="4K5-NG-0V2"/>
@@ -1169,8 +1244,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jg6-iO-aWH">
                                 <rect key="frame" x="0.0" y="44" width="320" height="431"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.91764705879999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexColor" red="0.23921568630000001" green="0.91764705879999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.23921568630000001" green="0.91764705879999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="NHl-Ky-jYo">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="5"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1308,7 +1384,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="MENU" id="CX7-h6-vgY" userLabel="lblTitulo">
+                                    <navigationItem id="CX7-h6-vgY" userLabel="lblTitulo">
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="qTv-RA-YM0">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PlC-xW-Lac">
                                                 <rect key="frame" x="16" y="11" width="13" height="22"/>
@@ -1326,18 +1402,16 @@
                                                 <action selector="actionBtnVoltar:" destination="fTc-aG-1p8" id="fut-Qb-Lmb"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" id="2RU-a0-KAM">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rZy-aB-v8h">
-                                                <rect key="frame" x="258" y="7" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="|||">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MEUS PRATOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4O-QD-Ydn">
+                                <rect key="frame" x="41" y="11" width="238" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.23921568630000001" green="0.91764705879999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1347,6 +1421,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="navLblItem" destination="CX7-h6-vgY" id="OWu-TY-dKm"/>
+                        <outlet property="outletLblTitle" destination="A4O-QD-Ydn" id="gzu-6G-k1L"/>
                         <outlet property="uitvmenu" destination="Jg6-iO-aWH" id="Idf-zK-6u7"/>
                     </connections>
                 </viewController>
@@ -1426,7 +1501,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="RESTAURANTE" id="Ha2-ht-T07" userLabel="lblTitulo">
+                                    <navigationItem id="Ha2-ht-T07" userLabel="lblTitulo">
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="jxz-4S-krz">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hIk-1p-Vt8">
                                                 <rect key="frame" x="16" y="11" width="13" height="22"/>
@@ -1456,6 +1531,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FAVORITOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxP-op-ZIs">
+                                <rect key="frame" x="44" y="10" width="232" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.23921568630000001" green="0.91764705879999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1464,6 +1546,7 @@
                     <connections>
                         <outlet property="navBar" destination="CTx-D3-VHL" id="RXo-kg-UTl"/>
                         <outlet property="navLblItem" destination="Ha2-ht-T07" id="VT8-zu-u5B"/>
+                        <outlet property="outletLblTitle" destination="fxP-op-ZIs" id="7If-If-lTl"/>
                         <outlet property="uiTvRest" destination="IXV-dO-RM2" id="qtv-Ho-0sg"/>
                     </connections>
                 </viewController>
@@ -1491,7 +1574,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="PRATO" id="ejR-id-hr2" userLabel="lblTitulo">
+                                    <navigationItem id="ejR-id-hr2" userLabel="lblTitulo">
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="YWM-Sn-Z0p">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GFf-cZ-VtN">
                                                 <rect key="frame" x="16" y="11" width="13" height="22"/>
@@ -1524,6 +1607,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PRATO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grh-26-P9x">
+                                <rect key="frame" x="44" y="10" width="232" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMc-12-6rL">
                                 <rect key="frame" x="0.0" y="44" width="320" height="475"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1598,6 +1688,7 @@
                     <connections>
                         <outlet property="navigationLblItem" destination="oTx-rH-nt4" id="hrw-D5-D2K"/>
                         <outlet property="outletBtnHeart" destination="hxq-S7-W4p" id="Zxm-at-Kdd"/>
+                        <outlet property="outletLblTitle" destination="Grh-26-P9x" id="zKy-kG-tB1"/>
                         <outlet property="outletNomeRest" destination="gjO-fA-muq" id="Vq8-G6-b3W"/>
                         <outlet property="outletPrato" destination="S3k-X4-ZkI" id="adB-BO-Au7"/>
                         <outlet property="outletValue" destination="yvR-FY-N5h" id="oH3-sh-6qY"/>
@@ -1617,6 +1708,7 @@
         <image name="Ligar.png" width="76" height="23"/>
         <image name="LogoInicial.png" width="193" height="47"/>
         <image name="LogoRestaurante.png" width="91" height="96"/>
+        <image name="Logo_tranparente.png" width="22" height="37"/>
         <image name="Logo_verde.png" width="190" height="46"/>
         <image name="amex.png" width="32" height="19"/>
         <image name="backgroundBottonBar.png" width="320" height="48"/>
@@ -1628,6 +1720,7 @@
         <image name="home.png" width="28" height="27"/>
         <image name="mast.png" width="32" height="19"/>
         <image name="meusPratos.png" width="28" height="23"/>
+        <image name="msg.png" width="26" height="19"/>
         <image name="rota.png" width="76" height="23"/>
         <image name="visa.png" width="32" height="19"/>
         <image name="voltar.png" width="13" height="22"/>

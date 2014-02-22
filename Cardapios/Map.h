@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet MKMapView *outletmap;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *navItem;
+@property (weak, nonatomic) IBOutlet UILabel *outletLblTitle;
 
 @end

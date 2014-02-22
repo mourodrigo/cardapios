@@ -15,7 +15,8 @@
 @end
 
 @implementation MenuDetailViewController
-@synthesize navBar, navItem;
+@synthesize navBar, navItem, navigationLblItem ,navLblItem;
+    @synthesize outletLblTitle;
 
 @synthesize outletNomeRest, outletValue, txtDetailRest, outletPrato, outletBtnHeart;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -58,7 +59,10 @@
     txtDetailRest.text = [menu valueForKey:@"ZDESCR"];
     [outletValue setTitle:[NSString stringWithFormat:@"$ %@", [menu valueForKey:@"ZVALUE"]] forState:UIControlStateNormal];
 	// Do any additional setup after loading the view.
+    outletLblTitle.text = [delegate getStr:@"PRATO"];
+    
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     [outletBtnHeart setImage:[UIImage imageNamed:@"estrela.png"] forState:UIControlStateNormal];
     [outletBtnHeart setImage:[UIImage imageNamed:@"estrela_selected.png"] forState:UIControlStateSelected];
@@ -67,9 +71,7 @@
     if (index!=NSNotFound || !favs) {
         [outletBtnHeart setSelected:TRUE];
     }
-
 }
-
 
 - (void)didReceiveMemoryWarning
 {

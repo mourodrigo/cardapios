@@ -20,7 +20,8 @@
 
 @implementation Search
 @synthesize navBar, navItem;
-
+@synthesize outletLblTitle;
+    
 @synthesize outletBtnMenu, outletBtnRest, outletNavItem, outletSearchBar, uiTVSearch;
 
 -(void)viewDidLoad{
@@ -36,10 +37,13 @@
                              forState:UIControlStateSelected];
 
     [self actionBtnRest:nil];
+    outletLblTitle.text = [delegate getStr:@"BUSCA"];
+    self.tabBarItem.title = [delegate getStr:@"BUSCA"];
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+
     [uiTVSearch deselectRowAtIndexPath:[uiTVSearch indexPathForSelectedRow] animated:YES];
 }
 

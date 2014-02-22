@@ -35,4 +35,5 @@
 - (void)imageRequest:(NSString*)directoryname withFileName:(NSString*)nameFile storeAtpath:(NSString*)downloadPath;
 -(NSMutableArray*)loadAllMenuFav;
 -(void)storeMenuFav:(NSMutableArray*)favs;
+-(NSString *)getStr:(NSString*)string;
 @end

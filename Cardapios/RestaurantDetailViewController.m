@@ -12,6 +12,7 @@
     NSMutableDictionary *info;
     AppDelegate *delegate;
     NSMutableArray *imgs;
+    int index;
     
 }
 @synthesize outletScrollView, outletBtnMenu, outletBtnCall, outletBtnRoute, outletBtnStar, outletImgAmex, outletImgMaster, outletImgView, outletImgViewLogo, outletImgVisa, outletLblAbout, outletLblCards, outletLblCity, outletLblEmail, outletLblName, outletLblTime, outletLblTimeDetail, outletLblType, outletTxtAbout;
@@ -24,7 +25,7 @@
     info= [[delegate sqliteDoQuery:[NSString stringWithFormat:@"Select * from ZRESTAURANT where ZIDREST = %d", delegate.idRestSelected]] objectAtIndex:0];
 
     NSLog(@"info %@", info);
-
+    index=0;
     outletLblName.text = [info objectForKey:@"ZNAME"];
     outletLblType.text = [info objectForKey:@"ZCOMPANY"];
     outletLblCity.text = [info objectForKey:@"ZCITY"];
@@ -66,20 +67,44 @@
 -(void)viewWillAppear:(BOOL)animated{
     imgs = [[NSMutableArray alloc]initWithCapacity:0];
     
-    if (![[info valueForKey:@"img0"] isEqualToString:@""] && [[NSFileManager defaultManager]fileExistsAtPath:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"img0"]] stringByExpandingTildeInPath]]) {
-        [imgs addObject:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"img0"]] stringByExpandingTildeInPath]];
+    if (![[info valueForKey:@"ZIMAGE1"] isEqualToString:@""] && [[NSFileManager defaultManager]fileExistsAtPath:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"ZIMAGE1"]] stringByExpandingTildeInPath]]) {
+        [imgs addObject:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"ZIMAGE1"]] stringByExpandingTildeInPath]];
     }
     
-    if (![[info valueForKey:@"img1"] isEqualToString:@""] && [[NSFileManager defaultManager]fileExistsAtPath:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"img1"]] stringByExpandingTildeInPath]]) {
-        [imgs addObject:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"img1"]] stringByExpandingTildeInPath]];
+    if (![[info valueForKey:@"ZIMAGE2"] isEqualToString:@""] && [[NSFileManager defaultManager]fileExistsAtPath:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"ZIMAGE2"]] stringByExpandingTildeInPath]]) {
+        [imgs addObject:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"ZIMAGE2"]] stringByExpandingTildeInPath]];
         
     }
     
-    if (![[info valueForKey:@"img2"] isEqualToString:@""] && [[NSFileManager defaultManager]fileExistsAtPath:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"img2"]] stringByExpandingTildeInPath]]) {
-        [imgs addObject:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"img2"]] stringByExpandingTildeInPath]];
+    if (![[info valueForKey:@"ZIMAGE3"] isEqualToString:@""] && [[NSFileManager defaultManager]fileExistsAtPath:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"ZIMAGE3"]] stringByExpandingTildeInPath]]) {
+        [imgs addObject:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"ZIMAGE3"]] stringByExpandingTildeInPath]];
         
     }
 
+    if (![[info valueForKey:@"ZIMAGE4"] isEqualToString:@""] && [[NSFileManager defaultManager]fileExistsAtPath:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"ZIMAGE4"]] stringByExpandingTildeInPath]]) {
+        [imgs addObject:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"ZIMAGE4"]] stringByExpandingTildeInPath]];
+        
+    }
+
+    if (imgs.count>0) {
+        [self setImgWithIndex:0];
+    }
+}
+
+-(void)setImgWithIndex:(int)theindex{
+    if (index<imgs.count) {
+        
+        
+        [UIView transitionWithView:self.view
+                          duration:0.33f
+                           options:UIViewAnimationOptionTransitionCrossDissolve
+                        animations:^{
+                            
+                            [outletImgView setImage:[UIImage imageWithContentsOfFile:[imgs objectAtIndex:theindex]]];
+                        } completion:NULL];
+        
+        theindex = index;
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -100,8 +125,8 @@
     NSLog(@"height %f", self.view.frame.size.height);
     
     NSMutableArray *favs = [delegate loadAllFav];
-    NSUInteger index = [favs indexOfObject:[NSString stringWithFormat:@"%d", delegate.idRestSelected]];
-    if (index!=NSNotFound && favs) {
+    NSUInteger indexz = [favs indexOfObject:[NSString stringWithFormat:@"%d", delegate.idRestSelected]];
+    if (indexz!=NSNotFound && favs) {
         [outletBtnStar setSelected:TRUE];
     }
     
@@ -115,8 +140,8 @@
 - (IBAction)actionBtnStar:(id)sender {
     if (outletBtnStar.selected) {
         NSMutableArray *favs = [delegate loadAllFav];
-        NSUInteger index = [favs indexOfObject:[NSString stringWithFormat:@"%d", delegate.idRestSelected]];
-        if (index!=NSNotFound) {
+        NSUInteger indexz = [favs indexOfObject:[NSString stringWithFormat:@"%d", delegate.idRestSelected]];
+        if (indexz!=NSNotFound) {
             [favs removeObjectAtIndex:index];
         }
         [outletBtnStar setSelected:FALSE];
@@ -151,8 +176,25 @@
     NSLog(@"dragging");
 }
 - (IBAction)actionDireita:(id)sender {
+    if (index==imgs.count-1) {
+        [self setImgWithIndex:0];
+        index = 0;
+
+    }else{
+        [self setImgWithIndex:index+1];
+        index = index+1;
+
+    }
 }
 
 - (IBAction)actionEsquerda:(id)sender {
+    if (index==0) {
+        [self setImgWithIndex:imgs.count-1];
+        index = imgs.count-1;
+
+    }else{
+        [self setImgWithIndex:index-1];
+        index = index-1;
+    }
 }
 @end

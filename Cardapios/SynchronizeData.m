@@ -89,6 +89,9 @@
                     if (![[dic valueForKey:@"img2"] isEqualToString:@""]) {
                         [_appdelegate imageRequest:[NSString stringWithFormat:@"http://ambiente.gobekdigital.com.br/cdc/webroot/uploads/%@/fotos/", [dic valueForKey:@"id"]] withFileName:[dic valueForKey:@"img2"] storeAtpath:@"files/"];
                     }
+                    if (![[dic valueForKey:@"img3"] isEqualToString:@""]) {
+                        [_appdelegate imageRequest:[NSString stringWithFormat:@"http://ambiente.gobekdigital.com.br/cdc/webroot/uploads/%@/fotos/", [dic valueForKey:@"id"]] withFileName:[dic valueForKey:@"img3"] storeAtpath:@"files/"];
+                    }
       
                 }
                 @catch (NSException *exception) {

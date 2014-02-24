@@ -129,7 +129,7 @@
             //NSLog(@"resultSQL \n%@", resultArray);
             return resultArray;
         }else{
-            return nil;
+            return resultArray;
         }
     }
     @catch (NSException *exception) {

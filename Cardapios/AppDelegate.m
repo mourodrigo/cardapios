@@ -17,17 +17,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
-    // Override point for customization after application launch.
-    [self eraseDb];
     [self persistentStoreCoordinator];
-    
+    // Override point for customization after application launch.
     return YES;
 }
 							
-- (void)applicationWillResignActive:(UIApplication *)application
-{
+- (void)applicationWillResignActive:(UIApplication *)application{
+    
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -44,6 +43,8 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    UINavigationController *nav = (UINavigationController*)self.window.rootViewController;
+    [nav popToRootViewControllerAnimated:true];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -158,6 +159,7 @@
             [[NSFileManager defaultManager]removeItemAtURL:[NSURL URLWithString:dbpath] error:&error]
         ;
     }*/
+    NSLog(@"from menu %@",[self sqliteDoQuery:@"Select * from zmenu"]);
     [self sqliteDoQuery:@"DELETE FROM ZCITY WHERE 1"];
     [self sqliteDoQuery:@"DELETE FROM ZFOODCATEGORY WHERE 1"];
     [self sqliteDoQuery:@"DELETE FROM ZRESTAURANT WHERE 1"];
@@ -237,12 +239,21 @@
 
 -(void)setIdiomWithString:(NSString*)idiom{
     NSMutableDictionary *dic = (NSMutableDictionary*)[self getInfoPlist];
-    [dic setValue:idiom forKey:@"idioma"];
+    [dic setObject:idiom forKey:@"idioma"];
     [self setInfoPlist:dic];
 }
 
 
 #pragma - mark Download
+
+-(BOOL)verificaConexao{
+    NSURL *scriptUrl = [NSURL URLWithString:@"http://ambiente.gobekdigital.com.br/cdc/api/categorias.php"];
+    NSData *data = [NSData dataWithContentsOfURL:scriptUrl];
+    if (data)
+        return TRUE;
+    else
+        return FALSE;
+}
 
 - (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL
 {

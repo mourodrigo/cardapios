@@ -24,28 +24,30 @@
 @synthesize progressCity, progressCategory, progressMenu, progressRest;
 - (void)startSincro
 {
+    _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+
+    
     manageDataObject=[[WriteDataBase alloc]init];
  
     [manageDataObject beginWriteData];
     
-    _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-
-    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONCity" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCity:) name:@"JSONCity" object:nil];
-    [self performSelector:@selector(getCity) withObject:Nil afterDelay:1];
-
-    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONCategory" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCategory:) name:@"JSONCategory" object:nil];
-    [self performSelector:@selector(getCategory) withObject:Nil afterDelay:2];
 
     
-    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONRestaurant" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRest:) name:@"JSONRestaurant" object:nil];
-    [self performSelector:@selector(getRestaurant) withObject:nil afterDelay:3];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCity:) name:@"JSONCity" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCategory:) name:@"JSONCategory" object:nil];
 
-    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONMenu" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRest:) name:@"JSONRestaurant" object:nil];
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateMenu:) name:@"JSONMenu" object:nil];
+    
+    [self performSelector:@selector(getCity) withObject:Nil afterDelay:1];
+    [self performSelector:@selector(getCategory) withObject:Nil afterDelay:2];
+    [self performSelector:@selector(getRestaurant) withObject:nil afterDelay:3];
     [self performSelector:@selector(getMenu) withObject:nil afterDelay:4];
+    
     progressCity = progressCategory = progressMenu = progressRest = FALSE;
 
     
@@ -98,6 +100,8 @@
         }
         NSLog(@"Sync restaurante Finalizado");
     });
+    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONRestaurant" object:nil];
+
 }
 
 
@@ -143,6 +147,8 @@
         }
         NSLog(@"Sync city Finalizado");
     });
+    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONCity" object:nil];
+    
 }
 
 
@@ -189,6 +195,8 @@
         }
         NSLog(@"Sync Menu Finalizado");
     });
+    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONMenu" object:nil];
+    
 }
 
 
@@ -212,6 +220,7 @@
         }];
         [operation start];
     });
+    [[NSNotificationCenter defaultCenter] removeObserver:nil name:@"JSONCategory" object:nil];
     
 }
 

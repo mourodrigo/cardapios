@@ -25,13 +25,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    sinc = [[SynchronizeData alloc]init];
- self.navigationController.navigationBar.hidden = YES;   
+ self.navigationController.navigationBar.hidden = YES;
 	// Do any additional setup after loading the view, typically from a nib.
-    [sinc startSincro];
-    [self checkDownload];
-
+    sinc = [[SynchronizeData alloc]init];
+    
 }
 
 -(void)checkDownload{
@@ -43,6 +40,18 @@
         [outletActivity setHidden:FALSE];
     }
     [self performSelector:@selector(checkDownload) withObject:Nil afterDelay:1];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    
+    [delegate eraseDb];
+    
+    [delegate persistentStoreCoordinator];
+
+    [sinc startSincro];
+   
+    [self checkDownload];
+   
 }
 -(void)viewDidAppear:(BOOL)animated{
 

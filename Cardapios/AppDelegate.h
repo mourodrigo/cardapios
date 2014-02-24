@@ -36,4 +36,5 @@
 -(NSMutableArray*)loadAllMenuFav;
 -(void)storeMenuFav:(NSMutableArray*)favs;
 -(NSString *)getStr:(NSString*)string;
+-(BOOL)verificaConexao;
 @end

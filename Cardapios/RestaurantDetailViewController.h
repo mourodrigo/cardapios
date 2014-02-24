@@ -40,4 +40,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *outletLblTitle;
 @property (weak, nonatomic) IBOutlet UILabel *outletLblCall;
 @property (weak, nonatomic) IBOutlet UILabel *outletLblRoute;
+@property (strong, nonatomic) IBOutlet UIButton *outletDireita;
+- (IBAction)actionDireita:(id)sender;
+- (IBAction)actionEsquerda:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *outletEsquerda;
 @end

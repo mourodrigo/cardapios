@@ -889,6 +889,30 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvY-Ym-GG2">
+                                        <rect key="frame" x="238" y="112" width="61" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title=">">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionDireita:" destination="V9t-6Q-A0n" eventType="touchUpInside" id="ejb-yh-fXN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r55-8g-T5f">
+                                        <rect key="frame" x="21" y="112" width="61" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title="&lt;">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionEsquerda:" destination="V9t-6Q-A0n" eventType="touchUpInside" id="bSM-aF-ybc"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.23921568630000001" green="0.91764705879999997" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1008,6 +1032,8 @@
                         <outlet property="outletBtnMenu" destination="6JQ-9A-XHN" id="CJ5-1h-dCt"/>
                         <outlet property="outletBtnRoute" destination="oHM-PI-npQ" id="sAB-ru-RIp"/>
                         <outlet property="outletBtnStar" destination="aIf-1k-AYu" id="DPp-Tg-jdc"/>
+                        <outlet property="outletDireita" destination="cvY-Ym-GG2" id="XBe-G8-3nl"/>
+                        <outlet property="outletEsquerda" destination="r55-8g-T5f" id="8Gi-HI-Toa"/>
                         <outlet property="outletImgAmex" destination="wbH-8s-5hA" id="kVZ-cr-PXl"/>
                         <outlet property="outletImgMaster" destination="YyH-1e-iAN" id="7W1-8E-ubS"/>
                         <outlet property="outletImgView" destination="Ado-hy-LgV" id="6lz-Tj-5g2"/>

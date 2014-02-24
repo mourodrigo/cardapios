@@ -24,20 +24,16 @@
 @synthesize progressCity, progressCategory, progressMenu, progressRest;
 - (void)startSincro
 {
+    
     _appdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-
     
     manageDataObject=[[WriteDataBase alloc]init];
  
     [manageDataObject beginWriteData];
     
-
-    
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCity:) name:@"JSONCity" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCategory:) name:@"JSONCategory" object:nil];
-
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRest:) name:@"JSONRestaurant" object:nil];
 
@@ -83,11 +79,17 @@
             for (NSDictionary *dic in [notification.object objectForKey:@"resultado"]) {
                 @try {
                     [manageDataObject writeRestaurant:dic];
-         /*           NSLog(@"DICC %@", dic);
+                    NSLog(@"DICC %@", dic);
                     if (![[dic valueForKey:@"img0"] isEqualToString:@""]) {
-                        _appdelegate imageRequest:<#(NSString *)#> withFileName:[dic valueForKey:@"img0"] storeAtpath:@""
+                        [_appdelegate imageRequest:[NSString stringWithFormat:@"http://ambiente.gobekdigital.com.br/cdc/webroot/uploads/%@/fotos/", [dic valueForKey:@"id"]] withFileName:[dic valueForKey:@"img0"] storeAtpath:@"files/"];
                     }
-      */
+                    if (![[dic valueForKey:@"img1"] isEqualToString:@""]) {
+                        [_appdelegate imageRequest:[NSString stringWithFormat:@"http://ambiente.gobekdigital.com.br/cdc/webroot/uploads/%@/fotos/", [dic valueForKey:@"id"]] withFileName:[dic valueForKey:@"img1"] storeAtpath:@"files/"];
+                    }
+                    if (![[dic valueForKey:@"img2"] isEqualToString:@""]) {
+                        [_appdelegate imageRequest:[NSString stringWithFormat:@"http://ambiente.gobekdigital.com.br/cdc/webroot/uploads/%@/fotos/", [dic valueForKey:@"id"]] withFileName:[dic valueForKey:@"img2"] storeAtpath:@"files/"];
+                    }
+      
                 }
                 @catch (NSException *exception) {
                     NSLog(@"getRestaurant expection -> %@", exception.description);

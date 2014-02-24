@@ -12,7 +12,9 @@
 	<string>pt</string>
 	<key>storyboard</key>
 	<string>Main</string>
+	<key>database</key>
+	<string>database.sqlite</string>
 	<key>api</key>
-	<string>http://255.255.255.255/api/</string>
+	<string></string>
 </dict>
 </plist>

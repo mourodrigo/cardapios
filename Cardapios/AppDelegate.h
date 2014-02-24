@@ -12,8 +12,8 @@
 @property (strong, nonatomic) UIWindow *window;
 
 -(UIViewController*)getViewControllerWithIdentifier:(NSString*)identifier;
--(NSDictionary *)getInfoPlist;
--(void)setInfoPlist:(NSDictionary*)constants;
+-(NSMutableDictionary *)getInfoPlist;
+-(void)setInfoPlist:(NSMutableDictionary*)constants;
 -(void)setIdiomWithString:(NSString*)idiom;
 - (void)saveContext;
 - (NSManagedObjectContext *)managedObjectContext;

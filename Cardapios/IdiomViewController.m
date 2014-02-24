@@ -25,10 +25,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = YES;
 	// Do any additional setup after loading the view, typically from a nib.
     sinc = [[SynchronizeData alloc]init];
     
+    delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    
+    //[delegate eraseDb];
+    
+    [self start];
+    
+}
+
+-(void)start{
+    [outletViewBtns setHidden:TRUE];
+    [delegate persistentStoreCoordinator];
+    if ([delegate verificaConexao]) {
+        [sinc startSincro];
+        [self checkDownload];
+    }else if([delegate sqliteDoQuery:@"Select * from zrestaurant"].count>0){
+        [outletViewBtns setHidden:FALSE];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Sem conexão" message:@"Conecte-se à internet para baixar o conteúdo dos cardápios da cidade." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
+        [self performSelector:@selector(start) withObject:nil afterDelay:60];
+    }
 }
 
 -(void)checkDownload{
@@ -42,19 +63,10 @@
     [self performSelector:@selector(checkDownload) withObject:Nil afterDelay:1];
 }
 -(void)viewWillAppear:(BOOL)animated{
-    delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     
-    [delegate eraseDb];
-    
-    [delegate persistentStoreCoordinator];
-
-    [sinc startSincro];
-   
-    [self checkDownload];
-   
 }
 -(void)viewDidAppear:(BOOL)animated{
-
+    
 }
 - (void)didReceiveMemoryWarning
 {

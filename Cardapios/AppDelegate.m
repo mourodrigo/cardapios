@@ -17,8 +17,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
-    [self persistentStoreCoordinator];
+    
+    
     // Override point for customization after application launch.
+    
     return YES;
 }
 							
@@ -45,6 +47,8 @@
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     UINavigationController *nav = (UINavigationController*)self.window.rootViewController;
     [nav popToRootViewControllerAnimated:true];
+  //  [self persistentStoreCoordinator];
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -159,12 +163,14 @@
             [[NSFileManager defaultManager]removeItemAtURL:[NSURL URLWithString:dbpath] error:&error]
         ;
     }*/
-    NSLog(@"from menu %@",[self sqliteDoQuery:@"Select * from zmenu"]);
-    [self sqliteDoQuery:@"DELETE FROM ZCITY WHERE 1"];
-    [self sqliteDoQuery:@"DELETE FROM ZFOODCATEGORY WHERE 1"];
-    [self sqliteDoQuery:@"DELETE FROM ZRESTAURANT WHERE 1"];
-    [self sqliteDoQuery:@"DELETE FROM ZMENU WHERE 1"];
 
+    NSLog(@"from menu %@",[self sqliteDoQuery:@"Select * from zmenu"]);
+    
+    NSLog(@"%@", [self sqliteDoQuery:@"DELETE FROM ZCITY WHERE 1"]);
+    NSLog(@"%@", [self sqliteDoQuery:@"DELETE FROM ZFOODCATEGORY WHERE 1"]);
+    NSLog(@"%@", [self sqliteDoQuery:@"DELETE FROM ZRESTAURANT WHERE 1"]);
+    NSLog(@"%@", [self sqliteDoQuery:@"DELETE FROM ZMENU WHERE 1"]);
+    
 }
 
 -(void)storeFav:(NSMutableArray*)favs{
@@ -210,15 +216,15 @@
 
 #pragma - mark Constants
 
--(NSDictionary *)getInfoPlist{
+-(NSMutableDictionary *)getInfoPlist{
     if (![[NSFileManager defaultManager]fileExistsAtPath:[@"~/Documents/constants.plist" stringByExpandingTildeInPath]]) {
         NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"constants" ofType:@"plist"];
-        NSDictionary *info = [[NSDictionary alloc]initWithContentsOfFile:plistPath];
+        NSMutableDictionary *info = [[NSMutableDictionary alloc]initWithContentsOfFile:plistPath];
         [info writeToFile:[@"~/Documents/constants.plist" stringByExpandingTildeInPath] atomically:YES];
         return info;
     }else{
         NSString *plistPath = [@"~/Documents/constants.plist" stringByExpandingTildeInPath];
-        NSDictionary *info = [[NSDictionary alloc]initWithContentsOfFile:plistPath];
+        NSMutableDictionary *info = [[NSMutableDictionary alloc]initWithContentsOfFile:plistPath];
         return info;
     }
 }
@@ -233,7 +239,7 @@
     }
 }
 
--(void)setInfoPlist:(NSDictionary*)constants{
+-(void)setInfoPlist:(NSMutableDictionary*)constants{
     [constants writeToFile:[@"~/Documents/constants.plist" stringByExpandingTildeInPath] atomically:YES];
 }
 
@@ -300,7 +306,7 @@
                 [UIImageJPEGRepresentation(image, 1.0) writeToFile:pathToWriteFile atomically:YES];
             }
             
-            [self addSkipBackupAttributeToItemAtURL:[NSURL URLWithString:pathToWriteFile]];
+           // [self addSkipBackupAttributeToItemAtURL:[NSURL URLWithString:pathToWriteFile]];
             
             NSLog(@"\n\nGetFileRequest: %@", request.URL);
             NSLog(@"downloadpath %@\n\n", pathToWriteFile);

@@ -11,6 +11,7 @@
 @implementation RestaurantDetailViewController{
     NSMutableDictionary *info;
     AppDelegate *delegate;
+    NSMutableArray *imgs;
     
 }
 @synthesize outletScrollView, outletBtnMenu, outletBtnCall, outletBtnRoute, outletBtnStar, outletImgAmex, outletImgMaster, outletImgView, outletImgViewLogo, outletImgVisa, outletLblAbout, outletLblCards, outletLblCity, outletLblEmail, outletLblName, outletLblTime, outletLblTimeDetail, outletLblType, outletTxtAbout;
@@ -63,7 +64,21 @@
     NSLog(@"IDIOM %@", idiom);
 }
 -(void)viewWillAppear:(BOOL)animated{
+    imgs = [[NSMutableArray alloc]initWithCapacity:0];
     
+    if (![[info valueForKey:@"img0"] isEqualToString:@""] && [[NSFileManager defaultManager]fileExistsAtPath:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"img0"]] stringByExpandingTildeInPath]]) {
+        [imgs addObject:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"img0"]] stringByExpandingTildeInPath]];
+    }
+    
+    if (![[info valueForKey:@"img1"] isEqualToString:@""] && [[NSFileManager defaultManager]fileExistsAtPath:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"img1"]] stringByExpandingTildeInPath]]) {
+        [imgs addObject:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"img1"]] stringByExpandingTildeInPath]];
+        
+    }
+    
+    if (![[info valueForKey:@"img2"] isEqualToString:@""] && [[NSFileManager defaultManager]fileExistsAtPath:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"img2"]] stringByExpandingTildeInPath]]) {
+        [imgs addObject:[[NSString stringWithFormat:@"~/Documents/files/%@",[info valueForKey:@"img2"]] stringByExpandingTildeInPath]];
+        
+    }
 
 }
 
@@ -134,5 +149,10 @@
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     NSLog(@"dragging");
+}
+- (IBAction)actionDireita:(id)sender {
+}
+
+- (IBAction)actionEsquerda:(id)sender {
 }
 @end
